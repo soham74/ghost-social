@@ -25,8 +25,14 @@ confidence score, then serves them in a small Flask app.
    algorithm. Capacity shortfall is normal (85 slots, 116 students) → excess
    students are left **unmatched and surfaced explicitly**, never silently dropped.
 6. **Output** — `matches.csv`, `unmatched.csv`, `metadata.json`, `score_matrix.npz`
-   (internal, real names, git-ignored) and a committed, **student-anonymized,
-   consent-gated** `display_data/results.json` for the web app.
+   (in `output/`, git-ignored) and the committed `display_data/results.json` —
+   a single internal view carrying **real** `mentor_name/email`, `student_name/email`,
+   `confidence`, and the full `rationale` for matched records (and `student_name/email`
+   for unmatched). **Contains student PII → keep the repo private.**
+
+The Flask app is **one view** with real identities everywhere: searchable cards
+(mentor + student name/email, confidence, expandable rationale), Matched/Unmatched
+tabs, pagination, per-card copy-contact, CSV + PDF export.
 
 ## Run locally
 
@@ -46,18 +52,20 @@ APP_MODE=display ./venv312/bin/gunicorn app:app --bind 0.0.0.0:3000
 ```
 
 For the real LLM (Condition B) run: `export ANTHROPIC_API_KEY=...` and add
-`--mode llm`. The pinned model is `claude-sonnet-4-5-20250929`, `temperature=0`,
-seeded — logged in `metadata.json`.
+`--mode llm` (default model `claude-sonnet-4-6`, `temperature=0`, seeded —
+logged in `metadata.json`). To rebuild the committed real-identity display from an
+existing run without recomputing: `python rebuild_display.py --mentors … --students …`.
 
 ## Deploy to Render
 
-The repo ships a `render.yaml` blueprint. It boots in **display mode with no
-secrets**, serving the committed results with zero API calls. To enable the
-password-gated regenerate, set `APP_MODE=live`, `ADMIN_PASSWORD`, and
-`ANTHROPIC_API_KEY` in the Render dashboard.
+The repo ships a `render.yaml` blueprint. **Set `SITE_PASSWORD` in the Render
+dashboard to gate the whole site** (one password, HTTP Basic auth — the only
+access control). If unset, the site is open. `ANTHROPIC_API_KEY` + `APP_MODE=live`
+are only needed to enable in-app regeneration (paid).
 
 ## Privacy
 
-Raw spreadsheets and `output/` (real names/emails) are git-ignored. Only the
-committed `display_data/results.json` is published — students anonymized as
-`Student NNN`, mentor names shown only when `consent_to_share = Yes`.
+`.env`, `output/`, and `private/` are git-ignored. The committed
+`display_data/results.json` **contains real student names and emails**, so the
+**repository must be Private**. Access is controlled at the app layer by
+`SITE_PASSWORD`.

@@ -146,17 +146,6 @@ def _location_nudge(mentor: pd.Series) -> int:
     return 0
 
 
-def _scrub_name(text: str, full: str, label: str) -> str:
-    """Remove a person's name (full + each ≥3-char token) from free text so an
-    LLM rationale can't leak a real (anonymized) name. Idempotent-ish."""
-    if not text or not full:
-        return text
-    toks = sorted(set([full] + [t for t in full.split() if len(t) >= 3]), key=len, reverse=True)
-    for tok in toks:
-        text = re.sub(r"\b" + re.escape(tok) + r"\b", label, text, flags=re.IGNORECASE)
-    return re.sub(r"\b" + re.escape(label) + r"(?:'s)?(?:\s+" + re.escape(label) + r")+", label, text)
-
-
 def _overall_and_confidence(crit: dict) -> tuple[int, int]:
     vals = [crit[c] for c in CRITERIA]
     overall = int(round(sum(vals) / len(vals)))
@@ -172,8 +161,7 @@ class MentorMatcher:
     def __init__(self, output_dir="output", model=DEFAULT_MODEL,
                  temperature=DEFAULT_TEMPERATURE, seed=DEFAULT_SEED,
                  mode="offline", batch_size=MENTEE_BATCH_SIZE,
-                 max_workers=6, display_out=None, roster_out=None,
-                 anonymize_students=True, logger: MatchingLogger | None = None):
+                 max_workers=6, display_out=None, logger: MatchingLogger | None = None):
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.model = model
@@ -183,8 +171,6 @@ class MentorMatcher:
         self.batch_size = batch_size
         self.max_workers = max_workers
         self.display_out = Path(display_out) if display_out else None
-        self.roster_out = Path(roster_out) if roster_out else None
-        self.anonymize_students = anonymize_students
         self.log = logger or MatchingLogger(self.output_dir)
         self.timestamp = datetime.now(timezone.utc).isoformat()
         self.rng = np.random.default_rng(seed)
@@ -513,12 +499,6 @@ class MentorMatcher:
         return matches, unmatched, rec
 
     def _export(self, matches, students, unmatched, pool, score_matrix, rec):
-        consent_by_name = {r["name"]: r["consent"] for _, r in pool.iterrows()}
-
-        def shown_mentor(name):
-            # Honor consent_to_share=No/unknown when displaying names.
-            return name if consent_by_name.get(name) == "yes" else "Mentor (name withheld — no share consent)"
-
         rows = [{
             "mentee_name": m["mentee_name"],
             "mentor_name": m["mentor_name"],
@@ -556,89 +536,35 @@ class MentorMatcher:
         }
         (self.output_dir / "metadata.json").write_text(json.dumps(meta, indent=2, default=str))
 
-        # Display payload for the web app (consent-respecting names).
-        display = {
-            "generated_at": self.timestamp,
-            "generation_mode": self.mode,
-            "stats": {
-                "mentors_pool": rec["mentors_in_1to1_pool"],
-                "students": rec["students_total"],
-                "matched": rec["matched"],
-                "unmatched": rec["unmatched"],
-                "total_slots": rec["total_mentor_slots"],
-                "avg_confidence": round(float(np.mean([m["confidence_score"] for m in matches])), 2) if matches else 0,
-                "solver_agreement": rec["solver_agreement"],
-            },
-            "matches": [{
-                "mentee_name": m["mentee_name"],
-                "mentor_name": shown_mentor(m["mentor_name"]),
-                "rationale": m["rationale"],
-                "confidence_score": m["confidence_score"],
-                "criteria_scores": m["criteria_scores"],
-            } for m in sorted(matches, key=lambda x: -x["confidence_score"])],
-            "unmatched": [students.iloc[j]["name"] for j in unmatched],
-            "reconciliation": rec,
-        }
-        (self.output_dir / "results.json").write_text(json.dumps(display, indent=2, default=str))
-        self.log.info(f"Output -> {self.output_dir.resolve()}")
-
-        # Committed, shareable payload: students anonymized, mentor names consent-gated,
-        # rationales scrubbed of student names (own + cross-mentions of other students).
-        def anon(j):
-            return f"Student {int(j) + 1:03d}" if self.anonymize_students else students.iloc[j]["name"]
-
-        shown_mentor_tokens = {t.lower() for m in matches
-                               if consent_by_name.get(m["mentor_name"]) == "yes"
-                               for t in str(m["mentor_name"]).split() if len(t) >= 4}
-        student_tokens = {t.lower() for m in matches
-                          for t in str(students.iloc[m["_j"]]["name"]).split() if len(t) >= 4}
-        cross_scrub = student_tokens - shown_mentor_tokens   # don't erase consented mentor names
-
-        def scrub_rationale(m):
-            rat = _scrub_name(m["rationale"], m["mentee_name"], "the mentee")
-            if consent_by_name.get(m["mentor_name"]) != "yes":
-                rat = _scrub_name(rat, m["mentor_name"], "the mentor")
-            for tok in cross_scrub:
-                rat = re.sub(r"\b" + re.escape(tok) + r"\b", "the mentee", rat, flags=re.IGNORECASE)
-            return re.sub(r"\bthe mentee(?:'s)?(?:\s+the mentee)+", "the mentee", rat)
-
+        # Single internal view — real mentor + student identities with contact info.
+        mentor_email = {pool.iloc[i]["name"]: pool.iloc[i].get("email", "") for i in range(len(pool))}
         sorted_matches = sorted(matches, key=lambda x: -x["confidence_score"])
 
-        if self.display_out is not None:
-            pub = {
-                "generated_at": self.timestamp,
-                "generation_mode": self.mode,
-                "scope": ("Blind review: mentor-mentee matches with rationale + confidence, "
-                          "plus unmatched students. Students anonymized; no student PII."),
-                "matches": [{
-                    "student": anon(m["_j"]),
-                    "mentor": shown_mentor(m["mentor_name"]),
-                    "confidence": m["confidence_score"],
-                    "rationale": scrub_rationale(m),
-                } for m in sorted_matches],
-                "unmatched": [anon(j) for j in unmatched],
+        def rec_match(m):
+            stu = students.iloc[m["_j"]]
+            return {
+                "mentor_name": m["mentor_name"],
+                "mentor_email": mentor_email.get(m["mentor_name"], ""),
+                "student_name": stu["name"],
+                "student_email": stu.get("email", ""),
+                "confidence": m["confidence_score"],
+                "rationale": m["rationale"],
             }
-            self.display_out.parent.mkdir(parents=True, exist_ok=True)
-            self.display_out.write_text(json.dumps(pub, indent=2, default=str))
-            self.log.info(f"Committed display -> {self.display_out.resolve()}")
 
-        # Admin roster (PII) — GIT-IGNORED. Powers the password-gated admin view.
-        if self.roster_out is not None:
-            mentor_email = {pool.iloc[i]["name"]: pool.iloc[i].get("email", "") for i in range(len(pool))}
-            roster = {
-                "matched": {anon(m["_j"]): {
-                    "student_name": students.iloc[m["_j"]]["name"],
-                    "student_email": students.iloc[m["_j"]].get("email", ""),
-                    "mentor_email": mentor_email.get(m["mentor_name"], ""),
-                } for m in sorted_matches},
-                "unmatched": {anon(j): {
-                    "student_name": students.iloc[j]["name"],
-                    "student_email": students.iloc[j].get("email", ""),
-                } for j in unmatched},
-            }
-            self.roster_out.parent.mkdir(parents=True, exist_ok=True)
-            self.roster_out.write_text(json.dumps(roster, indent=2, default=str))
-            self.log.info(f"Admin roster (PII, gitignored) -> {self.roster_out.resolve()}")
+        payload = {
+            "generated_at": self.timestamp,
+            "generation_mode": self.mode,
+            "scope": "Internal coordinator view: real mentor + student identities with contact info.",
+            "matches": [rec_match(m) for m in sorted_matches],
+            "unmatched": [{"student_name": students.iloc[j]["name"],
+                           "student_email": students.iloc[j].get("email", "")} for j in unmatched],
+        }
+        (self.output_dir / "results.json").write_text(json.dumps(payload, indent=2, default=str))
+        self.log.info(f"Output -> {self.output_dir.resolve()}")
+        if self.display_out is not None:
+            self.display_out.parent.mkdir(parents=True, exist_ok=True)
+            self.display_out.write_text(json.dumps(payload, indent=2, default=str))
+            self.log.info(f"Display -> {self.display_out.resolve()}")
 
 
 def main():
@@ -651,11 +577,7 @@ def main():
     ap.add_argument("--seed", type=int, default=DEFAULT_SEED)
     ap.add_argument("--output-dir", default="output")
     ap.add_argument("--display-out", default=None,
-                    help="Also write a committed, student-anonymized display JSON here")
-    ap.add_argument("--roster-out", default=None,
-                    help="Write the gitignored admin roster (student name/email + mentor email) here")
-    ap.add_argument("--no-anonymize", action="store_true",
-                    help="Keep real student names in the display JSON (NOT for public links)")
+                    help="Also write the committed display JSON (real identities) here")
     args = ap.parse_args()
 
     if args.mode == "llm" and not os.environ.get("ANTHROPIC_API_KEY"):
@@ -664,8 +586,7 @@ def main():
 
     m = MentorMatcher(output_dir=args.output_dir, model=args.model,
                       temperature=args.temperature, seed=args.seed, mode=args.mode,
-                      display_out=args.display_out, roster_out=args.roster_out,
-                      anonymize_students=not args.no_anonymize)
+                      display_out=args.display_out)
     matches, unmatched, rec = m.run(args.mentors, args.students)
     print(f"\nDone: {len(matches)} matched, {len(unmatched)} unmatched "
           f"(mode={args.mode}, agreement={rec['solver_agreement']}).")

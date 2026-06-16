@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
 """
-Flask app for the Ghost Social mentor-matching LLM arm (Condition B).
+Flask app for the Ghost Social mentor-matching tool — one internal view.
 
-Two surfaces:
-  - PUBLIC / blind (default): serves the committed, anonymized matches in
-    display_data/results.json. ZERO Claude API calls, ZERO student PII. Safe to
-    share for blind review.
-  - ADMIN (password-gated): overlays the gitignored private roster to show real
-    student + mentor names and emails per match, with a CSV roster export. The
-    student->identity map never leaves the server and is never sent to the public
-    surface.
+Single view with real identities everywhere: each match shows mentor name + email
+and student name + email, the confidence score, and the full rationale. Matched
+and unmatched lists, search, CSV export, and a PDF all carry the real data.
 
-APP_MODE=live additionally enables a password-gated regenerate (the only paid action).
+Security: if SITE_PASSWORD is set, the WHOLE site is gated behind it (HTTP Basic
+auth, one password). If unset, the site is open. There is no admin/blind tier.
+
+NOTE: display_data/results.json contains real student names + emails, so the repo
+must be PRIVATE.
 """
 
 import csv
@@ -26,143 +25,77 @@ from flask import Flask, Response, jsonify, render_template, request, send_file
 
 BASE = Path(__file__).parent
 DISPLAY_FILE = BASE / "display_data" / "results.json"
-ROSTER_FILE = BASE / "private" / "roster.json"
 
-APP_MODE = os.environ.get("APP_MODE", "display").lower()                 # display | live
-ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD") or os.environ.get("SITE_PASSWORD") or ""
+APP_MODE = os.environ.get("APP_MODE", "display").lower()
+SITE_PASSWORD = os.environ.get("SITE_PASSWORD") or os.environ.get("ADMIN_PASSWORD") or ""
 
 app = Flask(__name__)
-_override_results: dict | None = None      # from a live regenerate (ephemeral)
-_override_roster: dict | None = None
+_override: dict | None = None     # from a live regenerate (ephemeral)
 
-
-# ── data loaders ─────────────────────────────────────────────────────────────
 
 def load_results() -> dict:
-    if _override_results is not None:
-        return _override_results
+    if _override is not None:
+        return _override
     if DISPLAY_FILE.exists():
         return json.loads(DISPLAY_FILE.read_text())
     return {"matches": [], "unmatched": [], "generation_mode": "none",
-            "error": "No committed results (display_data/results.json missing)."}
+            "error": "No results (display_data/results.json missing)."}
 
 
-def load_roster() -> dict | None:
-    """Admin roster (PII). On Render set ADMIN_ROSTER (JSON); locally read the
-    gitignored private/roster.json. Returns None if unavailable."""
-    if _override_roster is not None:
-        return _override_roster
-    env = os.environ.get("ADMIN_ROSTER")
-    if env:
-        try:
-            return json.loads(env)
-        except json.JSONDecodeError:
-            return None
-    if ROSTER_FILE.exists():
-        return json.loads(ROSTER_FILE.read_text())
-    return None
+# ── Whole-site password gate (HTTP Basic auth) ───────────────────────────────
+
+@app.before_request
+def _gate():
+    if not SITE_PASSWORD or request.path == "/healthz":
+        return None
+    auth = request.authorization
+    if auth and hmac.compare_digest((auth.password or "").encode("utf-8"), SITE_PASSWORD.encode("utf-8")):
+        return None
+    return Response("Authentication required.", 401,
+                    {"WWW-Authenticate": 'Basic realm="Ghost Social"'})
 
 
-def admin_ok(req) -> bool:
-    supplied = req.headers.get("X-Admin-Password") or req.form.get("password") or req.args.get("password") or ""
-    # Encode both sides so non-ASCII input returns a clean 401 (compare_digest on
-    # str raises TypeError on non-ASCII); never opens the gate.
-    return bool(ADMIN_PASSWORD) and hmac.compare_digest(supplied.encode("utf-8"), ADMIN_PASSWORD.encode("utf-8"))
-
-
-# ── pages ────────────────────────────────────────────────────────────────────
+# ── Pages / health ───────────────────────────────────────────────────────────
 
 @app.route("/")
 def index():
-    return render_template("index.html",
-                           admin_enabled=bool(ADMIN_PASSWORD),
-                           live=(APP_MODE == "live"))
+    return render_template("index.html")
 
 
 @app.route("/healthz")
 def healthz():
     return jsonify({"ok": True, "mode": APP_MODE,
-                    "has_results": DISPLAY_FILE.exists(),
-                    "admin_configured": bool(ADMIN_PASSWORD)})
+                    "has_results": DISPLAY_FILE.exists(), "gated": bool(SITE_PASSWORD)})
 
 
-# ── PUBLIC data (no PII, zero API) ───────────────────────────────────────────
+# ── Data ─────────────────────────────────────────────────────────────────────
 
 @app.route("/api/results")
 def api_results():
     d = load_results()
-    # Defensive projection: only ever emit the blind fields to the public surface.
     return jsonify({
         "generation_mode": d.get("generation_mode"),
         "generated_at": d.get("generated_at"),
         "counts": {"matched": len(d.get("matches", [])), "unmatched": len(d.get("unmatched", []))},
-        "matches": [{"student": m.get("student"), "mentor": m.get("mentor"),
-                     "confidence": m.get("confidence"), "rationale": m.get("rationale")}
-                    for m in d.get("matches", [])],
-        "unmatched": list(d.get("unmatched", [])),
+        "matches": d.get("matches", []),
+        "unmatched": d.get("unmatched", []),
     })
 
 
-# ── ADMIN data (PII, password-gated) ─────────────────────────────────────────
-
-def _admin_rows():
-    """Join public matches + roster into full-contact rows. Raises if no roster."""
+@app.route("/api/export.csv")
+def api_csv():
     d = load_results()
-    roster = load_roster()
-    if roster is None:
-        return None, None
-    rmatched, runmatched = roster.get("matched", {}), roster.get("unmatched", {})
-    matches = []
-    for m in d.get("matches", []):
-        label = m.get("student")
-        info = rmatched.get(label, {})
-        matches.append({
-            "student_label": label,
-            "student_name": info.get("student_name", ""),
-            "student_email": info.get("student_email", ""),
-            "mentor_name": m.get("mentor"),
-            "mentor_email": info.get("mentor_email", ""),
-            "confidence": m.get("confidence"),
-            "rationale": m.get("rationale"),
-        })
-    unmatched = [{"student_label": lbl,
-                  "student_name": runmatched.get(lbl, {}).get("student_name", ""),
-                  "student_email": runmatched.get(lbl, {}).get("student_email", "")}
-                 for lbl in d.get("unmatched", [])]
-    return matches, unmatched
-
-
-@app.route("/api/admin")
-def api_admin():
-    if not admin_ok(request):
-        return jsonify({"error": "Unauthorized"}), 401
-    matches, unmatched = _admin_rows()
-    if matches is None:
-        return jsonify({"error": "Admin roster not available on this instance. "
-                                 "Set the ADMIN_ROSTER env var (contents of private/roster.json)."}), 503
-    return jsonify({"matches": matches, "unmatched": unmatched})
-
-
-@app.route("/api/admin/export.csv")
-def api_admin_csv():
-    if not admin_ok(request):
-        return jsonify({"error": "Unauthorized"}), 401
-    matches, unmatched = _admin_rows()
-    if matches is None:
-        return jsonify({"error": "Admin roster not available on this instance."}), 503
     buf = io.StringIO()
     w = csv.writer(buf)
     w.writerow(["status", "mentor_name", "mentor_email", "student_name", "student_email", "confidence"])
-    for m in matches:
-        w.writerow(["matched", m["mentor_name"], m["mentor_email"], m["student_name"],
-                    m["student_email"], m["confidence"]])
-    for u in unmatched:
-        w.writerow(["unmatched", "", "", u["student_name"], u["student_email"], ""])
+    for m in d.get("matches", []):
+        w.writerow(["matched", m.get("mentor_name", ""), m.get("mentor_email", ""),
+                    m.get("student_name", ""), m.get("student_email", ""), m.get("confidence", "")])
+    for u in d.get("unmatched", []):
+        w.writerow(["unmatched", "", "", u.get("student_name", ""), u.get("student_email", ""), ""])
     return Response(buf.getvalue(), mimetype="text/csv",
                     headers={"Content-Disposition": "attachment; filename=ghost_social_roster.csv"})
 
-
-# ── PDF (public, no PII) ─────────────────────────────────────────────────────
 
 @app.route("/api/report")
 def api_report():
@@ -180,40 +113,49 @@ def _build_pdf(d: dict) -> bytes:
     doc = SimpleDocTemplate(buf, pagesize=letter, topMargin=40, bottomMargin=40)
     st = getSampleStyleSheet()
     small = ParagraphStyle("s", parent=st["Normal"], fontSize=8, leading=10)
-    matches = d.get("matches", [])
-    story = [Paragraph("Ghost Social — Mentor/Mentee Matches (blind)", st["Title"]),
-             Paragraph(f"Matched: {len(matches)} &nbsp; Unmatched: {len(d.get('unmatched', []))} &nbsp; "
+    matches, unmatched = d.get("matches", []), d.get("unmatched", [])
+    story = [Paragraph("Ghost Social — Mentor / Mentee Matches", st["Title"]),
+             Paragraph(f"Matched: {len(matches)} &nbsp; Unmatched: {len(unmatched)} &nbsp; "
                        f"Mode: {d.get('generation_mode','?')}", st["Normal"]), Spacer(1, 12)]
-    data = [["Student", "Mentor", "Conf", "Rationale"]]
+    data = [["Mentor", "Student", "Conf", "Rationale"]]
     for m in matches:
-        data.append([m.get("student", ""), Paragraph(str(m.get("mentor", "")), small),
-                     str(m.get("confidence", "")), Paragraph(str(m.get("rationale", "")), small)])
-    t = Table(data, colWidths=[60, 90, 28, 320], repeatRows=1)
+        data.append([
+            Paragraph(f"{m.get('mentor_name','')}<br/><font size=7 color='#666666'>{m.get('mentor_email','')}</font>", small),
+            Paragraph(f"{m.get('student_name','')}<br/><font size=7 color='#666666'>{m.get('student_email','')}</font>", small),
+            str(m.get("confidence", "")), Paragraph(str(m.get("rationale", "")), small)])
+    t = Table(data, colWidths=[110, 110, 26, 250], repeatRows=1)
     t.setStyle(TableStyle([
-        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#1f2937")),
+        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#C5050C")),
         ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
         ("FONTSIZE", (0, 0), (-1, -1), 8), ("VALIGN", (0, 0), (-1, -1), "TOP"),
         ("GRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#d1d5db")),
-        ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#f3f4f6")]),
+        ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#f7f3f3")]),
     ]))
     story.append(t)
+    if unmatched:
+        story.append(Spacer(1, 16))
+        story.append(Paragraph("Unmatched students", st["Heading2"]))
+        ud = [["Student", "Email"]] + [[u.get("student_name", ""), u.get("student_email", "")] for u in unmatched]
+        ut = Table(ud, colWidths=[160, 240], repeatRows=1)
+        ut.setStyle(TableStyle([
+            ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#C5050C")),
+            ("TEXTCOLOR", (0, 0), (-1, 0), colors.white), ("FONTSIZE", (0, 0), (-1, -1), 8),
+            ("GRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#d1d5db"))]))
+        story.append(ut)
     doc.build(story)
     return buf.getvalue()
 
 
-# ── Gated regenerate (only paid action) ──────────────────────────────────────
+# ── Regenerate (live mode only; the only paid action) ────────────────────────
 
 @app.route("/api/match", methods=["POST"])
 def api_match():
-    global _override_results, _override_roster
+    global _override
     if APP_MODE != "live":
-        return jsonify({"error": "Regeneration is disabled in display mode (set APP_MODE=live)."}), 403
-    if not admin_ok(request):
-        return jsonify({"error": "Unauthorized — admin password required."}), 401
+        return jsonify({"error": "Regeneration disabled (set APP_MODE=live)."}), 403
     mentor_f, student_f = request.files.get("mentors"), request.files.get("students")
     if not mentor_f or not student_f:
         return jsonify({"error": "Both mentor and student files are required."}), 400
-
     from matcher import MentorMatcher
     work = Path(tempfile.mkdtemp())
     mp = work / ("mentors" + Path(mentor_f.filename or "m.xlsx").suffix)
@@ -221,20 +163,16 @@ def api_match():
     mentor_f.save(str(mp)); student_f.save(str(sp))
     mode = "llm" if os.environ.get("ANTHROPIC_API_KEY") else "offline"
     try:
-        mm = MentorMatcher(output_dir=str(work / "out"), mode=mode,
-                           display_out=str(work / "pub.json"),
-                           roster_out=str(work / "roster.json"), anonymize_students=True)
+        mm = MentorMatcher(output_dir=str(work / "out"), mode=mode, display_out=str(work / "pub.json"))
         mm.run(str(mp), str(sp))
-        _override_results = json.loads((work / "pub.json").read_text())
-        _override_roster = json.loads((work / "roster.json").read_text())
+        _override = json.loads((work / "pub.json").read_text())
     except Exception as exc:
         return jsonify({"error": f"Run failed: {exc}"}), 500
-    return jsonify({"ok": True, "mode": mode,
-                    "counts": {"matched": len(_override_results.get("matches", [])),
-                               "unmatched": len(_override_results.get("unmatched", []))}})
+    return jsonify({"ok": True, "mode": mode, "counts": {"matched": len(_override.get("matches", [])),
+                                                         "unmatched": len(_override.get("unmatched", []))}})
 
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", "3000"))
-    print(f"\n  Ghost Social matcher — mode={APP_MODE} — http://0.0.0.0:{port}\n")
+    print(f"\n  Ghost Social — mode={APP_MODE} gated={bool(SITE_PASSWORD)} — http://0.0.0.0:{port}\n")
     app.run(host="0.0.0.0", port=port, debug=False)
