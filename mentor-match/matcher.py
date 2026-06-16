@@ -38,9 +38,9 @@ from scipy.optimize import linear_sum_assignment
 import data_mapping as dm
 
 # ── Reproducibility defaults (fix #7) ────────────────────────────────────────
-# claude-sonnet-4-6 has no dated snapshot; the latest *dated* active Sonnet is
-# 4.5. Pinned for reproducibility — a moving alias is not.
-DEFAULT_MODEL = "claude-sonnet-4-5-20250929"
+# Model for LLM-mode regeneration (per request). NOTE: 4.6 is a moving alias with
+# no dated snapshot, so exact-version reproducibility is weaker than a pinned date.
+DEFAULT_MODEL = "claude-sonnet-4-6"
 DEFAULT_TEMPERATURE = 0.0
 DEFAULT_SEED = 20260315
 MENTEE_BATCH_SIZE = 4          # 4 mentees x ~27 mentors = ~108 score objects/call
@@ -172,8 +172,8 @@ class MentorMatcher:
     def __init__(self, output_dir="output", model=DEFAULT_MODEL,
                  temperature=DEFAULT_TEMPERATURE, seed=DEFAULT_SEED,
                  mode="offline", batch_size=MENTEE_BATCH_SIZE,
-                 max_workers=6, display_out=None, anonymize_students=True,
-                 logger: MatchingLogger | None = None):
+                 max_workers=6, display_out=None, roster_out=None,
+                 anonymize_students=True, logger: MatchingLogger | None = None):
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.model = model
@@ -183,6 +183,7 @@ class MentorMatcher:
         self.batch_size = batch_size
         self.max_workers = max_workers
         self.display_out = Path(display_out) if display_out else None
+        self.roster_out = Path(roster_out) if roster_out else None
         self.anonymize_students = anonymize_students
         self.log = logger or MatchingLogger(self.output_dir)
         self.timestamp = datetime.now(timezone.utc).isoformat()
@@ -581,37 +582,63 @@ class MentorMatcher:
         (self.output_dir / "results.json").write_text(json.dumps(display, indent=2, default=str))
         self.log.info(f"Output -> {self.output_dir.resolve()}")
 
-        # Committed, shareable display payload: students anonymized (they did not
-        # consent to public display), mentors already consent-gated above.
+        # Committed, shareable payload: students anonymized, mentor names consent-gated,
+        # rationales scrubbed of student names (own + cross-mentions of other students).
+        def anon(j):
+            return f"Student {int(j) + 1:03d}" if self.anonymize_students else students.iloc[j]["name"]
+
+        shown_mentor_tokens = {t.lower() for m in matches
+                               if consent_by_name.get(m["mentor_name"]) == "yes"
+                               for t in str(m["mentor_name"]).split() if len(t) >= 4}
+        student_tokens = {t.lower() for m in matches
+                          for t in str(students.iloc[m["_j"]]["name"]).split() if len(t) >= 4}
+        cross_scrub = student_tokens - shown_mentor_tokens   # don't erase consented mentor names
+
+        def scrub_rationale(m):
+            rat = _scrub_name(m["rationale"], m["mentee_name"], "the mentee")
+            if consent_by_name.get(m["mentor_name"]) != "yes":
+                rat = _scrub_name(rat, m["mentor_name"], "the mentor")
+            for tok in cross_scrub:
+                rat = re.sub(r"\b" + re.escape(tok) + r"\b", "the mentee", rat, flags=re.IGNORECASE)
+            return re.sub(r"\bthe mentee(?:'s)?(?:\s+the mentee)+", "the mentee", rat)
+
+        sorted_matches = sorted(matches, key=lambda x: -x["confidence_score"])
+
         if self.display_out is not None:
-            def anon(j):
-                return f"Student {int(j) + 1:03d}" if self.anonymize_students else students.iloc[j]["name"]
-            pub = dict(display)
-            # Strip identifiable mentor names out of the reconciliation block (these are
-            # EXCLUDED / unknown-capacity mentors who are not consent-shown). Keep counts/reasons.
-            safe_rec = {k: v for k, v in rec.items()
-                        if k not in ("excluded_detail", "unknown_capacity_detail")}
-            safe_rec["excluded_detail"] = [{"reasons": e.get("reasons", [])}
-                                           for e in rec.get("excluded_detail", [])]
-            pub["reconciliation"] = safe_rec
-            pub["privacy"] = ("Students anonymized as 'Student NNN'; mentor names shown only with "
-                              "consent_to_share=Yes. Identifiable data kept internal (gitignored output/).")
-            def scrub_rationale(m):
-                rat = _scrub_name(m["rationale"], m["mentee_name"], "the mentee")
-                if consent_by_name.get(m["mentor_name"]) != "yes":   # withheld mentor
-                    rat = _scrub_name(rat, m["mentor_name"], "the mentor")
-                return rat
-            pub["matches"] = [{
-                "mentee_name": anon(m["_j"]),
-                "mentor_name": shown_mentor(m["mentor_name"]),
-                "rationale": scrub_rationale(m),
-                "confidence_score": m["confidence_score"],
-                "criteria_scores": m["criteria_scores"],
-            } for m in sorted(matches, key=lambda x: -x["confidence_score"])]
-            pub["unmatched"] = [anon(j) for j in unmatched]
+            pub = {
+                "generated_at": self.timestamp,
+                "generation_mode": self.mode,
+                "scope": ("Blind review: mentor-mentee matches with rationale + confidence, "
+                          "plus unmatched students. Students anonymized; no student PII."),
+                "matches": [{
+                    "student": anon(m["_j"]),
+                    "mentor": shown_mentor(m["mentor_name"]),
+                    "confidence": m["confidence_score"],
+                    "rationale": scrub_rationale(m),
+                } for m in sorted_matches],
+                "unmatched": [anon(j) for j in unmatched],
+            }
             self.display_out.parent.mkdir(parents=True, exist_ok=True)
             self.display_out.write_text(json.dumps(pub, indent=2, default=str))
             self.log.info(f"Committed display -> {self.display_out.resolve()}")
+
+        # Admin roster (PII) — GIT-IGNORED. Powers the password-gated admin view.
+        if self.roster_out is not None:
+            mentor_email = {pool.iloc[i]["name"]: pool.iloc[i].get("email", "") for i in range(len(pool))}
+            roster = {
+                "matched": {anon(m["_j"]): {
+                    "student_name": students.iloc[m["_j"]]["name"],
+                    "student_email": students.iloc[m["_j"]].get("email", ""),
+                    "mentor_email": mentor_email.get(m["mentor_name"], ""),
+                } for m in sorted_matches},
+                "unmatched": {anon(j): {
+                    "student_name": students.iloc[j]["name"],
+                    "student_email": students.iloc[j].get("email", ""),
+                } for j in unmatched},
+            }
+            self.roster_out.parent.mkdir(parents=True, exist_ok=True)
+            self.roster_out.write_text(json.dumps(roster, indent=2, default=str))
+            self.log.info(f"Admin roster (PII, gitignored) -> {self.roster_out.resolve()}")
 
 
 def main():
@@ -625,6 +652,8 @@ def main():
     ap.add_argument("--output-dir", default="output")
     ap.add_argument("--display-out", default=None,
                     help="Also write a committed, student-anonymized display JSON here")
+    ap.add_argument("--roster-out", default=None,
+                    help="Write the gitignored admin roster (student name/email + mentor email) here")
     ap.add_argument("--no-anonymize", action="store_true",
                     help="Keep real student names in the display JSON (NOT for public links)")
     args = ap.parse_args()
@@ -635,7 +664,8 @@ def main():
 
     m = MentorMatcher(output_dir=args.output_dir, model=args.model,
                       temperature=args.temperature, seed=args.seed, mode=args.mode,
-                      display_out=args.display_out, anonymize_students=not args.no_anonymize)
+                      display_out=args.display_out, roster_out=args.roster_out,
+                      anonymize_students=not args.no_anonymize)
     matches, unmatched, rec = m.run(args.mentors, args.students)
     print(f"\nDone: {len(matches)} matched, {len(unmatched)} unmatched "
           f"(mode={args.mode}, agreement={rec['solver_agreement']}).")

@@ -30,6 +30,8 @@ mentor-match/venv312/
 mentor-match/data/
 mentor-match/output/
 mentor-match/uploads/
+# Admin roster: student names + emails (PII) — never commit; supply on Render via ADMIN_ROSTER env.
+mentor-match/private/
 
 # ─────────────────────────────── OS / editor ──────────────────────────────
 .DS_Store

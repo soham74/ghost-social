@@ -1,1035 +1,517 @@
 {
   "generated_at": "2026-06-16T04:48:28.203310+00:00",
   "generation_mode": "llm",
-  "stats": {
-    "mentors_pool": 27,
-    "students": 116,
-    "matched": 85,
-    "unmatched": 31,
-    "total_slots": 85,
-    "avg_confidence": 7.38,
-    "solver_agreement": true
-  },
+  "scope": "Blind review: mentor-mentee matches with rationale + confidence, plus unmatched students. Students anonymized; no student PII.",
   "matches": [
     {
-      "mentee_name": "Student 022",
-      "mentor_name": "Christopher Harrison",
-      "rationale": "Christopher Harrison's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, and Innovation Processes aligns with the mentee's interests across Business/Strategy, Product/UX, Engineering/Development, and Data/AI/Analytics. Christopher's Career Advice & Professional Growth background can support the mentee's diverse skill set spanning research, customer discovery, and operations/project management. This pairing provides comprehensive mentorship across the multiple domains the mentee is exploring.",
-      "confidence_score": 9,
-      "criteria_scores": {
-        "skill_alignment": 9,
-        "domain_fit": 9,
-        "goal_compatibility": 9,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 033",
-      "mentor_name": "Catherine Killam",
-      "rationale": "Catherine's expertise in Product Development/Design, Industry Applications / Use Cases, go-to-market execution, sales enablement, and storytelling aligns perfectly with the mentee's top choice of Campus and Industry Innovation Project Leader. the mentee wants to work on real-world problems with real constraints and real people, taking responsibility for decisions and tradeoffs, which connects to Catherine's industry applications and product development knowledge. Catherine's go-to-market and storytelling expertise can support the mentee's leadership development as he moves beyond just helping on projects to owning them.",
-      "confidence_score": 9,
-      "criteria_scores": {
-        "skill_alignment": 9,
-        "domain_fit": 9,
-        "goal_compatibility": 9,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 034",
-      "mentor_name": "Max Landau",
-      "rationale": "Max's expertise in AI & Emerging Tech, Virtual Environments/XR, and Career Advice & Professional Growth is an excellent match for the mentee's Self-Directed Exploration concept using augmented reality to guide people through hands-on trade tasks. the mentee's idea specifically involves AR glasses or headsets for real-time visual overlays, making Max's Virtual Environments/XR expertise directly relevant. Max can provide guidance on the visual technology the mentee needs and support his interest in the Venture Pathway for developing business-building skills.",
-      "confidence_score": 9,
-      "criteria_scores": {
-        "skill_alignment": 9,
-        "domain_fit": 10,
-        "goal_compatibility": 9,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 035",
-      "mentor_name": "Christian Kaczmarczyk",
-      "rationale": "Christian's expertise in AI & Emerging Tech, Entrepreneurship / Venture Creation, Industry Applications / Use Cases, and Innovation Processes aligns with the mentee's interest in the intersection of technology and business as a computer science and finance major. the mentee wants to use technology to solve real business problems and create and build products, which directly connects to Christian's entrepreneurship and industry applications knowledge. Christian can help the mentee leverage lab resources to further build upon his startup ideas.",
-      "confidence_score": 9,
-      "criteria_scores": {
-        "skill_alignment": 9,
-        "domain_fit": 10,
-        "goal_compatibility": 9,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 053",
-      "mentor_name": "Nicki Doggart",
-      "rationale": "the mentee's top choice is the Venture Pathway with a strong interest in building a startup from the ground up, identifying real problems, and developing solutions people will pay for. Nicki's expertise spans Entrepreneurship/Venture Creation, Product Development/Design, and Go-to-market strategy including ICP and story, which directly aligns with the mentee's goals of creating impactful, real-world products and understanding how to bring them to market.",
-      "confidence_score": 9,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 9,
-        "goal_compatibility": 10,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 054",
-      "mentor_name": "Christopher Harrison",
-      "rationale": "the mentee is interested in the Venture Pathway and Events, which align with his current ventures. Christopher's expertise includes Entrepreneurship/Venture Creation, Innovation Processes, and AI & Emerging Tech, providing relevant guidance for the mentee's ongoing venture work and event participation.",
-      "confidence_score": 9,
-      "criteria_scores": {
-        "skill_alignment": 9,
-        "domain_fit": 9,
-        "goal_compatibility": 10,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 062",
-      "mentor_name": "Tim Nott",
-      "rationale": "the mentee is mainly interested in the Venture Pathway and Events to validate, learn, and team up for their prototype. Tim's expertise in Entrepreneurship/Venture Creation, Product Development/Design, AI & Emerging Tech, and Innovation Processes directly supports the mentee's goals of prototype validation and venture development.",
-      "confidence_score": 9,
-      "criteria_scores": {
-        "skill_alignment": 9,
-        "domain_fit": 9,
-        "goal_compatibility": 10,
-        "style_fit": 10
-      }
-    },
-    {
-      "mentee_name": "Student 063",
-      "mentor_name": "Tim Nott",
-      "rationale": "the mentee's top choice is the Venture Pathway, as he already has an idea with friends for a degree planning tool for UW Madison students and wants to turn it into a working product. Tim's expertise in Entrepreneurship/Venture Creation, Product Development/Design, and Innovation Processes aligns perfectly with the mentee's goal of implementing his idea and benefiting from resources to help with product development.",
-      "confidence_score": 9,
-      "criteria_scores": {
-        "skill_alignment": 9,
-        "domain_fit": 9,
-        "goal_compatibility": 10,
-        "style_fit": 10
-      }
-    },
-    {
-      "mentee_name": "Student 064",
-      "mentor_name": "Tim Nott",
-      "rationale": "Tim Nott's expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship/Venture Creation, and Innovation Processes aligns directly with the mentee's venture idea for a UW-specific academic planning tool with a conversational interface. the mentee wants to validate the problem, build an MVP, and iterate fast through the Venture Pathway, which matches Tim's product development and entrepreneurship focus. Tim's background can support the mentee's goal of building production-oriented software and ML systems for real campus challenges.",
-      "confidence_score": 9,
-      "criteria_scores": {
-        "skill_alignment": 9,
-        "domain_fit": 9,
-        "goal_compatibility": 10,
-        "style_fit": 10
-      }
-    },
-    {
-      "mentee_name": "Student 066",
-      "mentor_name": "Christopher Harrison",
-      "rationale": "Christopher Harrison's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns well with the mentee's interest in applying artificial intelligence to chaotic systems. the mentee wants to explore cutting-edge AI tools and techniques through Self-Directed Exploration and engage in research through the Campus and Industry Innovation Project Leader program. Christopher's AI and innovation background can guide the mentee's research goals in mathematics and computer science applications.",
-      "confidence_score": 9,
-      "criteria_scores": {
-        "skill_alignment": 9,
-        "domain_fit": 9,
-        "goal_compatibility": 9,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 068",
-      "mentor_name": "Ananth Subramanya",
-      "rationale": "Ananth Subramanya's expertise in AI & Emerging Tech and Entrepreneurship/Venture Creation directly matches the mentee's top choice of the Venture Pathway, where she wants to build and validate an AI-driven project from idea to prototype. the mentee's interest in using data science and AI for real-world technical challenges aligns with Ananth's entrepreneurship and AI focus. His mentorship can support her goal of contributing meaningfully to venture-building despite a busy course load.",
-      "confidence_score": 9,
-      "criteria_scores": {
-        "skill_alignment": 9,
-        "domain_fit": 9,
-        "goal_compatibility": 9,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 074",
-      "mentor_name": "Ananth Subramanya",
-      "rationale": "Ananth Subramanya's expertise in AI & Emerging Tech and Entrepreneurship/Venture Creation aligns with the mentee's top choice of the Venture Pathway, where he wants a guided approach to confirming whether his technical concepts are valid ventures. the mentee has experience with AI, knowledge graphs, and developer infrastructure projects and needs help developing passion projects to the next stage. Ananth's entrepreneurship background can provide the guidance the mentee seeks for moving from exploratory phases to MVPs.",
-      "confidence_score": 9,
-      "criteria_scores": {
-        "skill_alignment": 10,
-        "domain_fit": 10,
-        "goal_compatibility": 10,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 002",
-      "mentor_name": "Catherine Killam",
-      "rationale": "Catherine's expertise in Product Development/Design, Industry Applications/Use Cases, go-to-market execution, sales enablement, and storytelling aligns well with the mentee's interest in the Venture Pathway. the mentee wants to strengthen her product thinking, learn to validate ideas with real users, and gain exposure to moving from concept to execution, which directly matches Catherine's skill set in product development and go-to-market strategies.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 9,
-        "domain_fit": 8,
-        "goal_compatibility": 9,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 007",
-      "mentor_name": "Saurabh K Gupta",
-      "rationale": "Saurabh's expertise in AI & Emerging Tech, Product Development/Design, Industry Applications/Use Cases, and Innovation Processes aligns with the mentee's interest in the campus and industry innovation project. the mentee wants to implement his skills in real-world settings and challenge himself to improve, which matches Saurabh's focus on industry applications and product development.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 8,
-        "goal_compatibility": 8,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 010",
-      "mentor_name": "Catherine Killam",
-      "rationale": "Catherine's expertise in Product Development/Design, Industry Applications/Use Cases, go-to-market execution, sales enablement, and storytelling aligns with the mentee's diverse interests spanning Business/Strategy, Product/UX, Engineering/Development, Data/AI/Analytics, Design/Branding, Research/Customer Discovery, and Operations/Project Management. Her comprehensive skill set in product development and go-to-market strategies can support the mentee's multifaceted professional interests.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 9,
-        "domain_fit": 8,
-        "goal_compatibility": 9,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 012",
-      "mentor_name": "Luke Anderson",
-      "rationale": "Luke's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns with the mentee's top choice as a Campus and Industry Innovation Project Leader. the mentee wants to build rigorous engineering and problem-solving skills in areas like AI and enterprise tech within a structured team environment, and seeks professional mentorship for future internships and jobs, which matches Luke's focus areas.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 8,
-        "goal_compatibility": 8,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 015",
-      "mentor_name": "Thomas Yen",
-      "rationale": "Thomas Yen's expertise in AI & Emerging Tech, Product Development/Design, and Industry Applications aligns well with the mentee's goal to build a real solution for the Digital Health Challenge. the mentee wants to develop technology that supports communication for people with different abilities, which connects to Thomas's strengths in turning ideas into practical products and exploring use cases. Thomas's background in Innovation Processes and Entrepreneurship can help the mentee transform his existing ideas into a viable solution.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 9,
-        "domain_fit": 9,
-        "goal_compatibility": 8,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 016",
-      "mentor_name": "Thomas Yen",
-      "rationale": "Thomas Yen's expertise in Product Development/Design and Entrepreneurship/Venture Creation directly supports the mentee's dual interests in the Digital Health Challenge and Venture Pathway. the mentee has already worked on health-related projects like Medica and Vitals and needs help with validation and the business side, which aligns with Thomas's strengths in Innovation Processes and turning technical projects into viable ventures. Thomas's experience in Industry Applications can guide the mentee in taking his health projects further in a structured setting.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 9,
-        "domain_fit": 9,
-        "goal_compatibility": 8,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 018",
-      "mentor_name": "Christopher Harrison",
-      "rationale": "Christopher Harrison's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, and Innovation Processes directly supports the mentee's top choices of Venture Pathway and Campus & Industry Innovation Project Leader. the mentee wants a structured way to take an idea from zero to one with real user validation and MVP building, which aligns with Christopher's strengths in entrepreneurship and innovation. Christopher's Career Advice & Professional Growth expertise can also help the mentee prepare for the kind of work he wants to do after graduation in computer science and data science.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 9,
-        "goal_compatibility": 9,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 030",
-      "mentor_name": "Mike Trigg",
-      "rationale": "Mike's expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship / Venture Creation, and Career Advice & Professional Growth directly matches the mentee's goal of turning side projects into something bigger through the Venture Pathway. the mentee has been building developer tools and wants to learn how to take them further, making Mike's entrepreneurship and product development knowledge essential. Mike's comprehensive skill set can guide the mentee through the entire process of transforming projects into viable ventures.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 9,
-        "goal_compatibility": 9,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 036",
-      "mentor_name": "Catherine Killam",
-      "rationale": "Catherine's expertise in Product Development/Design, Industry Applications / Use Cases, go-to-market execution, sales enablement, and storytelling supports the mentee's top choice of Campus and Industry Innovation Project Leader. As a junior wanting to gain leadership experience and create a collaborative environment, the mentee can benefit from Catherine's product development and industry applications knowledge. Catherine's go-to-market expertise also aligns with the mentee's interest in the Venture Pathway and desire to innovate something new from start to finish, making a simple idea become reality.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 9,
-        "domain_fit": 8,
-        "goal_compatibility": 9,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 039",
-      "mentor_name": "Roy Vreeland",
-      "rationale": "the mentee explicitly requests to continue working with his mentor Roy from the Tech Lab last semester, stating it was \"super helpful\" and wanting to stay connected through self-directed exploration. Roy's expertise in AI & Emerging Tech, Career Advice & Professional Growth, and Innovation Processes directly supports the mentee's work on refining the EverOS MVP for edge devices (Nvidia Jetsons) and applying to government opportunities (SBIR and SOCOM). The established mentor relationship and Roy's relevant technical expertise make this an ideal continuation pairing.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 9,
-        "domain_fit": 9,
-        "goal_compatibility": 8,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 043",
-      "mentor_name": "Mike Trigg",
-      "rationale": "Mike's comprehensive expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship/Venture Creation, and Career Advice & Professional Growth aligns perfectly with the mentee's profile. the mentee brings business experience from running a storage business for two years and near-completion of CS and DS degrees, seeking to assist others and work on serious projects. Mike's entrepreneurship background can guide the mentee's leadership aspirations in Campus and Industry Innovation Projects, while his broad expertise supports the mentee's goal of building experiences and relationships across technical and business domains.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 9,
-        "goal_compatibility": 9,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 046",
-      "mentor_name": "Mike Trigg",
-      "rationale": "Mike's expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship/Venture Creation, and Career Advice & Professional Growth directly supports the mentee's Venture Pathway interests. As a computer science senior interested in AI and backend systems, the mentee wants to move beyond prototypes to focus on problem discovery, MVP development, and market validation. Mike's entrepreneurship and product development expertise can guide the mentee through the structured process of turning technical ideas into validated, real-world solutions with solid engineering foundations.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 9,
-        "goal_compatibility": 9,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 047",
-      "mentor_name": "Zainab Hameed",
-      "rationale": "Zainab's expertise in Product Development/Design, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns perfectly with the mentee's interests in Digital Health and Self-Directed Exploration. the mentee is exploring ideas at the intersection of technology, health, and wellness, seeking space to understand user problems, experiment, research, and prototype thoughtfully. Zainab's product development and entrepreneurship expertise can provide the structured guidance the mentee seeks while supporting her participation in hackathons and workshops to build technical and interdisciplinary skills.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 9,
-        "goal_compatibility": 9,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 060",
-      "mentor_name": "Max Landau",
-      "rationale": "the mentee's top choice is Self-Directed Exploration to build immersive experiences connecting technology with storytelling, culture, and perception. Max's expertise in Virtual Environments/XR and AI & Emerging Tech directly aligns with the mentee's interest in immersive experiences, while his Career Advice & Professional Growth experience can support the mentee's development goals.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 9,
-        "goal_compatibility": 9,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 072",
-      "mentor_name": "Mike Trigg",
-      "rationale": "Mike Trigg's expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship/Venture Creation, and Career Advice & Professional Growth aligns perfectly with the mentee's top choice of the Venture Pathway. the mentee wants structure, feedback, and accountability for customer discovery, validation, and shipping iterations to scale his venture, which matches Mike's product development and entrepreneurship focus. Mike can also support the mentee's second choice of Campus and Industry Innovation Project Leader with his product direction expertise.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 9,
-        "goal_compatibility": 9,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 078",
-      "mentor_name": "Saurabh K Gupta",
-      "rationale": "Saurabh K Gupta's expertise in AI & Emerging Tech, Product Development/Design, Industry Applications/Use Cases, and Innovation Processes aligns with the mentee's interest in the Campus and Industry Innovation Project Leader program. the mentee is passionate about using technology to solve problems affecting everyday people, such as climate change and global hunger, which matches Saurabh's industry applications focus. Saurabh can help the mentee navigate the startup ecosystem and pursue solutions beyond profit-focused ventures as he hopes to do post-grad.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 9,
-        "goal_compatibility": 9,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 081",
-      "mentor_name": "Tim Nott",
-      "rationale": "Tim Nott's expertise in Product Development/Design, Entrepreneurship/Venture Creation, and Innovation Processes aligns well with the mentee's interest in Self-Directed Exploration, where the mentee wants guidance from experts on research ideas he has started exploring. Tim's background in AI & Emerging Tech and Innovation Processes can support the mentee's goal of learning how classroom knowledge applies in industry through the Campus and Industry Innovation Project Leader experience.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 9,
-        "goal_compatibility": 9,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 085",
-      "mentor_name": "Thomas Yen",
-      "rationale": "Thomas Yen's comprehensive expertise spanning Product Development/Design, Entrepreneurship/Venture Creation, Innovation Processes, and Career Advice & Professional Growth aligns perfectly with the mentee's interest in the Digital Health Challenge. His background can support the mentee's goals of building solutions at the intersection of health and technology, emphasizing real user problems, rapid experimentation, and validation through the guided accelerator format.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 9,
-        "goal_compatibility": 9,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 089",
-      "mentor_name": "Zainab Hameed",
-      "rationale": "Zainab Hameed's expertise in Product Development/Design, Entrepreneurship/Venture Creation, and Innovation Processes aligns perfectly with the mentee's interest in the Digital Health Challenge and Campus and Industry Innovation Project Leader experiences. Zainab's background in Career Advice & Professional Growth can provide mentorship on the human-facing side of tech that the mentee seeks, supporting her goal of building tech products while meeting with stakeholders to identify meaningful areas of impact.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 9,
-        "goal_compatibility": 9,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 109",
-      "mentor_name": "Thomas Yen",
-      "rationale": "Thomas Yen's expertise in AI & Emerging Tech directly supports the mentee's goal of building skills to understand the AI industry and developing a toolkit for personal projects. His focus on Product Development/Design and Innovation Processes aligns with the mentee's interest in creating health and wellness solutions, as demonstrated by the mentee's previous electroencephalogram project for sleep disorder detection. Thomas's comprehensive mentorship areas, including both technical and innovation processes, will support the mentee's learning stage goals across self-directed exploration and the digital health challenge.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 9,
-        "goal_compatibility": 8,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 111",
-      "mentor_name": "Brett Hawkins",
-      "rationale": "Brett's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, and Innovation Processes aligns well with the mentee's interest in applying technical and business skills to frontier technologies. the mentee's desire to understand how different project components work together and his interest in leadership and communication match Brett's focus areas in Career Advice & Professional Growth and Innovation Processes. the mentee's experience with tech and CPG startups and his preference for both Project Leader and Venture Pathway roles directly connect to Brett's entrepreneurship and venture creation expertise.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 7,
-        "goal_compatibility": 9,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 114",
-      "mentor_name": "Andy Siedschlag",
-      "rationale": "Andy's expertise in Product Development/Design and Innovation Processes directly supports the mentee's top choice of the Campus and Industry Innovation Project Leader track and approach to breaking down ambiguous problems and iterating toward solutions. His focus on Career Advice & Professional Growth aligns with the mentee's desire to take ownership and work across disciplines on goal-oriented teams. Andy's background matches the mentee's interest in execution-focused projects that move ideas forward without needing fully defined instructions.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 8,
-        "goal_compatibility": 8,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 115",
-      "mentor_name": "Christian Kaczmarczyk",
-      "rationale": "Christian's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, and Innovation Processes aligns with the mentee's top choice of the Campus and Industry Innovation Project Leader role and interest in managing projects end-to-end. His knowledge in Industry Applications/Use Cases supports the mentee's experience with technical deliverables, data analysis, and product features from past internships. Christian's entrepreneurship background also matches the mentee's second choice of the Venture Pathway and interest in building and validating new ideas through customer discovery and rapid prototyping.",
-      "confidence_score": 8,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 9,
-        "goal_compatibility": 9,
-        "style_fit": 9
-      }
-    },
-    {
-      "mentee_name": "Student 006",
-      "mentor_name": "Brett Hawkins",
-      "rationale": "Brett's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns with the mentee's interest in both the Venture Pathway and Campus and Industry Innovation Project Leader roles. the mentee wants to apply analytical skills to customer discovery and venture development while working on real campus and industry challenges in fields like AI, which matches Brett's areas of expertise.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 8,
-        "goal_compatibility": 8,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 008",
-      "mentor_name": "Cathy Carlson-Barchus",
-      "rationale": "Cathy's expertise in Product Development/Design, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns with the mentee's interest in both the Venture Pathway and Campus and Industry Innovation Project Leader role. the mentee is motivated by turning ideas into reality through iteration and feedback, and has leadership experience from Women in ACM, which matches Cathy's focus on entrepreneurship, product development, and innovation processes.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 7,
-        "goal_compatibility": 8,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 014",
-      "mentor_name": "Cathy Carlson-Barchus",
-      "rationale": "Cathy's expertise in Product Development/Design, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns with the mentee's top choices of Campus and Industry Innovation Project Leader and Venture Pathway. the mentee is interested in structuring ambiguous challenges, leading research and analysis, and early-stage venture development with emphasis on user research and experimentation, which matches Cathy's comprehensive skill set in entrepreneurship and innovation.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 7,
-        "goal_compatibility": 8,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 017",
-      "mentor_name": "Grant Watkins",
-      "rationale": "Grant Watkins's expertise in AI & Emerging Tech, Product Development/Design, and Innovation Processes aligns with the mentee's interest in the Campus and Industry Project Leader and Venture Pathways roles. the mentee wants to lead a team in discovering and creating ideas for real-world challenges, which connects to Grant's strengths in innovation and entrepreneurship. Grant's background in Entrepreneurship/Venture Creation can support the mentee's excitement about working in teams and fostering growth in teammates and the community.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 8,
-        "goal_compatibility": 8,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 020",
-      "mentor_name": "Cathy Carlson-Barchus",
-      "rationale": "Cathy Carlson-Barchus's expertise in Product Development/Design, Entrepreneurship/Venture Creation, and Innovation Processes aligns with the mentee's top choices of Campus and Industry Innovation Project Leader and Self-Directed Exploration. the mentee wants to build leadership skills while working on real campus and industry problems, and also values the flexibility to explore emerging technologies independently, which connects to Cathy's strengths in turning ideas into practical solutions. Cathy's Career Advice & Professional Growth expertise can help the mentee balance structured leadership experience with independent exploration as a sophomore.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 7,
-        "goal_compatibility": 8,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 021",
-      "mentor_name": "Roy Vreeland",
-      "rationale": "Roy Vreeland's expertise in AI & Emerging Tech, Career Advice & Professional Growth, and Innovation Processes aligns with the mentee's dual interests in creating tech talks/meetups and pursuing research rooted in computer science. the mentee wants to bridge the tech and business industries by discussing applications of cutting-edge technology, and is also interested in AI/ML, HCI, and CS Theory research with meaningful societal impact, which connects to Roy's strengths in AI and innovation. Roy's background can support the mentee's goal of developing innovative solutions to real-world problems.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 8,
-        "goal_compatibility": 7,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 024",
-      "mentor_name": "Tejvir Mann",
-      "rationale": "Tejvir Mann's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns with the mentee's top choices of Campus and Industry Innovation Project Leader and Venture Pathway. the mentee wants to apply her statistics and data science background to real challenges in AI and enterprise tech while growing as a leader, which connects to Tejvir's strengths in AI applications and career development. Tejvir's background can support the mentee's goals in analytics and AI-focused roles while helping her think more entrepreneurially.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 8,
-        "goal_compatibility": 7,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 025",
-      "mentor_name": "Christian Kaczmarczyk",
-      "rationale": "Christian's expertise in AI & Emerging Tech, Entrepreneurship / Venture Creation, Industry Applications / Use Cases, and Innovation Processes directly aligns with the mentee's interest in learning about venture and deployment processes. the mentee has experience with AI projects (Unload AI voice journal and Trusted to Lead AI career advising) but notes that neither led to venture or deployment, making Christian's entrepreneurship and innovation process knowledge particularly valuable. Christian can guide the mentee through the processes of moving from prototype to venture, which is exactly what the mentee wants to learn.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 7,
-        "goal_compatibility": 8,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 026",
-      "mentor_name": "Roy Vreeland",
-      "rationale": "Roy's expertise in AI & Emerging Tech, Career Advice & Professional Growth, and Innovation Processes matches well with the mentee's background in computer science, data science, and applied AI. the mentee wants to work on real-world, technically challenging problems with emerging technologies while developing leadership skills, and Roy's innovation processes expertise can support this growth. Roy's career advice focus also aligns with the mentee's desire to challenge herself and learn through hands-on leadership in the Campus and Industry Innovation Project Leader role.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 7,
-        "goal_compatibility": 7,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 028",
-      "mentor_name": "Roy Vreeland",
-      "rationale": "Roy's expertise in AI & Emerging Tech, Career Advice & Professional Growth, and Innovation Processes fits well with the mentee's desire for real-world experience and willingness to learn required skills. the mentee is looking to work as part of a team to engineer solutions to real problems, and Roy's innovation processes knowledge can guide him through structured problem-solving approaches. Roy's career advice focus also supports the mentee's goal of gaining practical experience in a collaborative environment.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 7,
-        "goal_compatibility": 7,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 029",
-      "mentor_name": "Tejvir Mann",
-      "rationale": "Tejvir's expertise in AI & Emerging Tech, Industry Applications / Use Cases, and Career Advice & Professional Growth aligns with the mentee's interest in Self-Directed Exploration and experimenting with emerging technology. the mentee wants to learn by building and eventually understand how to validate ideas with real users, which connects to Tejvir's industry applications knowledge. With the mentee's upcoming AWS Software Engineering internship at Amazon, Tejvir's career advice expertise can help her integrate industry-scale systems experience with hands-on exploration of emerging tech.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 8,
-        "goal_compatibility": 8,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 038",
-      "mentor_name": "Brett Hawkins",
-      "rationale": "Brett's expertise in AI & Emerging Tech, Virtual Environments/XR, Entrepreneurship/Venture Creation, and Innovation Processes aligns well with the mentee's self-directed exploration of DuoSport. the mentee is developing a complex backend stack with Java/Spring Boot, Go microservices, and Kafka, and seeks to experiment with emerging distributed systems patterns\u2014areas where Brett's emerging tech and innovation process knowledge can provide valuable guidance. Additionally, Brett's entrepreneurship experience can support the mentee's venture development goals while balancing academic demands in advanced mathematics and computer science.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 8,
-        "goal_compatibility": 8,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 042",
-      "mentor_name": "David Pulvermacher",
-      "rationale": "David's expertise in AI & Emerging Tech and Product Development/Design aligns with the mentee's interest in Campus and Industry Innovation to gain practical Computer Science experience beyond theoretical coursework. the mentee specifically wants to work on real campus and company challenges in enterprise tech, which matches David's product development and AI expertise. This pairing provides the practical, real-world application exposure the mentee is seeking.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 8,
-        "goal_compatibility": 7,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 049",
-      "mentor_name": "Luke Anderson",
-      "rationale": "Luke's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns with the mentee's top choice of Campus and Industry Innovation Project Leader. the mentee is interested in working on practical tasks, collaborating with others, and achieving outcomes using development and programming skills. Luke's industry applications expertise can guide the mentee in contributing technical skills to specific projects while supporting collaborative work in real-world contexts.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 8,
-        "goal_compatibility": 7,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 050",
-      "mentor_name": "Luke Anderson",
-      "rationale": "Luke's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth directly supports the mentee's top choice of Campus and Industry Innovation Project Leader. the mentee wants to apply her computer science and AI background to build practical solutions for real campus or industry problems while taking meaningful responsibility. Luke's industry applications and AI expertise can guide the mentee in contributing to project progress and exploring emerging technologies through Lab events like hackathons and workshops.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 8,
-        "goal_compatibility": 7,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 055",
-      "mentor_name": "Luke Anderson",
-      "rationale": "the mentee's interests are in Engineering/Development and Data/AI/Analytics. Luke's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns well with the mentee's technical focus areas and can support her development in these domains.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 8,
-        "goal_compatibility": 7,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 057",
-      "mentor_name": "Tejvir Mann",
-      "rationale": "the mentee wants to focus on high-impact projects applying grad school learning to real-world problems, with interest in the Project Leader role working on complex challenges like AI or enterprise tech. Tejvir's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns well with the mentee's goals for her final semester leadership experience.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 9,
-        "domain_fit": 8,
-        "goal_compatibility": 7,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 058",
-      "mentor_name": "Ali Abtahi",
-      "rationale": "the mentee's top choice is the Digital Health Challenge, motivated by personal experiences with people struggling with brain health and neurological issues, wanting to create real-world health impact. Ali is co-founder of a venture capital firm focused on human health challenges, has an MS in epidemiology, and is keenly interested in assisting startups in the health and medical sectors, making this an excellent match for the mentee's health-focused goals.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 6,
-        "domain_fit": 9,
-        "goal_compatibility": 8,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 061",
-      "mentor_name": "Nicki Doggart",
-      "rationale": "the mentee's top choice is the Campus and Industry Innovation Project Leader pathway, wanting to take ownership of work with real stakeholders and impact while applying strengths in AI, systems, and product execution. Nicki's expertise in Product Development/Design, Industry Applications/Use Cases, AI & Emerging Tech, and Go-to-market strategy aligns well with the mentee's goals of translating ambiguous problems into clear execution plans and shipping measurable outcomes.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 8,
-        "goal_compatibility": 8,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 070",
-      "mentor_name": "Brooks Boyd",
-      "rationale": "Brooks Boyd's expertise in Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns well with the mentee's top choice of Campus and Industry Innovation Project Leader experience. the mentee wants to use his skills to solve real-world problems for companies or people on campus, which matches Brooks's industry applications focus. Brooks can also support the mentee's second choice of Self-Directed Exploration with focused technical exploration that complements his coursework.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 7,
-        "goal_compatibility": 7,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 077",
-      "mentor_name": "Shayna Hetzel",
-      "rationale": "Shayna Hetzel's expertise in Entrepreneurship/Venture Creation, Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns with the mentee's top interest in the Venture Pathway. the mentee wants to continue working in venture capital after her summer experience evaluating how ML could improve internal processes in venture capital firms. Shayna's entrepreneurship and industry applications background can support the mentee's venture capital interests while accommodating her busy senior double major schedule.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 6,
-        "domain_fit": 7,
-        "goal_compatibility": 9,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 080",
-      "mentor_name": "Saurabh K Gupta",
-      "rationale": "Saurabh K Gupta's expertise in AI & Emerging Tech, Product Development/Design, Industry Applications/Use Cases, and Innovation Processes aligns with the mentee's top choice of Campus and Industry Innovation Project Leader. the mentee wants to work on real, well-defined problems while taking on leadership roles with meaningful responsibility and applying his technical background to projects with tangible impact. Saurabh's industry applications and product development expertise can support the mentee's goals of improving campus systems or addressing industry partner challenges.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 7,
-        "goal_compatibility": 8,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 082",
-      "mentor_name": "Max Landau",
-      "rationale": "Max Landau's expertise in AI & Emerging Tech and Career Advice & Professional Growth matches the mentee's interests in both the Venture Pathway, where the mentee's team is developing a degree planning tool, and the Campus and Industry Innovation Project Leader track, where the mentee wants to work on projects with real-world practical business uses. Max's industry experience can provide valuable guidance for the mentee's product development goals.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 9,
-        "goal_compatibility": 7,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 086",
-      "mentor_name": "Brooks Boyd",
-      "rationale": "Brooks Boyd's expertise in Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns with the mentee's interest in the Venture Pathway, where the mentee wants structured process and feedback to turn ideas into something real and usable. Brooks can provide guidance on the hands-on, collaborative learning approach that the mentee values in events like hackathons and build nights.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 7,
-        "goal_compatibility": 8,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 087",
-      "mentor_name": "Christian Kaczmarczyk",
-      "rationale": "Christian Kaczmarczyk's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Innovation Processes aligns well with the mentee's experience working on an industry-facing project with SBDC and her interest in translating client needs into technical solutions. His background in Entrepreneurship/Venture Creation can support the mentee's goal of taking on leadership responsibility while working on real-world applications and continuing to build practical skills.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 7,
-        "goal_compatibility": 8,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 088",
-      "mentor_name": "Andy Siedschlag",
-      "rationale": "Andy Siedschlag's expertise in Product Development/Design, Innovation Processes, and Career Advice & Professional Growth directly aligns with the mentee's top choice of the Campus and Industry Innovation Project Leader track. Andy can support the mentee's goal of working with technologies actively used in industry while solving real problems with real constraints, and help the mentee apply technical skills to make meaningful impact.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 7,
-        "goal_compatibility": 8,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 094",
-      "mentor_name": "Ali Abtahi",
-      "rationale": "Ali Abtahi's background as co-founder of Global Venture Group focused on seed and early-stage investments in health sectors, combined with his educational background in molecular biology and epidemiology, aligns exceptionally well with the mentee's top choices. Ali's keen interest in assisting startups in health and medical sectors directly supports the mentee's Venture Pathway goals at the early validation stage and the Digital Health Challenge focus on health, wellness, and AI.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 6,
-        "domain_fit": 9,
-        "goal_compatibility": 8,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 095",
-      "mentor_name": "Saurabh K Gupta",
-      "rationale": "Saurabh K Gupta's expertise in AI & Emerging Tech, Product Development/Design, Industry Applications/Use Cases, and Innovation Processes aligns perfectly with the mentee's top choice of Campus and Industry Innovation Project Leader. Saurabh can support the mentee's goal of applying his background in data science, machine learning, and AI to enterprise or research-driven challenges, and also guide the mentee's Self-Directed Exploration interest in prototyping ideas in applied AI, automation, and intelligent systems.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 7,
-        "goal_compatibility": 8,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 096",
-      "mentor_name": "Ali Abtahi",
-      "rationale": "Ali Abtahi's background as co-founder of Global Venture Group, a venture capital firm focused on seed and early-stage investments with emphasis on health sectors, directly aligns with the mentee's top choice of Venture Pathway for early validation stage work. Additionally, Ali's keen interest in assisting startups in health and medical sectors matches the mentee's Digital Health Challenge interest, as the mentee's idea focuses on health, wellness, and AI. Ali's combined expertise in strategic advisory services and health-focused venture investments makes him well-suited to guide the mentee through both validation and impact-driven refinement.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 6,
-        "domain_fit": 9,
-        "goal_compatibility": 8,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 099",
-      "mentor_name": "Shayna Hetzel",
-      "rationale": "Shayna Hetzel's expertise in Entrepreneurship/Venture Creation aligns with the mentee's top choice of Venture Discovery, where he wants to return to the cycle of testing assumptions, getting feedback, and improving ideas. Her additional focus on Industry Applications/Use Cases directly matches the mentee's second choice of Industry Innovation/Co-Labs, where he's interested in working on real problems with clear constraints and stakeholders. Shayna's combined mentorship areas cover both the foundational validation work and practical application settings that the mentee seeks.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 6,
-        "domain_fit": 7,
-        "goal_compatibility": 9,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 101",
-      "mentor_name": "Brooks Boyd",
-      "rationale": "Brooks Boyd's expertise in Industry Applications/Use Cases can help the mentee identify interesting projects across different domains that align with his passions. Additionally, Brooks's focus on Career Advice & Professional Growth will support the mentee's goal of gaining meaningful experience. Brooks's knowledge of Innovation Processes can guide the mentee in contributing effectively to projects he's passionate about building.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 7,
-        "goal_compatibility": 7,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 103",
-      "mentor_name": "Cathy Carlson-Barchus",
-      "rationale": "Cathy Carlson-Barchus's expertise in Product Development/Design and Innovation Processes directly aligns with the mentee's interest in translating complex systems into usable, human-centered products as she works on her autonomous trucking thesis. Cathy's focus on Entrepreneurship/Venture Creation supports the mentee's Co-Labs interest in working on real campus or company problem statements with leadership roles. Her combined expertise in product design and innovation processes will help the mentee bridge her technical research experience with building impactful, real-world solutions.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 7,
-        "goal_compatibility": 8,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 104",
-      "mentor_name": "David Pulvermacher",
-      "rationale": "David Pulvermacher's expertise in AI & Emerging Tech and Product Development/Design aligns with the mentee's goal of contributing to meaningful UW Tech Projects that provide impact. David's product development focus will help the mentee build tangible contributions to discuss in full-time role interviews. This pairing supports the mentee's dual objectives of creating meaningful impact and advancing his professional prospects.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 8,
-        "goal_compatibility": 7,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 107",
-      "mentor_name": "Zainab Hameed",
-      "rationale": "Zainab Hameed's expertise in Product Development/Design and Entrepreneurship/Venture Creation directly aligns with the mentee's top choice of Venture Pathway, where she wants end-to-end project experience with applied learning and exploration. Zainab's focus on Innovation Processes supports the mentee's interest in taking steps to find solutions, validate, research, and test. Her combined mentorship areas match the mentee's desire to work on meaningful projects while applying her HCI, computer science, and statistics knowledge to build solutions that help people.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 8,
-        "domain_fit": 7,
-        "goal_compatibility": 8,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 108",
-      "mentor_name": "Max Landau",
-      "rationale": "Max Landau's expertise in AI & Emerging Tech aligns with the mentee's Self-Directed Exploration interest in experimenting with emerging tech and continuing her C++/Arduino hardware integration projects. His focus on Career Advice & Professional Growth supports the mentee's desire for community involvement with academic flexibility. Max's technical expertise will provide valuable mentorship for the mentee's current projects while respecting her need for creative experimentation without rigid venture-track pressure.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 7,
-        "goal_compatibility": 7,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 110",
-      "mentor_name": "Grant Watkins",
-      "rationale": "Grant Watkins's expertise in AI & Emerging Tech, Product Development/Design, and Entrepreneurship/Venture Creation aligns with the mentee's dual interests in Campus and Industry Innovation Project Leader and Venture Pathway. His focus on Innovation Processes supports the mentee's goal of developing and growing through campus/company challenges in biotech and enterprise tech areas. Grant's combined technical and entrepreneurial expertise will help the mentee work on projects in her areas of interest while developing her innovation capabilities.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 8,
-        "goal_compatibility": 8,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 112",
-      "mentor_name": "Brett Hawkins",
-      "rationale": "Brett's expertise in Entrepreneurship/Venture Creation directly supports the mentee's primary interest in the Venture Pathway and desire to test technical projects for real-world potential. His knowledge in AI & Emerging Tech and Innovation Processes can help the mentee learn how to bridge the gap between prototype and real product, specifically addressing her interest in the validation aspect. Brett's background aligns with the mentee's goal of graduating with a validated project under her belt.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 7,
-        "goal_compatibility": 9,
-        "style_fit": 8
-      }
-    },
-    {
-      "mentee_name": "Student 113",
-      "mentor_name": "Nicki Doggart",
-      "rationale": "Nicki's expertise in AI & Emerging Tech, Product Development/Design, and Entrepreneurship/Venture Creation aligns with the mentee's passion for developing healthcare solutions and building something revolutionary. Her knowledge in Industry Applications/Use Cases and Go-to-market strategy can support the mentee's experience with NLP solutions and tracking apps in the healthcare space. Nicki's background can help the mentee with rapid ideation and building, which connects to the mentee's interest in hackathons and rapid development.",
-      "confidence_score": 7,
-      "criteria_scores": {
-        "skill_alignment": 6,
-        "domain_fit": 9,
-        "goal_compatibility": 8,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 011",
-      "mentor_name": "Joey Frayne",
-      "rationale": "Joey's expertise in Entrepreneurship/Venture Creation and Career Advice & Professional Growth aligns with the mentee's interest in the Venture Pathway for their PersonaXR project. the mentee enjoyed previous mentorship and is interested in continuing venture-focused guidance, which matches Joey's entrepreneurship and career mentorship focus.",
-      "confidence_score": 6,
-      "criteria_scores": {
-        "skill_alignment": 6,
-        "domain_fit": 6,
-        "goal_compatibility": 8,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 013",
-      "mentor_name": "Andrea Stein",
-      "rationale": "Andrea's expertise in Career Advice & Professional Growth and Marketing can support the mentee's interest in the Venture pathway as he works with the AI sports team next semester. Her career guidance and marketing expertise can provide valuable mentorship for venture development.",
-      "confidence_score": 6,
-      "criteria_scores": {
-        "skill_alignment": 6,
-        "domain_fit": 6,
-        "goal_compatibility": 6,
-        "style_fit": 6
-      }
-    },
-    {
-      "mentee_name": "Student 019",
-      "mentor_name": "Brooks Boyd",
-      "rationale": "Brooks Boyd's expertise in Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns with the mentee's priority for the Campus and Industry Innovation Project Leader role. the mentee wants to lead projects that bridge academic learning with practical industry impact in areas like enterprise technology and AI, which connects to Brooks's strengths in translating innovation into real-world applications. Brooks's background can support the mentee's goal of becoming a technology leader who translates innovative ideas into tangible outcomes.",
-      "confidence_score": 6,
-      "criteria_scores": {
-        "skill_alignment": 7,
-        "domain_fit": 7,
-        "goal_compatibility": 6,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 023",
-      "mentor_name": "Ali Abtahi",
-      "rationale": "Ali Abtahi's background as co-founder of Global Venture Group focused on health and medical sectors, combined with his educational background in molecular biology, epidemiology, and public health, directly aligns with the mentee's interest in the Digital Health Challenge. the mentee wants to bridge her majors in Rehabilitation Psychology and Information Science to explore health informatics, which connects to Ali's keen interest in assisting startups in health and medical sectors. Ali's experience with university-affiliated ventures can help the mentee gain hands-on experience in understanding the foundations of digital health and information.",
-      "confidence_score": 6,
-      "criteria_scores": {
-        "skill_alignment": 5,
-        "domain_fit": 8,
-        "goal_compatibility": 7,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 052",
-      "mentor_name": "Kurt Malueg",
-      "rationale": "Kurt's expertise in AI & Emerging Tech and Product Development/Design aligns well with the mentee's top choice of the Venture Pathway. the mentee has many different ideas but lacks motivation and channels to turn them into something concrete, which is exactly what she wants to do. Kurt's product development expertise can provide the practical guidance and structure the mentee needs to transform her various ideas into reality through concrete development processes.",
-      "confidence_score": 6,
-      "criteria_scores": {
-        "skill_alignment": 6,
-        "domain_fit": 7,
-        "goal_compatibility": 7,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 056",
-      "mentor_name": "Ben Dreher",
-      "rationale": "the mentee is extremely interested in Campus and Industry Innovation to work on real campus/company challenges and apply tech knowledge in the real world. Ben's expertise in Product Development/Design and Industry Applications/Use Cases directly supports the mentee's goal of applying skills to real-world challenges, while his Career Advice & Professional Growth experience can guide her development.",
-      "confidence_score": 6,
-      "criteria_scores": {
-        "skill_alignment": 6,
-        "domain_fit": 7,
-        "goal_compatibility": 7,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 079",
-      "mentor_name": "Ben Dreher",
-      "rationale": "Ben Dreher's expertise in Product Development/Design, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns with the mentee's interest in Campus and Industry Innovation Project Leader - Co-Labs and Problem Statements. the mentee wants to gain experience applying her skills to solve real-world problems while connecting with industry to learn about practical applications. Ben's industry applications and career advice background can support the mentee's goals of bridging her skills with real-world problem-solving.",
-      "confidence_score": 6,
-      "criteria_scores": {
-        "skill_alignment": 6,
-        "domain_fit": 7,
-        "goal_compatibility": 7,
-        "style_fit": 6
-      }
-    },
-    {
-      "mentee_name": "Student 084",
-      "mentor_name": "Joey Frayne",
-      "rationale": "Joey Frayne's expertise in Entrepreneurship/Venture Creation and Career Advice & Professional Growth directly aligns with the mentee's interest in the Venture Pathway, where the mentee wants to build something concrete from classroom skills. Joey can provide guidance on translating classroom knowledge into real-world team-based projects and events that the mentee is interested in pursuing.",
-      "confidence_score": 6,
-      "criteria_scores": {
-        "skill_alignment": 5,
-        "domain_fit": 7,
-        "goal_compatibility": 8,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 100",
-      "mentor_name": "Joey Frayne",
-      "rationale": "Joey Frayne's expertise in Entrepreneurship/Venture Creation and Career Advice & Professional Growth aligns well with the mentee's goals. the mentee's second choice is the Venture Pathway, where he is passionate about startups and seeks structured guidance to validate and refine his ideas into successful ventures. Joey's entrepreneurship focus can provide the mentorship the mentee needs to develop his venture ideas while also supporting his professional growth aspirations.",
-      "confidence_score": 6,
-      "criteria_scores": {
-        "skill_alignment": 6,
-        "domain_fit": 6,
-        "goal_compatibility": 8,
-        "style_fit": 7
-      }
-    },
-    {
-      "mentee_name": "Student 003",
-      "mentor_name": "Rich Fischer",
-      "rationale": "Rich's expertise in Product Development/Design, Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes matches the mentee's goal as a Campus and Industry Innovation Project Leader. the mentee wants to apply his technical background to real-world operational challenges and take ownership from problem statement to deployed solution, which aligns with Rich's focus on product development and industry applications.",
-      "confidence_score": 5,
-      "criteria_scores": {
-        "skill_alignment": 5,
-        "domain_fit": 5,
-        "goal_compatibility": 6,
-        "style_fit": 6
-      }
-    },
-    {
-      "mentee_name": "Student 027",
-      "mentor_name": "Rich Fischer",
-      "rationale": "Rich's expertise in Product Development/Design, Industry Applications / Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns perfectly with the mentee's goal of moving from technical execution to overseeing projects from start to finish. the mentee has experience managing HPC workflows, full stack development, and architecting ML pipelines, and Rich's product development and industry applications knowledge can help him transition to the Campus and Industry Innovation Project Leader role. Rich's career advice expertise also supports the mentee's professional growth trajectory within a team environment.",
-      "confidence_score": 5,
-      "criteria_scores": {
-        "skill_alignment": 6,
-        "domain_fit": 5,
-        "goal_compatibility": 6,
-        "style_fit": 6
-      }
-    },
-    {
-      "mentee_name": "Student 045",
-      "mentor_name": "Rich Fischer",
-      "rationale": "Rich's expertise in Product Development/Design, Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns well with the mentee's interests as a data science major. the mentee seeks AI or data-driven enterprise problem statements focused on analytics, decision-making, and user behavior, wanting to translate insights into actionable outcomes. Rich's industry applications and product development expertise can guide the mentee in applying machine learning and data analysis to real-world challenges while supporting her leadership-focused project goals.",
-      "confidence_score": 5,
-      "criteria_scores": {
-        "skill_alignment": 6,
-        "domain_fit": 5,
-        "goal_compatibility": 6,
-        "style_fit": 6
-      }
+      "student": "Student 022",
+      "mentor": "Christopher Harrison",
+      "confidence": 9,
+      "rationale": "Christopher Harrison's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, and Innovation Processes aligns with the mentee's interests across Business/Strategy, Product/UX, Engineering/Development, and Data/AI/Analytics. Christopher's Career Advice & Professional Growth background can support the mentee's diverse skill set spanning research, customer discovery, and operations/project management. This pairing provides comprehensive mentorship across the multiple domains the mentee is exploring."
+    },
+    {
+      "student": "Student 033",
+      "mentor": "Catherine Killam",
+      "confidence": 9,
+      "rationale": "Catherine's expertise in Product Development/Design, Industry Applications / Use Cases, go-to-market execution, sales enablement, and storytelling aligns perfectly with the mentee's top choice of Campus and Industry Innovation Project Leader. the mentee wants to work on real-world problems with real constraints and real people, taking responsibility for decisions and tradeoffs, which connects to Catherine's industry applications and product development knowledge. Catherine's go-to-market and storytelling expertise can support the mentee's leadership development as he moves beyond just helping on projects to owning them."
+    },
+    {
+      "student": "Student 034",
+      "mentor": "Max Landau",
+      "confidence": 9,
+      "rationale": "Max's expertise in AI & Emerging Tech, Virtual Environments/XR, and Career Advice & Professional Growth is an excellent match for the mentee's Self-Directed Exploration concept using augmented reality to guide people through hands-on trade tasks. the mentee's idea specifically involves AR glasses or headsets for real-time visual overlays, making Max's Virtual Environments/XR expertise directly relevant. Max can provide guidance on the visual technology the mentee needs and support his interest in the Venture Pathway for developing business-building skills."
+    },
+    {
+      "student": "Student 035",
+      "mentor": "Christian Kaczmarczyk",
+      "confidence": 9,
+      "rationale": "Christian's expertise in AI & Emerging Tech, Entrepreneurship / Venture Creation, Industry Applications / Use Cases, and Innovation Processes aligns with the mentee's interest in the intersection of technology and business as a computer science and finance major. the mentee wants to use technology to solve real business problems and create and build products, which directly connects to Christian's entrepreneurship and industry applications knowledge. Christian can help the mentee leverage lab resources to further build upon his startup ideas."
+    },
+    {
+      "student": "Student 053",
+      "mentor": "Nicki Doggart",
+      "confidence": 9,
+      "rationale": "the mentee's top choice is the Venture Pathway with a strong interest in building a startup from the ground up, identifying real problems, and developing solutions people will pay for. Nicki's expertise spans Entrepreneurship/Venture Creation, Product Development/Design, and Go-to-market strategy including ICP and story, which directly aligns with the mentee's goals of creating impactful, real-world products and understanding how to bring them to market."
+    },
+    {
+      "student": "Student 054",
+      "mentor": "Christopher Harrison",
+      "confidence": 9,
+      "rationale": "the mentee is interested in the Venture Pathway and Events, which align with his current ventures. Christopher's expertise includes Entrepreneurship/Venture Creation, Innovation Processes, and AI & Emerging Tech, providing relevant guidance for the mentee's ongoing venture work and event participation."
+    },
+    {
+      "student": "Student 062",
+      "mentor": "Tim Nott",
+      "confidence": 9,
+      "rationale": "the mentee is mainly interested in the Venture Pathway and Events to validate, learn, and team up for their prototype. Tim's expertise in Entrepreneurship/Venture Creation, Product Development/Design, AI & Emerging Tech, and Innovation Processes directly supports the mentee's goals of prototype validation and venture development."
+    },
+    {
+      "student": "Student 063",
+      "mentor": "Tim Nott",
+      "confidence": 9,
+      "rationale": "the mentee's top choice is the Venture Pathway, as he already has an idea with friends for a degree planning tool for UW Madison students and wants to turn it into a working product. Tim's expertise in Entrepreneurship/Venture Creation, Product Development/Design, and Innovation Processes aligns perfectly with the mentee's goal of implementing his idea and benefiting from resources to help with product development."
+    },
+    {
+      "student": "Student 064",
+      "mentor": "Tim Nott",
+      "confidence": 9,
+      "rationale": "Tim Nott's expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship/Venture Creation, and Innovation Processes aligns directly with the mentee's venture idea for a UW-specific academic planning tool with a conversational interface. the mentee wants to validate the problem, build an MVP, and iterate fast through the Venture Pathway, which matches Tim's product development and entrepreneurship focus. Tim's background can support the mentee's goal of building production-oriented software and ML systems for real campus challenges."
+    },
+    {
+      "student": "Student 066",
+      "mentor": "Christopher Harrison",
+      "confidence": 9,
+      "rationale": "Christopher Harrison's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns well with the mentee's interest in applying artificial intelligence to chaotic systems. the mentee wants to explore cutting-edge AI tools and techniques through Self-Directed Exploration and engage in research through the Campus and Industry Innovation Project Leader program. Christopher's AI and innovation background can guide the mentee's research goals in mathematics and computer science applications."
+    },
+    {
+      "student": "Student 068",
+      "mentor": "Ananth Subramanya",
+      "confidence": 9,
+      "rationale": "Ananth Subramanya's expertise in AI & Emerging Tech and Entrepreneurship/Venture Creation directly matches the mentee's top choice of the Venture Pathway, where she wants to build and validate an AI-driven project from idea to prototype. the mentee's interest in using data science and AI for real-world technical challenges aligns with Ananth's entrepreneurship and AI focus. His mentorship can support her goal of contributing meaningfully to venture-building despite a busy course load."
+    },
+    {
+      "student": "Student 074",
+      "mentor": "Ananth Subramanya",
+      "confidence": 9,
+      "rationale": "Ananth Subramanya's expertise in AI & Emerging Tech and Entrepreneurship/Venture Creation aligns with the mentee's top choice of the Venture Pathway, where he wants a guided approach to confirming whether his technical concepts are valid ventures. the mentee has experience with AI, knowledge graphs, and developer infrastructure projects and needs help developing passion projects to the next stage. Ananth's entrepreneurship background can provide the guidance the mentee seeks for moving from exploratory phases to MVPs."
+    },
+    {
+      "student": "Student 002",
+      "mentor": "Catherine Killam",
+      "confidence": 8,
+      "rationale": "Catherine's expertise in Product Development/Design, Industry Applications/Use Cases, go-to-market execution, sales enablement, and storytelling aligns well with the mentee's interest in the Venture Pathway. the mentee wants to strengthen her product thinking, learn to validate ideas with real users, and gain exposure to moving from concept to execution, which directly matches Catherine's skill set in product development and go-to-market strategies."
+    },
+    {
+      "student": "Student 007",
+      "mentor": "Saurabh K Gupta",
+      "confidence": 8,
+      "rationale": "Saurabh's expertise in AI & Emerging Tech, Product Development/Design, Industry Applications/Use Cases, and Innovation Processes aligns with the mentee's interest in the campus and industry innovation project. the mentee wants to implement his skills in real-world settings and challenge himself to improve, which matches Saurabh's focus on industry applications and product development."
+    },
+    {
+      "student": "Student 010",
+      "mentor": "Catherine Killam",
+      "confidence": 8,
+      "rationale": "Catherine's expertise in Product Development/Design, Industry Applications/Use Cases, go-to-market execution, sales enablement, and storytelling aligns with the mentee's diverse interests spanning Business/Strategy, Product/UX, Engineering/Development, Data/AI/Analytics, Design/Branding, Research/Customer Discovery, and Operations/Project Management. Her comprehensive skill set in product development and go-to-market strategies can support the mentee's multifaceted professional interests."
+    },
+    {
+      "student": "Student 012",
+      "mentor": "Luke Anderson",
+      "confidence": 8,
+      "rationale": "Luke's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns with the mentee's top choice as a Campus and Industry Innovation Project Leader. the mentee wants to build rigorous engineering and problem-solving skills in areas like AI and enterprise tech within a structured team environment, and seeks professional mentorship for future internships and jobs, which matches Luke's focus areas."
+    },
+    {
+      "student": "Student 015",
+      "mentor": "Thomas Yen",
+      "confidence": 8,
+      "rationale": "Thomas Yen's expertise in AI & Emerging Tech, Product Development/Design, and Industry Applications aligns well with the mentee's goal to build a real solution for the Digital Health Challenge. the mentee wants to develop technology that supports communication for people with different abilities, which connects to Thomas's strengths in turning ideas into practical products and exploring use cases. Thomas's background in Innovation Processes and Entrepreneurship can help the mentee transform his existing ideas into a viable solution."
+    },
+    {
+      "student": "Student 016",
+      "mentor": "Thomas Yen",
+      "confidence": 8,
+      "rationale": "Thomas Yen's expertise in Product Development/Design and Entrepreneurship/Venture Creation directly supports the mentee's dual interests in the Digital Health Challenge and Venture Pathway. the mentee has already worked on health-related projects like Medica and Vitals and needs help with validation and the business side, which aligns with Thomas's strengths in Innovation Processes and turning technical projects into viable ventures. Thomas's experience in Industry Applications can guide the mentee in taking his health projects further in a structured setting."
+    },
+    {
+      "student": "Student 018",
+      "mentor": "Christopher Harrison",
+      "confidence": 8,
+      "rationale": "Christopher Harrison's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, and Innovation Processes directly supports the mentee's top choices of Venture Pathway and Campus & Industry Innovation Project Leader. the mentee wants a structured way to take an idea from zero to one with real user validation and MVP building, which aligns with Christopher's strengths in entrepreneurship and innovation. Christopher's Career Advice & Professional Growth expertise can also help the mentee prepare for the kind of work he wants to do after graduation in computer science and data science."
+    },
+    {
+      "student": "Student 030",
+      "mentor": "Mike Trigg",
+      "confidence": 8,
+      "rationale": "Mike's expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship / Venture Creation, and Career Advice & Professional Growth directly matches the mentee's goal of turning side projects into something bigger through the Venture Pathway. the mentee has been building developer tools and wants to learn how to take them further, making Mike's entrepreneurship and product development knowledge essential. Mike's comprehensive skill set can guide the mentee through the entire process of transforming projects into viable ventures."
+    },
+    {
+      "student": "Student 036",
+      "mentor": "Catherine Killam",
+      "confidence": 8,
+      "rationale": "Catherine's expertise in Product Development/Design, Industry Applications / Use Cases, go-to-market execution, sales enablement, and storytelling supports the mentee's top choice of Campus and Industry Innovation Project Leader. As a junior wanting to gain leadership experience and create a collaborative environment, the mentee can benefit from Catherine's product development and industry applications knowledge. Catherine's go-to-market expertise also aligns with the mentee's interest in the Venture Pathway and desire to innovate something new from start to finish, making a simple idea become reality."
+    },
+    {
+      "student": "Student 039",
+      "mentor": "Roy Vreeland",
+      "confidence": 8,
+      "rationale": "the mentee explicitly requests to continue working with his mentor Roy from the Tech Lab last semester, stating it was \"super helpful\" and wanting to stay connected through self-directed exploration. Roy's expertise in AI & Emerging Tech, Career Advice & Professional Growth, and Innovation Processes directly supports the mentee's work on refining the EverOS MVP for edge devices (Nvidia Jetsons) and applying to government opportunities (SBIR and SOCOM). The established mentor relationship and Roy's relevant technical expertise make this an ideal continuation pairing."
+    },
+    {
+      "student": "Student 043",
+      "mentor": "Mike Trigg",
+      "confidence": 8,
+      "rationale": "Mike's comprehensive expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship/Venture Creation, and Career Advice & Professional Growth aligns perfectly with the mentee's profile. the mentee brings business experience from running a storage business for two years and near-completion of CS and DS degrees, seeking to assist others and work on serious projects. Mike's entrepreneurship background can guide the mentee's leadership aspirations in Campus and Industry Innovation Projects, while his broad expertise supports the mentee's goal of building experiences and relationships across technical and business domains."
+    },
+    {
+      "student": "Student 046",
+      "mentor": "Mike Trigg",
+      "confidence": 8,
+      "rationale": "Mike's expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship/Venture Creation, and Career Advice & Professional Growth directly supports the mentee's Venture Pathway interests. As a computer science senior interested in AI and backend systems, the mentee wants to move beyond prototypes to focus on problem discovery, MVP development, and market validation. Mike's entrepreneurship and product development expertise can guide the mentee through the structured process of turning technical ideas into validated, real-world solutions with solid engineering foundations."
+    },
+    {
+      "student": "Student 047",
+      "mentor": "Zainab Hameed",
+      "confidence": 8,
+      "rationale": "Zainab's expertise in Product Development/Design, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns perfectly with the mentee's interests in Digital Health and Self-Directed Exploration. the mentee is exploring ideas at the intersection of technology, health, and wellness, seeking space to understand user problems, experiment, research, and prototype thoughtfully. Zainab's product development and entrepreneurship expertise can provide the structured guidance the mentee seeks while supporting her participation in hackathons and workshops to build technical and interdisciplinary skills."
+    },
+    {
+      "student": "Student 060",
+      "mentor": "Max Landau",
+      "confidence": 8,
+      "rationale": "the mentee's top choice is Self-Directed Exploration to build immersive experiences connecting technology with storytelling, culture, and perception. Max's expertise in Virtual Environments/XR and AI & Emerging Tech directly aligns with the mentee's interest in immersive experiences, while his Career Advice & Professional Growth experience can support the mentee's development goals."
+    },
+    {
+      "student": "Student 072",
+      "mentor": "Mike Trigg",
+      "confidence": 8,
+      "rationale": "Mike Trigg's expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship/Venture Creation, and Career Advice & Professional Growth aligns perfectly with the mentee's top choice of the Venture Pathway. the mentee wants structure, feedback, and accountability for customer discovery, validation, and shipping iterations to scale his venture, which matches Mike's product development and entrepreneurship focus. Mike can also support the mentee's second choice of Campus and Industry Innovation Project Leader with his product direction expertise."
+    },
+    {
+      "student": "Student 078",
+      "mentor": "Saurabh K Gupta",
+      "confidence": 8,
+      "rationale": "Saurabh K Gupta's expertise in AI & Emerging Tech, Product Development/Design, Industry Applications/Use Cases, and Innovation Processes aligns with the mentee's interest in the Campus and Industry Innovation Project Leader program. the mentee is passionate about using technology to solve problems affecting everyday people, such as climate change and global hunger, which matches Saurabh's industry applications focus. Saurabh can help the mentee navigate the startup ecosystem and pursue solutions beyond profit-focused ventures as he hopes to do post-grad."
+    },
+    {
+      "student": "Student 081",
+      "mentor": "Tim Nott",
+      "confidence": 8,
+      "rationale": "Tim Nott's expertise in Product Development/Design, Entrepreneurship/Venture Creation, and Innovation Processes aligns well with the mentee's interest in Self-Directed Exploration, where the mentee wants guidance from experts on research ideas he has started exploring. Tim's background in AI & Emerging Tech and Innovation Processes can support the mentee's goal of learning how classroom knowledge applies in industry through the Campus and Industry Innovation Project Leader experience."
+    },
+    {
+      "student": "Student 085",
+      "mentor": "Thomas Yen",
+      "confidence": 8,
+      "rationale": "Thomas Yen's comprehensive expertise spanning Product Development/Design, Entrepreneurship/Venture Creation, Innovation Processes, and Career Advice & Professional Growth aligns perfectly with the mentee's interest in the Digital Health Challenge. His background can support the mentee's goals of building solutions at the intersection of health and technology, emphasizing real user problems, rapid experimentation, and validation through the guided accelerator format."
+    },
+    {
+      "student": "Student 089",
+      "mentor": "Zainab Hameed",
+      "confidence": 8,
+      "rationale": "Zainab Hameed's expertise in Product Development/Design, Entrepreneurship/Venture Creation, and Innovation Processes aligns perfectly with the mentee's interest in the Digital Health Challenge and Campus and Industry Innovation Project Leader experiences. Zainab's background in Career Advice & Professional Growth can provide mentorship on the human-facing side of tech that the mentee seeks, supporting her goal of building tech products while meeting with stakeholders to identify meaningful areas of impact."
+    },
+    {
+      "student": "Student 109",
+      "mentor": "Thomas Yen",
+      "confidence": 8,
+      "rationale": "Thomas Yen's expertise in AI & Emerging Tech directly supports the mentee's goal of building skills to understand the AI industry and developing a toolkit for personal projects. His focus on Product Development/Design and Innovation Processes aligns with the mentee's interest in creating health and wellness solutions, as demonstrated by the mentee's previous electroencephalogram project for sleep disorder detection. Thomas's comprehensive mentorship areas, including both technical and innovation processes, will support the mentee's learning stage goals across self-directed exploration and the digital health challenge."
+    },
+    {
+      "student": "Student 111",
+      "mentor": "Brett Hawkins",
+      "confidence": 8,
+      "rationale": "Brett's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, and Innovation Processes aligns well with the mentee's interest in applying technical and business skills to frontier technologies. the mentee's desire to understand how different project components work together and his interest in leadership and communication match Brett's focus areas in Career Advice & Professional Growth and Innovation Processes. the mentee's experience with tech and CPG startups and his preference for both Project Leader and Venture Pathway roles directly connect to Brett's entrepreneurship and venture creation expertise."
+    },
+    {
+      "student": "Student 114",
+      "mentor": "Andy Siedschlag",
+      "confidence": 8,
+      "rationale": "Andy's expertise in Product Development/Design and Innovation Processes directly supports the mentee's top choice of the Campus and Industry Innovation Project Leader track and approach to breaking down ambiguous problems and iterating toward solutions. His focus on Career Advice & Professional Growth aligns with the mentee's desire to take ownership and work across disciplines on goal-oriented teams. Andy's background matches the mentee's interest in execution-focused projects that move ideas forward without needing fully defined instructions."
+    },
+    {
+      "student": "Student 115",
+      "mentor": "Christian Kaczmarczyk",
+      "confidence": 8,
+      "rationale": "Christian's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, and Innovation Processes aligns with the mentee's top choice of the Campus and Industry Innovation Project Leader role and interest in managing projects end-to-end. His knowledge in Industry Applications/Use Cases supports the mentee's experience with technical deliverables, data analysis, and product features from past internships. Christian's entrepreneurship background also matches the mentee's second choice of the Venture Pathway and interest in building and validating new ideas through customer discovery and rapid prototyping."
+    },
+    {
+      "student": "Student 006",
+      "mentor": "Brett Hawkins",
+      "confidence": 7,
+      "rationale": "Brett's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns with the mentee's interest in both the Venture Pathway and Campus and Industry Innovation Project Leader roles. the mentee wants to apply analytical skills to customer discovery and venture development while working on real campus and industry challenges in fields like AI, which matches Brett's areas of expertise."
+    },
+    {
+      "student": "Student 008",
+      "mentor": "Cathy Carlson-Barchus",
+      "confidence": 7,
+      "rationale": "Cathy's expertise in Product Development/Design, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns with the mentee's interest in both the Venture Pathway and Campus and Industry Innovation Project Leader role. the mentee is motivated by turning ideas into reality through iteration and feedback, and has leadership experience from Women in ACM, which matches Cathy's focus on entrepreneurship, product development, and innovation processes."
+    },
+    {
+      "student": "Student 014",
+      "mentor": "Cathy Carlson-Barchus",
+      "confidence": 7,
+      "rationale": "Cathy's expertise in Product Development/Design, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns with the mentee's top choices of Campus and Industry Innovation Project Leader and Venture Pathway. the mentee is interested in structuring ambiguous challenges, leading research and analysis, and early-stage venture development with emphasis on user research and experimentation, which matches Cathy's comprehensive skill set in entrepreneurship and innovation."
+    },
+    {
+      "student": "Student 017",
+      "mentor": "Grant Watkins",
+      "confidence": 7,
+      "rationale": "Grant Watkins's expertise in AI & Emerging Tech, Product Development/Design, and Innovation Processes aligns with the mentee's interest in the Campus and Industry Project Leader and Venture Pathways roles. the mentee wants to lead a team in discovering and creating ideas for real-world challenges, which connects to Grant's strengths in innovation and entrepreneurship. Grant's background in Entrepreneurship/Venture Creation can support the mentee's excitement about working in teams and fostering growth in teammates and the community."
+    },
+    {
+      "student": "Student 020",
+      "mentor": "Cathy Carlson-Barchus",
+      "confidence": 7,
+      "rationale": "Cathy Carlson-Barchus's expertise in Product Development/Design, Entrepreneurship/Venture Creation, and Innovation Processes aligns with the mentee's top choices of Campus and Industry Innovation Project Leader and Self-Directed Exploration. the mentee wants to build leadership skills while working on real campus and industry problems, and also values the flexibility to explore emerging technologies independently, which connects to Cathy's strengths in turning ideas into practical solutions. Cathy's Career Advice & Professional Growth expertise can help the mentee balance structured leadership experience with independent exploration as a sophomore."
+    },
+    {
+      "student": "Student 021",
+      "mentor": "Roy Vreeland",
+      "confidence": 7,
+      "rationale": "Roy Vreeland's expertise in AI & Emerging Tech, Career Advice & Professional Growth, and Innovation Processes aligns with the mentee's dual interests in creating tech talks/meetups and pursuing research rooted in computer science. the mentee wants to bridge the tech and business industries by discussing applications of cutting-edge technology, and is also interested in AI/ML, HCI, and CS Theory research with meaningful societal impact, which connects to Roy's strengths in AI and innovation. Roy's background can support the mentee's goal of developing innovative solutions to real-world problems."
+    },
+    {
+      "student": "Student 024",
+      "mentor": "Tejvir Mann",
+      "confidence": 7,
+      "rationale": "Tejvir Mann's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns with the mentee's top choices of Campus and Industry Innovation Project Leader and Venture Pathway. the mentee wants to apply her statistics and data science background to real challenges in AI and enterprise tech while growing as a leader, which connects to Tejvir's strengths in AI applications and career development. Tejvir's background can support the mentee's goals in analytics and AI-focused roles while helping her think more entrepreneurially."
+    },
+    {
+      "student": "Student 025",
+      "mentor": "Christian Kaczmarczyk",
+      "confidence": 7,
+      "rationale": "Christian's expertise in AI & Emerging Tech, Entrepreneurship / Venture Creation, Industry Applications / Use Cases, and Innovation Processes directly aligns with the mentee's interest in learning about venture and deployment processes. the mentee has experience with AI projects (Unload AI voice journal and Trusted to Lead AI career advising) but notes that neither led to venture or deployment, making Christian's entrepreneurship and innovation process knowledge particularly valuable. Christian can guide the mentee through the processes of moving from prototype to venture, which is exactly what the mentee wants to learn."
+    },
+    {
+      "student": "Student 026",
+      "mentor": "Roy Vreeland",
+      "confidence": 7,
+      "rationale": "Roy's expertise in AI & Emerging Tech, Career Advice & Professional Growth, and Innovation Processes matches well with the mentee's background in computer science, data science, and applied AI. the mentee wants to work on real-world, technically challenging problems with emerging technologies while developing leadership skills, and Roy's innovation processes expertise can support this growth. Roy's career advice focus also aligns with the mentee's desire to challenge herself and learn through hands-on leadership in the Campus and Industry Innovation Project Leader role."
+    },
+    {
+      "student": "Student 028",
+      "mentor": "Roy Vreeland",
+      "confidence": 7,
+      "rationale": "Roy's expertise in AI & Emerging Tech, Career Advice & Professional Growth, and Innovation Processes fits well with the mentee's desire for real-world experience and willingness to learn required skills. the mentee is looking to work as part of a team to engineer solutions to real problems, and Roy's innovation processes knowledge can guide him through structured problem-solving approaches. Roy's career advice focus also supports the mentee's goal of gaining practical experience in a collaborative environment."
+    },
+    {
+      "student": "Student 029",
+      "mentor": "Tejvir Mann",
+      "confidence": 7,
+      "rationale": "Tejvir's expertise in AI & Emerging Tech, Industry Applications / Use Cases, and Career Advice & Professional Growth aligns with the mentee's interest in Self-Directed Exploration and experimenting with emerging technology. the mentee wants to learn by building and eventually understand how to validate ideas with real users, which connects to Tejvir's industry applications knowledge. With the mentee's upcoming AWS Software Engineering internship at Amazon, Tejvir's career advice expertise can help her integrate industry-scale systems experience with hands-on exploration of emerging tech."
+    },
+    {
+      "student": "Student 038",
+      "mentor": "Brett Hawkins",
+      "confidence": 7,
+      "rationale": "Brett's expertise in AI & Emerging Tech, Virtual Environments/XR, Entrepreneurship/Venture Creation, and Innovation Processes aligns well with the mentee's self-directed exploration of DuoSport. the mentee is developing a complex backend stack with Java/Spring Boot, Go microservices, and Kafka, and seeks to experiment with emerging distributed systems patterns\u2014areas where Brett's emerging tech and innovation process knowledge can provide valuable guidance. Additionally, Brett's entrepreneurship experience can support the mentee's venture development goals while balancing academic demands in advanced mathematics and computer science."
+    },
+    {
+      "student": "Student 042",
+      "mentor": "David Pulvermacher",
+      "confidence": 7,
+      "rationale": "David's expertise in AI & Emerging Tech and Product Development/Design aligns with the mentee's interest in Campus and Industry Innovation to gain practical Computer Science experience beyond theoretical coursework. the mentee specifically wants to work on real campus and company challenges in enterprise tech, which matches David's product development and AI expertise. This pairing provides the practical, real-world application exposure the mentee is seeking."
+    },
+    {
+      "student": "Student 049",
+      "mentor": "Luke Anderson",
+      "confidence": 7,
+      "rationale": "Luke's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns with the mentee's top choice of Campus and Industry Innovation Project Leader. the mentee is interested in working on practical tasks, collaborating with others, and achieving outcomes using development and programming skills. Luke's industry applications expertise can guide the mentee in contributing technical skills to specific projects while supporting collaborative work in real-world contexts."
+    },
+    {
+      "student": "Student 050",
+      "mentor": "Luke Anderson",
+      "confidence": 7,
+      "rationale": "Luke's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth directly supports the mentee's top choice of Campus and Industry Innovation Project Leader. the mentee wants to apply her computer science and AI background to build practical solutions for real campus or industry problems while taking meaningful responsibility. Luke's industry applications and AI expertise can guide the mentee in contributing to project progress and exploring emerging technologies through Lab events like hackathons and workshops."
+    },
+    {
+      "student": "Student 055",
+      "mentor": "Luke Anderson",
+      "confidence": 7,
+      "rationale": "the mentee's interests are in Engineering/Development and Data/AI/Analytics. Luke's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns well with the mentee's technical focus areas and can support her development in these domains."
+    },
+    {
+      "student": "Student 057",
+      "mentor": "Tejvir Mann",
+      "confidence": 7,
+      "rationale": "the mentee wants to focus on high-impact projects applying grad school learning to real-world problems, with interest in the Project Leader role working on complex challenges like AI or enterprise tech. Tejvir's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns well with the mentee's goals for her final semester leadership experience."
+    },
+    {
+      "student": "Student 058",
+      "mentor": "Ali Abtahi",
+      "confidence": 7,
+      "rationale": "the mentee's top choice is the Digital Health Challenge, motivated by personal experiences with people struggling with brain health and neurological issues, wanting to create real-world health impact. Ali is co-founder of a venture capital firm focused on human health challenges, has an MS in epidemiology, and is keenly interested in assisting startups in the health and medical sectors, making this an excellent match for the mentee's health-focused goals."
+    },
+    {
+      "student": "Student 061",
+      "mentor": "Nicki Doggart",
+      "confidence": 7,
+      "rationale": "the mentee's top choice is the Campus and Industry Innovation Project Leader pathway, wanting to take ownership of work with real stakeholders and impact while applying strengths in AI, systems, and product execution. Nicki's expertise in Product Development/Design, Industry Applications/Use Cases, AI & Emerging Tech, and Go-to-market strategy aligns well with the mentee's goals of translating ambiguous problems into clear execution plans and shipping measurable outcomes."
+    },
+    {
+      "student": "Student 070",
+      "mentor": "Brooks Boyd",
+      "confidence": 7,
+      "rationale": "Brooks Boyd's expertise in Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns well with the mentee's top choice of Campus and Industry Innovation Project Leader experience. the mentee wants to use his skills to solve real-world problems for companies or people on campus, which matches Brooks's industry applications focus. Brooks can also support the mentee's second choice of Self-Directed Exploration with focused technical exploration that complements his coursework."
+    },
+    {
+      "student": "Student 077",
+      "mentor": "Shayna Hetzel",
+      "confidence": 7,
+      "rationale": "Shayna Hetzel's expertise in Entrepreneurship/Venture Creation, Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns with the mentee's top interest in the Venture Pathway. the mentee wants to continue working in venture capital after her summer experience evaluating how ML could improve internal processes in venture capital firms. Shayna's entrepreneurship and industry applications background can support the mentee's venture capital interests while accommodating her busy senior double major schedule."
+    },
+    {
+      "student": "Student 080",
+      "mentor": "Saurabh K Gupta",
+      "confidence": 7,
+      "rationale": "Saurabh K Gupta's expertise in AI & Emerging Tech, Product Development/Design, Industry Applications/Use Cases, and Innovation Processes aligns with the mentee's top choice of Campus and Industry Innovation Project Leader. the mentee wants to work on real, well-defined problems while taking on leadership roles with meaningful responsibility and applying his technical background to projects with tangible impact. Saurabh's industry applications and product development expertise can support the mentee's goals of improving campus systems or addressing industry partner challenges."
+    },
+    {
+      "student": "Student 082",
+      "mentor": "Max Landau",
+      "confidence": 7,
+      "rationale": "Max Landau's expertise in AI & Emerging Tech and Career Advice & Professional Growth matches the mentee's interests in both the Venture Pathway, where the mentee's team is developing a degree planning tool, and the Campus and Industry Innovation Project Leader track, where the mentee wants to work on projects with real-world practical business uses. Max's industry experience can provide valuable guidance for the mentee's product development goals."
+    },
+    {
+      "student": "Student 086",
+      "mentor": "Brooks Boyd",
+      "confidence": 7,
+      "rationale": "Brooks Boyd's expertise in Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns with the mentee's interest in the Venture Pathway, where the mentee wants structured process and feedback to turn ideas into something real and usable. Brooks can provide guidance on the hands-on, collaborative learning approach that the mentee values in events like hackathons and build nights."
+    },
+    {
+      "student": "Student 087",
+      "mentor": "Christian Kaczmarczyk",
+      "confidence": 7,
+      "rationale": "Christian Kaczmarczyk's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Innovation Processes aligns well with the mentee's experience working on an industry-facing project with SBDC and her interest in translating client needs into technical solutions. His background in Entrepreneurship/Venture Creation can support the mentee's goal of taking on leadership responsibility while working on real-world applications and continuing to build practical skills."
+    },
+    {
+      "student": "Student 088",
+      "mentor": "Andy Siedschlag",
+      "confidence": 7,
+      "rationale": "Andy Siedschlag's expertise in Product Development/Design, Innovation Processes, and Career Advice & Professional Growth directly aligns with the mentee's top choice of the Campus and Industry Innovation Project Leader track. Andy can support the mentee's goal of working with technologies actively used in industry while solving real problems with real constraints, and help the mentee apply technical skills to make meaningful impact."
+    },
+    {
+      "student": "Student 094",
+      "mentor": "Ali Abtahi",
+      "confidence": 7,
+      "rationale": "Ali Abtahi's background as co-founder of Global Venture Group focused on seed and early-stage investments in health sectors, combined with his educational background in molecular biology and epidemiology, aligns exceptionally well with the mentee's top choices. Ali's keen interest in assisting startups in health and medical sectors directly supports the mentee's Venture Pathway goals at the early validation stage and the Digital Health Challenge focus on health, wellness, and AI."
+    },
+    {
+      "student": "Student 095",
+      "mentor": "Saurabh K Gupta",
+      "confidence": 7,
+      "rationale": "Saurabh K Gupta's expertise in AI & Emerging Tech, Product Development/Design, Industry Applications/Use Cases, and Innovation Processes aligns perfectly with the mentee's top choice of Campus and Industry Innovation Project Leader. Saurabh can support the mentee's goal of applying his background in data science, machine learning, and AI to enterprise or research-driven challenges, and also guide the mentee's Self-Directed Exploration interest in prototyping ideas in applied AI, automation, and intelligent systems."
+    },
+    {
+      "student": "Student 096",
+      "mentor": "Ali Abtahi",
+      "confidence": 7,
+      "rationale": "Ali Abtahi's background as co-founder of Global Venture Group, a venture capital firm focused on seed and early-stage investments with emphasis on health sectors, directly aligns with the mentee's top choice of Venture Pathway for early validation stage work. Additionally, Ali's keen interest in assisting startups in health and medical sectors matches the mentee's Digital Health Challenge interest, as the mentee's idea focuses on health, wellness, and AI. Ali's combined expertise in strategic advisory services and health-focused venture investments makes him well-suited to guide the mentee through both validation and impact-driven refinement."
+    },
+    {
+      "student": "Student 099",
+      "mentor": "Shayna Hetzel",
+      "confidence": 7,
+      "rationale": "Shayna Hetzel's expertise in Entrepreneurship/Venture Creation aligns with the mentee's top choice of Venture Discovery, where he wants to return to the cycle of testing assumptions, getting feedback, and improving ideas. Her additional focus on Industry Applications/Use Cases directly matches the mentee's second choice of Industry Innovation/Co-Labs, where he's interested in working on real problems with clear constraints and stakeholders. Shayna's combined mentorship areas cover both the foundational validation work and practical application settings that the mentee seeks."
+    },
+    {
+      "student": "Student 101",
+      "mentor": "Brooks Boyd",
+      "confidence": 7,
+      "rationale": "Brooks Boyd's expertise in Industry Applications/Use Cases can help the mentee identify interesting projects across different domains that align with his passions. Additionally, Brooks's focus on Career Advice & Professional Growth will support the mentee's goal of gaining meaningful experience. Brooks's knowledge of Innovation Processes can guide the mentee in contributing effectively to projects he's passionate about building."
+    },
+    {
+      "student": "Student 103",
+      "mentor": "Cathy Carlson-Barchus",
+      "confidence": 7,
+      "rationale": "Cathy Carlson-Barchus's expertise in Product Development/Design and Innovation Processes directly aligns with the mentee's interest in translating complex systems into usable, human-centered products as she works on her autonomous trucking thesis. Cathy's focus on Entrepreneurship/Venture Creation supports the mentee's Co-Labs interest in working on real campus or company problem statements with leadership roles. Her combined expertise in product design and innovation processes will help the mentee bridge her technical research experience with building impactful, real-world solutions."
+    },
+    {
+      "student": "Student 104",
+      "mentor": "David Pulvermacher",
+      "confidence": 7,
+      "rationale": "David Pulvermacher's expertise in AI & Emerging Tech and Product Development/Design aligns with the mentee's goal of contributing to meaningful UW Tech Projects that provide impact. David's product development focus will help the mentee build tangible contributions to discuss in full-time role interviews. This pairing supports the mentee's dual objectives of creating meaningful impact and advancing his professional prospects."
+    },
+    {
+      "student": "Student 107",
+      "mentor": "Zainab Hameed",
+      "confidence": 7,
+      "rationale": "Zainab Hameed's expertise in Product Development/Design and Entrepreneurship/Venture Creation directly aligns with the mentee's top choice of Venture Pathway, where she wants end-to-end project experience with applied learning and exploration. Zainab's focus on Innovation Processes supports the mentee's interest in taking steps to find solutions, validate, research, and test. Her combined mentorship areas match the mentee's desire to work on meaningful projects while applying her HCI, computer science, and statistics knowledge to build solutions that help people."
+    },
+    {
+      "student": "Student 108",
+      "mentor": "Max Landau",
+      "confidence": 7,
+      "rationale": "Max Landau's expertise in AI & Emerging Tech aligns with the mentee's Self-Directed Exploration interest in experimenting with emerging tech and continuing her C++/Arduino hardware integration projects. His focus on Career Advice & Professional Growth supports the mentee's desire for community involvement with academic flexibility. Max's technical expertise will provide valuable mentorship for the mentee's current projects while respecting her need for creative experimentation without rigid venture-track pressure."
+    },
+    {
+      "student": "Student 110",
+      "mentor": "Grant Watkins",
+      "confidence": 7,
+      "rationale": "Grant Watkins's expertise in AI & Emerging Tech, Product Development/Design, and Entrepreneurship/Venture Creation aligns with the mentee's dual interests in Campus and Industry Innovation Project Leader and Venture Pathway. His focus on Innovation Processes supports the mentee's goal of developing and growing through campus/company challenges in biotech and enterprise tech areas. Grant's combined technical and entrepreneurial expertise will help the mentee work on projects in her areas of interest while developing her innovation capabilities."
+    },
+    {
+      "student": "Student 112",
+      "mentor": "Brett Hawkins",
+      "confidence": 7,
+      "rationale": "Brett's expertise in Entrepreneurship/Venture Creation directly supports the mentee's primary interest in the Venture Pathway and desire to test technical projects for real-world potential. His knowledge in AI & Emerging Tech and Innovation Processes can help the mentee learn how to bridge the gap between prototype and real product, specifically addressing her interest in the validation aspect. Brett's background aligns with the mentee's goal of graduating with a validated project under her belt."
+    },
+    {
+      "student": "Student 113",
+      "mentor": "Nicki Doggart",
+      "confidence": 7,
+      "rationale": "Nicki's expertise in AI & Emerging Tech, Product Development/Design, and Entrepreneurship/Venture Creation aligns with the mentee's passion for developing healthcare solutions and building something revolutionary. Her knowledge in Industry Applications/Use Cases and Go-to-market strategy can support the mentee's experience with NLP solutions and tracking apps in the healthcare space. Nicki's background can help the mentee with rapid ideation and building, which connects to the mentee's interest in hackathons and rapid development."
+    },
+    {
+      "student": "Student 011",
+      "mentor": "Joey Frayne",
+      "confidence": 6,
+      "rationale": "Joey's expertise in Entrepreneurship/Venture Creation and Career Advice & Professional Growth aligns with the mentee's interest in the Venture Pathway for their PersonaXR project. the mentee enjoyed previous mentorship and is interested in continuing venture-focused guidance, which matches Joey's entrepreneurship and career mentorship focus."
+    },
+    {
+      "student": "Student 013",
+      "mentor": "Andrea Stein",
+      "confidence": 6,
+      "rationale": "Andrea's expertise in Career Advice & Professional Growth and Marketing can support the mentee's interest in the Venture pathway as he works with the AI sports team next semester. Her career guidance and marketing expertise can provide valuable mentorship for venture development."
+    },
+    {
+      "student": "Student 019",
+      "mentor": "Brooks Boyd",
+      "confidence": 6,
+      "rationale": "Brooks Boyd's expertise in Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns with the mentee's priority for the Campus and Industry Innovation Project Leader role. the mentee wants to lead projects that bridge academic learning with practical industry impact in areas like enterprise technology and AI, which connects to Brooks's strengths in translating innovation into real-world applications. Brooks's background can support the mentee's goal of becoming a technology leader who translates innovative ideas into tangible outcomes."
+    },
+    {
+      "student": "Student 023",
+      "mentor": "Ali Abtahi",
+      "confidence": 6,
+      "rationale": "Ali Abtahi's background as co-founder of Global Venture Group focused on health and medical sectors, combined with his educational background in molecular biology, epidemiology, and public health, directly aligns with the mentee's interest in the Digital Health Challenge. the mentee wants to bridge her majors in Rehabilitation Psychology and Information Science to explore health informatics, which connects to Ali's keen interest in assisting startups in health and medical sectors. Ali's experience with university-affiliated ventures can help the mentee gain hands-on experience in understanding the foundations of digital health and information."
+    },
+    {
+      "student": "Student 052",
+      "mentor": "Kurt Malueg",
+      "confidence": 6,
+      "rationale": "Kurt's expertise in AI & Emerging Tech and Product Development/Design aligns well with the mentee's top choice of the Venture Pathway. the mentee has many different ideas but lacks motivation and channels to turn them into something concrete, which is exactly what she wants to do. Kurt's product development expertise can provide the practical guidance and structure the mentee needs to transform her various ideas into reality through concrete development processes."
+    },
+    {
+      "student": "Student 056",
+      "mentor": "Ben Dreher",
+      "confidence": 6,
+      "rationale": "the mentee is extremely interested in Campus and Industry Innovation to work on real campus/company challenges and apply tech knowledge in the real world. Ben's expertise in Product Development/Design and Industry Applications/Use Cases directly supports the mentee's goal of applying skills to real-world challenges, while his Career Advice & Professional Growth experience can guide her development."
+    },
+    {
+      "student": "Student 079",
+      "mentor": "Ben Dreher",
+      "confidence": 6,
+      "rationale": "Ben Dreher's expertise in Product Development/Design, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns with the mentee's interest in Campus and Industry Innovation Project Leader - Co-Labs and Problem Statements. the mentee wants to gain experience applying her skills to solve real-world problems while connecting with industry to learn about practical applications. Ben's industry applications and career advice background can support the mentee's goals of bridging her skills with real-world problem-solving."
+    },
+    {
+      "student": "Student 084",
+      "mentor": "Joey Frayne",
+      "confidence": 6,
+      "rationale": "Joey Frayne's expertise in Entrepreneurship/Venture Creation and Career Advice & Professional Growth directly aligns with the mentee's interest in the Venture Pathway, where the mentee wants to build something concrete from classroom skills. Joey can provide guidance on translating classroom knowledge into real-world team-based projects and events that the mentee is interested in pursuing."
+    },
+    {
+      "student": "Student 100",
+      "mentor": "Joey Frayne",
+      "confidence": 6,
+      "rationale": "Joey Frayne's expertise in Entrepreneurship/Venture Creation and Career Advice & Professional Growth aligns well with the mentee's goals. the mentee's second choice is the Venture Pathway, where he is passionate about startups and seeks structured guidance to validate and refine his ideas into successful ventures. Joey's entrepreneurship focus can provide the mentorship the mentee needs to develop his venture ideas while also supporting his professional growth aspirations."
+    },
+    {
+      "student": "Student 003",
+      "mentor": "Rich Fischer",
+      "confidence": 5,
+      "rationale": "Rich's expertise in Product Development/Design, Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes matches the mentee's goal as a Campus and Industry Innovation Project Leader. the mentee wants to apply his technical background to real-world operational challenges and take ownership from problem statement to deployed solution, which aligns with Rich's focus on product development and industry applications."
+    },
+    {
+      "student": "Student 027",
+      "mentor": "Rich Fischer",
+      "confidence": 5,
+      "rationale": "Rich's expertise in Product Development/Design, Industry Applications / Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns perfectly with the mentee's goal of moving from technical execution to overseeing projects from start to finish. the mentee has experience managing HPC workflows, full stack development, and architecting ML pipelines, and Rich's product development and industry applications knowledge can help him transition to the Campus and Industry Innovation Project Leader role. Rich's career advice expertise also supports the mentee's professional growth trajectory within a team environment."
+    },
+    {
+      "student": "Student 045",
+      "mentor": "Rich Fischer",
+      "confidence": 5,
+      "rationale": "Rich's expertise in Product Development/Design, Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns well with the mentee's interests as a data science major. the mentee seeks AI or data-driven enterprise problem statements focused on analytics, decision-making, and user behavior, wanting to translate insights into actionable outcomes. Rich's industry applications and product development expertise can guide the mentee in applying machine learning and data analysis to real-world challenges while supporting her leadership-focused project goals."
     }
   ],
   "unmatched": [
@@ -1064,61 +546,5 @@
     "Student 105",
     "Student 106",
     "Student 116"
-  ],
-  "reconciliation": {
-    "mentors_total": 34,
-    "mentors_in_1to1_pool": 27,
-    "mentors_excluded": 7,
-    "excluded_detail": [
-      {
-        "reasons": [
-          "no 1:1 mentoring format (panel/group/blank only)"
-        ]
-      },
-      {
-        "reasons": [
-          "no 1:1 mentoring format (panel/group/blank only)"
-        ]
-      },
-      {
-        "reasons": [
-          "no 1:1 mentoring format (panel/group/blank only)"
-        ]
-      },
-      {
-        "reasons": [
-          "no 1:1 mentoring format (panel/group/blank only)"
-        ]
-      },
-      {
-        "reasons": [
-          "no 1:1 mentoring format (panel/group/blank only)",
-          "consent_to_share = No"
-        ]
-      },
-      {
-        "reasons": [
-          "no 1:1 mentoring format (panel/group/blank only)",
-          "consent_to_share = No"
-        ]
-      },
-      {
-        "reasons": [
-          "no 1:1 mentoring format (panel/group/blank only)"
-        ]
-      }
-    ],
-    "total_mentor_slots": 85,
-    "students_total": 116,
-    "expected_unmatched": 31,
-    "unknown_capacity_count": 1,
-    "mentor_request_field_present": false,
-    "students_matched_by_default": 116,
-    "matched": 85,
-    "unmatched": 31,
-    "solver_total_score": 690,
-    "scipy_cross_check_total": 690,
-    "solver_agreement": true
-  },
-  "privacy": "Students anonymized as 'Student NNN'; mentor names shown only with consent_to_share=Yes. Identifiable data kept internal (gitignored output/)."
+  ]
 }

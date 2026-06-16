@@ -7,204 +7,211 @@
 <style>
   :root{
     --ink:#15171c; --ink-2:#5b6472; --line:#e6e3dc; --bg:#f4f1ea; --card:#fffdf8;
-    --accent:#b4532a; --accent-2:#1f6f6b; --good:#2f7a4f; --warn:#a8762b; --chipbg:#efe9dd;
+    --accent:#b4532a; --accent-2:#1f6f6b; --chipbg:#efe9dd;
   }
   *{box-sizing:border-box} html,body{margin:0}
   body{font-family:"Iowan Old Style","Palatino Linotype",Georgia,serif;color:var(--ink);
        background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
-  header{border-bottom:1px solid var(--line);padding:30px 0 22px}
-  .kicker{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.18em;
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);padding:26px 0 18px;display:flex;
+         justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+  .kicker{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.16em;
           text-transform:uppercase;color:var(--accent)}
-  h1{font-size:34px;margin:.18em 0 .1em;font-weight:600;letter-spacing:-.01em}
-  .sub{color:var(--ink-2);font-size:15px;max-width:62ch}
-  .badge{display:inline-block;font-family:ui-monospace,monospace;font-size:11px;padding:3px 9px;
-         border:1px solid var(--line);border-radius:999px;background:var(--chipbg);color:var(--ink-2);
-         vertical-align:middle;margin-left:8px}
-  .stats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin:24px 0}
-  .stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
-  .stat b{display:block;font-size:26px;font-weight:600;font-variant-numeric:tabular-nums}
-  .stat span{font-size:11px;color:var(--ink-2);text-transform:uppercase;letter-spacing:.06em}
-  nav{display:flex;gap:4px;margin:8px 0 22px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
-  nav button{font-family:inherit;font-size:14px;background:none;border:none;padding:10px 14px;
-             color:var(--ink-2);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
-  nav button.on{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
-  section{display:none;padding-bottom:60px} section.on{display:block}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:12px 0}
-  .pair{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
-  .pair .m{font-size:18px;font-weight:600}
-  .pair .arrow{color:var(--accent);font-size:13px;font-family:ui-monospace,monospace}
-  .conf{font-family:ui-monospace,monospace;font-size:12px;padding:3px 9px;border-radius:999px;
-        background:var(--accent-2);color:#fff;white-space:nowrap}
-  .rat{margin:10px 0 0;color:#2b2f37;font-size:15px}
-  .crit{display:flex;gap:14px;margin-top:12px;flex-wrap:wrap}
-  .crit div{font-size:11px;color:var(--ink-2);font-family:ui-monospace,monospace}
-  .bar{height:5px;width:78px;background:#e9e4d8;border-radius:3px;overflow:hidden;margin-top:3px}
-  .bar i{display:block;height:100%;background:var(--accent-2)}
-  table{width:100%;border-collapse:collapse;font-size:14px;background:var(--card);
-        border:1px solid var(--line);border-radius:10px;overflow:hidden}
-  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line)}
-  th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-2);background:#faf7f0}
-  .ul{columns:3;font-size:14px;color:var(--ink-2)} .ul div{break-inside:avoid;padding:2px 0}
-  .gridbars{display:grid;gap:10px;max-width:520px}
-  .gb{display:grid;grid-template-columns:160px 1fr 42px;align-items:center;gap:10px;font-size:13px}
-  .gb .track{height:9px;background:#e9e4d8;border-radius:5px;overflow:hidden}
-  .gb .track i{display:block;height:100%;background:var(--accent)}
-  .btn{font-family:inherit;font-size:14px;border:1px solid var(--ink);background:var(--ink);color:#fff;
-       padding:9px 16px;border-radius:8px;cursor:pointer;text-decoration:none;display:inline-block}
+  h1{font-size:27px;margin:.2em 0 0;font-weight:600;letter-spacing:-.01em}
+  .who{font-size:12px;color:var(--ink-2);margin-top:3px}
+  .badge{display:inline-block;font-family:ui-monospace,monospace;font-size:10px;padding:2px 8px;
+         border:1px solid var(--line);border-radius:999px;background:var(--chipbg);color:var(--ink-2);margin-left:6px}
+  .badge.adm{background:var(--accent-2);color:#fff;border-color:var(--accent-2)}
+  .controls{display:flex;gap:10px;align-items:center;margin:18px 0 14px;flex-wrap:wrap}
+  .seg{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--card)}
+  .seg button{font-family:inherit;font-size:13px;border:none;background:none;padding:8px 14px;cursor:pointer;color:var(--ink-2)}
+  .seg button.on{background:var(--ink);color:#fff}
+  input[type=search],input[type=password]{font-family:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--line);
+        border-radius:9px;background:var(--card);flex:1;min-width:180px}
+  .btn{font-family:inherit;font-size:13px;border:1px solid var(--ink);background:var(--ink);color:#fff;
+       padding:8px 13px;border-radius:9px;cursor:pointer;text-decoration:none;white-space:nowrap}
   .btn.ghost{background:transparent;color:var(--ink)}
-  .note{font-size:13px;color:var(--ink-2);background:#faf7f0;border:1px solid var(--line);
-        border-radius:8px;padding:12px 14px;margin:10px 0}
-  input[type=file],input[type=password]{font-family:inherit;font-size:13px;padding:8px;border:1px solid var(--line);
-        border-radius:7px;background:#fff;width:100%;margin:6px 0}
-  footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:12px;padding:20px 0 50px}
-  @media(max-width:760px){.stats{grid-template-columns:repeat(3,1fr)}.ul{columns:1}.gb{grid-template-columns:110px 1fr 36px}}
+  .btn.sm{font-size:12px;padding:5px 10px}
+  .spacer{flex:1}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:13px 16px;margin:9px 0;cursor:pointer}
+  .row1{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .pair{font-size:15px}
+  .pair .mn{font-weight:600}
+  .pair .ar{color:var(--accent);font-family:ui-monospace,monospace;font-size:11px;margin:0 6px}
+  .pair .st{color:var(--ink)}
+  .em{display:block;font-size:11px;color:var(--ink-2);font-family:ui-monospace,monospace;margin-top:1px}
+  .conf{font-family:ui-monospace,monospace;font-size:11px;padding:3px 8px;border-radius:999px;
+        background:var(--accent-2);color:#fff;white-space:nowrap}
+  .rat{margin:7px 0 0;color:#2b2f37;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .card.open .rat{white-space:normal}
+  .cardacts{margin-top:9px;display:none}.card.open .cardacts{display:block}
+  .um{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:11px 16px;margin:7px 0;font-size:14px}
+  .um .em{display:inline;margin-left:8px}
+  .pager{display:flex;justify-content:center;align-items:center;gap:14px;margin:18px 0 50px;color:var(--ink-2);font-size:13px}
+  .pager button{font-family:inherit;font-size:13px;border:1px solid var(--line);background:var(--card);border-radius:8px;padding:6px 12px;cursor:pointer}
+  .pager button:disabled{opacity:.4;cursor:default}
+  .empty{color:var(--ink-2);padding:30px 4px;text-align:center}
+  .note{font-size:12px;color:var(--ink-2);background:#faf7f0;border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:10px 0}
+  dialog{border:1px solid var(--line);border-radius:12px;padding:20px;max-width:340px;background:var(--card)}
+  dialog::backdrop{background:rgba(20,20,20,.35)}
+  footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:12px;padding:16px 0 40px}
+  @media(max-width:600px){.em{display:block}}
 </style>
 </head>
 <body>
-<header><div class="wrap">
-  <div class="kicker">UW Tech Exploration Lab · Ghost Social — LLM matching arm</div>
-  <h1>Mentor–Mentee Matches <span class="badge" id="modeBadge">{{ mode }}</span></h1>
-  <p class="sub">One-to-one pairings with grounded rationales and an evidence-based confidence score.
-     Assignment is a global optimum (min-cost max-flow), cross-checked against the Hungarian algorithm.
-     Students are anonymized; mentor names appear only with sharing consent.</p>
+<header><div class="wrap" style="display:flex;justify-content:space-between;align-items:flex-end;width:100%">
+  <div>
+    <div class="kicker">UW Tech Exploration Lab · Ghost Social</div>
+    <h1>Mentor–Mentee Matches <span class="badge" id="viewBadge">blind</span></h1>
+    <div class="who" id="counts"></div>
+  </div>
+  <div style="display:flex;gap:8px">
+    <a class="btn ghost sm" href="/api/report">PDF</a>
+    {% if admin_enabled %}<button class="btn sm" id="adminBtn">Admin view</button>{% endif %}
+  </div>
 </div></header>
 
 <div class="wrap">
-  <div class="stats" id="stats"></div>
-  <nav id="nav">
-    <button class="on" data-t="matches">Matches</button>
-    <button data-t="unmatched">Unmatched</button>
-    <button data-t="analysis">Analysis</button>
-    <button data-t="compare">Compare</button>
-    {% if live %}<button data-t="regen">Regenerate</button>{% endif %}
-    <span style="flex:1"></span>
-    <a class="btn ghost" href="/api/report" style="margin:5px 0;font-size:13px;padding:7px 12px">Export PDF</a>
-  </nav>
-
-  <section class="on" id="matches"></section>
-  <section id="unmatched"></section>
-  <section id="analysis"></section>
-
-  <section id="compare">
-    <div class="note">Upload another condition's CSV (<code>mentee_name,mentor_name,confidence_score</code>)
-      to compute Cohen's κ agreement on the pairs both conditions proposed. Keys must match the displayed ids.</div>
-    <input type="file" id="cmpFile" accept=".csv">
-    <button class="btn" onclick="runCompare()">Compare</button>
-    <div id="cmpOut" style="margin-top:14px"></div>
-  </section>
-
-  {% if live %}
-  <section id="regen">
-    <div class="note"><b>Live mode.</b> This is the only action that calls the Claude API and spends budget.
-      It is password-gated. Upload the mentor sheet and the student sheet to regenerate.</div>
-    <input type="password" id="pw" placeholder="Admin password">
-    <label style="font-size:12px;color:var(--ink-2)">Mentors (.xlsx/.csv)</label>
-    <input type="file" id="mFile" accept=".xlsx,.xls,.csv">
-    <label style="font-size:12px;color:var(--ink-2)">Students (.csv/.xlsx)</label>
-    <input type="file" id="sFile" accept=".csv,.xlsx,.xls">
-    <button class="btn" onclick="runRegen()">Run matching</button>
-    <div id="regenOut" style="margin-top:14px"></div>
-  </section>
-  {% endif %}
+  <div class="controls">
+    <div class="seg" id="tabs">
+      <button data-tab="matched" class="on">Matched</button>
+      <button data-tab="unmatched">Unmatched</button>
+    </div>
+    <input type="search" id="q" placeholder="Search by mentor or student…">
+    <span id="adminTools" style="display:none;gap:8px">
+      <button class="btn sm" id="csvBtn">Export CSV</button>
+      <button class="btn ghost sm" id="blindBtn">Back to blind</button>
+    </span>
+  </div>
+  <div id="list"></div>
+  <div class="pager" id="pager"></div>
 </div>
 
 <footer><div class="wrap" id="foot"></div></footer>
 
+{% if admin_enabled %}
+<dialog id="pwDlg">
+  <form method="dialog" id="pwForm">
+    <div style="font-weight:600;margin-bottom:6px">Coordinator access</div>
+    <div class="note" style="margin-top:0">Shows real student + mentor names and emails. Not for blind review.</div>
+    <input type="password" id="pwInput" placeholder="Password" style="width:100%" autofocus>
+    <div id="pwErr" style="color:var(--accent);font-size:12px;min-height:16px"></div>
+    <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">
+      <button class="btn ghost sm" value="cancel">Cancel</button>
+      <button class="btn sm" id="pwGo" value="ok">Unlock</button>
+    </div>
+  </form>
+</dialog>
+{% endif %}
+
 <script>
 const $=s=>document.querySelector(s), el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
-let DATA=null;
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const PAGE=12;
+let PUB=null, ADM=null, admin=false, pw="", tab="matched", q="", page=1;
 
-document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>{
-  document.querySelectorAll('#nav button').forEach(x=>x.classList.remove('on'));
-  document.querySelectorAll('section').forEach(x=>x.classList.remove('on'));
-  b.classList.add('on'); $('#'+b.dataset.t).classList.add('on');
-});
+async function boot(){
+  PUB=await (await fetch('/api/results')).json();
+  $('#counts').textContent=`${PUB.counts.matched} matched · ${PUB.counts.unmatched} unmatched · ${PUB.generation_mode} run`;
+  $('#foot').textContent=`Generated ${(PUB.generated_at||'').slice(0,19).replace('T',' ')} UTC · blind link carries no student names or emails.`;
+  render();
+}
+$('#tabs').onclick=e=>{const b=e.target.closest('button');if(!b)return;
+  [...$('#tabs').children].forEach(x=>x.classList.toggle('on',x===b));tab=b.dataset.tab;page=1;render();};
+$('#q').oninput=e=>{q=e.target.value.toLowerCase().trim();page=1;render();};
 
-function stat(v,l){const d=el('div','stat');d.append(el('b',null,v),el('span',null,l));return d}
-function critBar(k,v){const d=el('div',null,`${k.replace(/_/g,' ')} ${v}/10`);
-  const bar=el('div','bar');bar.append(el('i',null,''));bar.firstChild.style.width=(v*10)+'%';d.append(bar);return d}
-function esc(s){return String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
+function curList(){
+  if(admin) return tab==='matched'?ADM.matches:ADM.unmatched;
+  return tab==='matched'?PUB.matches:PUB.unmatched.map(s=>({student:s}));
+}
+function matchQ(item){
+  if(!q) return true;
+  const hay = admin
+    ? [item.student_label,item.student_name,item.student_email,item.mentor_name,item.mentor_email]
+    : [item.student,item.mentor];
+  return hay.filter(Boolean).join(' ').toLowerCase().includes(q);
+}
 
 function render(){
-  const s=DATA.stats||{};
-  $('#stats').innerHTML='';
-  [['matched','Matched'],['unmatched','Unmatched'],['mentors_pool','1:1 mentors'],
-   ['total_slots','Slots'],['avg_confidence','Avg conf'],['solver_agreement','Solver ✓']]
-   .forEach(([k,l])=>$('#stats').append(stat(String(s[k]),l)));
-
-  const mx=$('#matches'); mx.innerHTML='';
-  (DATA.matches||[]).forEach(m=>{
-    const c=el('div','card');
-    const top=el('div','pair');
-    top.append(el('div','m',`${esc(m.mentee_name)} <span class="arrow">paired with</span> ${esc(m.mentor_name)}`),
-               el('div','conf',`confidence ${m.confidence_score}/10`));
-    c.append(top, el('p','rat',esc(m.rationale)));
-    const cr=el('div','crit'); Object.entries(m.criteria_scores||{}).forEach(([k,v])=>cr.append(critBar(k,v)));
-    c.append(cr); mx.append(c);
-  });
-
-  const um=$('#unmatched');
-  um.innerHTML=`<div class="note">${(DATA.unmatched||[]).length} students exceed available mentor capacity
-    (${s.total_slots} 1:1 slots for ${s.students} students). They are surfaced, never silently dropped.</div>`;
-  const ul=el('div','ul'); (DATA.unmatched||[]).forEach(n=>ul.append(el('div',null,esc(n)))); um.append(ul);
-
-  $('#foot').innerHTML=`Generated ${ esc((DATA.generated_at||'').slice(0,19).replace('T',' ')) } UTC ·
-    mode <b>${esc(DATA.generation_mode)}</b> · ${esc(DATA.privacy||'')}`;
+  $('#viewBadge').textContent=admin?'admin':'blind';
+  $('#viewBadge').className='badge'+(admin?' adm':'');
+  const items=curList().filter(matchQ);
+  const pages=Math.max(1,Math.ceil(items.length/PAGE));
+  page=Math.min(page,pages);
+  const slice=items.slice((page-1)*PAGE,page*PAGE);
+  const L=$('#list'); L.innerHTML='';
+  if(!slice.length){L.append(el('div','empty','No results.'));}
+  else if(tab==='matched') slice.forEach(m=>L.append(matchedCard(m)));
+  else slice.forEach(u=>L.append(unmatchedRow(u)));
+  const P=$('#pager'); P.innerHTML='';
+  if(pages>1){
+    const prev=el('button',null,'‹ Prev');prev.disabled=page<=1;prev.onclick=()=>{page--;render();};
+    const next=el('button',null,'Next ›');next.disabled=page>=pages;next.onclick=()=>{page++;render();};
+    P.append(prev, el('span',null,`Page ${page} of ${pages} · ${items.length} shown`), next);
+  } else if(items.length) P.append(el('span',null,`${items.length} shown`));
 }
 
-async function loadAnalysis(){
-  const a=await (await fetch('/api/analysis')).json();
-  const sec=$('#analysis'); sec.innerHTML='';
-  const c1=el('div','card'); c1.append(el('h3',null,'Average score by criterion'));
-  const g=el('div','gridbars');
-  Object.entries(a.criteria_avg).forEach(([k,v])=>{
-    const row=el('div','gb'); const tr=el('div','track'); tr.append(el('i'));tr.firstChild.style.width=(v*10)+'%';
-    row.append(el('div',null,k.replace(/_/g,' ')),tr,el('div',null,v)); g.append(row);
-  });
-  c1.append(g); sec.append(c1);
-
-  const c2=el('div','card'); c2.append(el('h3',null,'Confidence distribution'));
-  const g2=el('div','gridbars'); const mx=Math.max(1,...Object.values(a.confidence_histogram));
-  Object.entries(a.confidence_histogram).filter(([k,v])=>v>0).forEach(([k,v])=>{
-    const row=el('div','gb'); const tr=el('div','track'); tr.append(el('i'));tr.firstChild.style.width=(100*v/mx)+'%';
-    row.append(el('div',null,'conf '+k),tr,el('div',null,v)); g2.append(row);
-  });
-  c2.append(g2,el('p','rat',`Slot utilization ${a.slot_utilization_pct}% · match rate ${a.match_rate_pct}%`));
-  sec.append(c2);
-
-  const r=a.reconciliation||{}; const c3=el('div','card'); c3.append(el('h3',null,'Reconciliation'));
-  const t=el('table'); t.innerHTML='<tr><th>Metric</th><th>Value</th></tr>'+
-    [['Mentors total',r.mentors_total],['In 1:1 pool',r.mentors_in_1to1_pool],
-     ['Excluded (panel-only / no consent)',r.mentors_excluded],['Total slots',r.total_mentor_slots],
-     ['Students',r.students_total],['Expected unmatched',r.expected_unmatched],
-     ['Unknown capacity (defaulted)',r.unknown_capacity_count],
-     ['Solver agreement (OR-Tools vs scipy)',r.solver_agreement]]
-    .map(([k,v])=>`<tr><td>${esc(k)}</td><td>${esc(v)}</td></tr>`).join('');
-  c3.append(t); sec.append(c3);
+function matchedCard(m){
+  const c=el('div','card');
+  const student = admin
+    ? `<span class="st">${esc(m.student_name)||esc(m.student_label)}<span class="em">${esc(m.student_email)}</span></span>`
+    : `<span class="st">${esc(m.student)}</span>`;
+  const mentor = admin
+    ? `<span class="mn">${esc(m.mentor_name)}<span class="em">${esc(m.mentor_email)}</span></span>`
+    : `<span class="mn">${esc(m.mentor)}</span>`;
+  const conf = admin?m.confidence:m.confidence;
+  c.innerHTML=`<div class="row1"><div class="pair">${mentor}<span class="ar">→</span>${student}</div>
+    <span class="conf">conf ${esc(conf)}/10</span></div>
+    <div class="rat">${esc(m.rationale)}</div>`;
+  const acts=el('div','cardacts');
+  if(admin){
+    const cp=el('button','btn ghost sm','Copy contact info');
+    cp.onclick=ev=>{ev.stopPropagation();
+      const txt=`Mentor: ${m.mentor_name} <${m.mentor_email}>\nStudent: ${m.student_name} <${m.student_email}>`;
+      navigator.clipboard.writeText(txt).then(()=>{cp.textContent='Copied ✓';setTimeout(()=>cp.textContent='Copy contact info',1200);});};
+    acts.append(cp);
+  }
+  c.append(acts);
+  c.onclick=()=>c.classList.toggle('open');
+  return c;
+}
+function unmatchedRow(u){
+  const r=el('div','um');
+  if(admin) r.innerHTML=`${esc(u.student_name)||esc(u.student_label)}<span class="em">${esc(u.student_email)}</span>`;
+  else r.textContent=u.student;
+  return r;
 }
 
-async function runCompare(){
-  const f=$('#cmpFile').files[0]; if(!f){$('#cmpOut').textContent='Choose a CSV first.';return}
-  const fd=new FormData(); fd.append('file',f);
-  const r=await (await fetch('/api/comparison',{method:'POST',body:fd})).json();
-  $('#cmpOut').innerHTML = r.error ? `<div class="note">${esc(r.error)}</div>` :
-    `<div class="card"><b>Cohen's κ: ${r.cohens_kappa}</b><p class="rat">${r.shared_pairs} shared pairs ·
-     this tool ${r.this_tool_pairs} · uploaded ${r.uploaded_pairs}</p><p class="rat" style="font-size:13px">${esc(r.note)}</p></div>`;
-}
+// ── admin gating ──
+{% if admin_enabled %}
+const dlg=$('#pwDlg');
+$('#adminBtn').onclick=()=>{$('#pwErr').textContent='';$('#pwInput').value='';dlg.showModal();};
+$('#pwForm').addEventListener('submit',async e=>{
+  if(e.submitter && e.submitter.value==='cancel') return;
+  e.preventDefault();
+  const tryPw=$('#pwInput').value;
+  const r=await fetch('/api/admin',{headers:{'X-Admin-Password':tryPw}});
+  if(r.status===401){$('#pwErr').textContent='Incorrect password.';return;}
+  if(r.status===503){$('#pwErr').textContent='Roster not available on this instance.';return;}
+  ADM=await r.json(); pw=tryPw; admin=true; page=1;
+  $('#adminTools').style.display='inline-flex';
+  $('#counts').textContent=`${ADM.matches.length} matched · ${ADM.unmatched.length} unmatched · full contact info`;
+  $('#foot').textContent='Admin view — real names and emails. Do not share this screen for blind review.';
+  dlg.close(); render();
+});
+$('#blindBtn').onclick=()=>{admin=false;ADM=null;pw="";page=1;
+  $('#adminTools').style.display='none';
+  $('#counts').textContent=`${PUB.counts.matched} matched · ${PUB.counts.unmatched} unmatched · ${PUB.generation_mode} run`;
+  $('#foot').textContent='Blind link carries no student names or emails.';render();};
+$('#csvBtn').onclick=async()=>{
+  const r=await fetch('/api/admin/export.csv',{headers:{'X-Admin-Password':pw}});
+  if(!r.ok){alert('Export failed.');return;}
+  const blob=await r.blob(), a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);a.download='ghost_social_roster.csv';a.click();URL.revokeObjectURL(a.href);
+};
+{% endif %}
 
-async function runRegen(){
-  const out=$('#regenOut'); out.textContent='Running…';
-  const fd=new FormData(); fd.append('password',$('#pw').value);
-  if($('#mFile').files[0])fd.append('mentors',$('#mFile').files[0]);
-  if($('#sFile').files[0])fd.append('students',$('#sFile').files[0]);
-  const r=await (await fetch('/api/match',{method:'POST',body:fd})).json();
-  if(r.error){out.innerHTML=`<div class="note">${esc(r.error)}</div>`;return}
-  out.innerHTML=`<div class="note">Done (mode ${esc(r.mode)}). Reloading…</div>`;
-  DATA=await (await fetch('/api/results')).json(); render(); await loadAnalysis();
-}
-
-(async()=>{ DATA=await (await fetch('/api/results')).json(); render(); await loadAnalysis(); })();
+boot();
 </script>
 </body>
 </html>
