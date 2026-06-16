@@ -1,0 +1,38 @@
+# ───────────────────────── Secrets & environment ─────────────────────────
+# Never commit real credentials. .env holds the live ANTHROPIC_API_KEY.
+.env
+.env.*
+!.env.example
+
+# ─────────────── Build transcript (LEAKED KEY + full prompt log) ───────────────
+# The root .txt is a Claude Code session transcript. It contains the plaintext
+# API key on lines 66 & 94 and must never be pushed.
+2026-03-18-023732-build-a-python-based-mentor-mentee-matching-tool-u.txt
+# Defensive: ignore any similarly-named session transcript dropped at the root.
+/*-build-a-python-based-mentor-mentee-matching-tool-*.txt
+
+# ───────────────────────────────── Python ─────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyc
+.venv/
+venv/
+venv*/
+mentor-match/venv/
+mentor-match/venv312/
+*.egg-info/
+.pytest_cache/
+
+# ─────────────── Runtime data & output (may contain real participants) ───────────────
+# These dirs are generated at runtime and can hold real mentor/mentee names,
+# emails, and feedback. A curated, anonymized display dataset (for DISPLAY mode)
+# should be committed deliberately under a separate, reviewed path — not here.
+mentor-match/data/
+mentor-match/output/
+mentor-match/uploads/
+
+# ─────────────────────────────── OS / editor ──────────────────────────────
+.DS_Store
+*.swp
+.idea/
+.vscode/

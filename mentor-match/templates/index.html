@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ghost Social · Mentor–Mentee Matches</title>
+<style>
+  :root{
+    --ink:#15171c; --ink-2:#5b6472; --line:#e6e3dc; --bg:#f4f1ea; --card:#fffdf8;
+    --accent:#b4532a; --accent-2:#1f6f6b; --good:#2f7a4f; --warn:#a8762b; --chipbg:#efe9dd;
+  }
+  *{box-sizing:border-box} html,body{margin:0}
+  body{font-family:"Iowan Old Style","Palatino Linotype",Georgia,serif;color:var(--ink);
+       background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  header{border-bottom:1px solid var(--line);padding:30px 0 22px}
+  .kicker{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.18em;
+          text-transform:uppercase;color:var(--accent)}
+  h1{font-size:34px;margin:.18em 0 .1em;font-weight:600;letter-spacing:-.01em}
+  .sub{color:var(--ink-2);font-size:15px;max-width:62ch}
+  .badge{display:inline-block;font-family:ui-monospace,monospace;font-size:11px;padding:3px 9px;
+         border:1px solid var(--line);border-radius:999px;background:var(--chipbg);color:var(--ink-2);
+         vertical-align:middle;margin-left:8px}
+  .stats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin:24px 0}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+  .stat b{display:block;font-size:26px;font-weight:600;font-variant-numeric:tabular-nums}
+  .stat span{font-size:11px;color:var(--ink-2);text-transform:uppercase;letter-spacing:.06em}
+  nav{display:flex;gap:4px;margin:8px 0 22px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+  nav button{font-family:inherit;font-size:14px;background:none;border:none;padding:10px 14px;
+             color:var(--ink-2);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+  nav button.on{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+  section{display:none;padding-bottom:60px} section.on{display:block}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:12px 0}
+  .pair{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+  .pair .m{font-size:18px;font-weight:600}
+  .pair .arrow{color:var(--accent);font-size:13px;font-family:ui-monospace,monospace}
+  .conf{font-family:ui-monospace,monospace;font-size:12px;padding:3px 9px;border-radius:999px;
+        background:var(--accent-2);color:#fff;white-space:nowrap}
+  .rat{margin:10px 0 0;color:#2b2f37;font-size:15px}
+  .crit{display:flex;gap:14px;margin-top:12px;flex-wrap:wrap}
+  .crit div{font-size:11px;color:var(--ink-2);font-family:ui-monospace,monospace}
+  .bar{height:5px;width:78px;background:#e9e4d8;border-radius:3px;overflow:hidden;margin-top:3px}
+  .bar i{display:block;height:100%;background:var(--accent-2)}
+  table{width:100%;border-collapse:collapse;font-size:14px;background:var(--card);
+        border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line)}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-2);background:#faf7f0}
+  .ul{columns:3;font-size:14px;color:var(--ink-2)} .ul div{break-inside:avoid;padding:2px 0}
+  .gridbars{display:grid;gap:10px;max-width:520px}
+  .gb{display:grid;grid-template-columns:160px 1fr 42px;align-items:center;gap:10px;font-size:13px}
+  .gb .track{height:9px;background:#e9e4d8;border-radius:5px;overflow:hidden}
+  .gb .track i{display:block;height:100%;background:var(--accent)}
+  .btn{font-family:inherit;font-size:14px;border:1px solid var(--ink);background:var(--ink);color:#fff;
+       padding:9px 16px;border-radius:8px;cursor:pointer;text-decoration:none;display:inline-block}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .note{font-size:13px;color:var(--ink-2);background:#faf7f0;border:1px solid var(--line);
+        border-radius:8px;padding:12px 14px;margin:10px 0}
+  input[type=file],input[type=password]{font-family:inherit;font-size:13px;padding:8px;border:1px solid var(--line);
+        border-radius:7px;background:#fff;width:100%;margin:6px 0}
+  footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:12px;padding:20px 0 50px}
+  @media(max-width:760px){.stats{grid-template-columns:repeat(3,1fr)}.ul{columns:1}.gb{grid-template-columns:110px 1fr 36px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="kicker">UW Tech Exploration Lab · Ghost Social — LLM matching arm</div>
+  <h1>Mentor–Mentee Matches <span class="badge" id="modeBadge">{{ mode }}</span></h1>
+  <p class="sub">One-to-one pairings with grounded rationales and an evidence-based confidence score.
+     Assignment is a global optimum (min-cost max-flow), cross-checked against the Hungarian algorithm.
+     Students are anonymized; mentor names appear only with sharing consent.</p>
+</div></header>
+
+<div class="wrap">
+  <div class="stats" id="stats"></div>
+  <nav id="nav">
+    <button class="on" data-t="matches">Matches</button>
+    <button data-t="unmatched">Unmatched</button>
+    <button data-t="analysis">Analysis</button>
+    <button data-t="compare">Compare</button>
+    {% if live %}<button data-t="regen">Regenerate</button>{% endif %}
+    <span style="flex:1"></span>
+    <a class="btn ghost" href="/api/report" style="margin:5px 0;font-size:13px;padding:7px 12px">Export PDF</a>
+  </nav>
+
+  <section class="on" id="matches"></section>
+  <section id="unmatched"></section>
+  <section id="analysis"></section>
+
+  <section id="compare">
+    <div class="note">Upload another condition's CSV (<code>mentee_name,mentor_name,confidence_score</code>)
+      to compute Cohen's κ agreement on the pairs both conditions proposed. Keys must match the displayed ids.</div>
+    <input type="file" id="cmpFile" accept=".csv">
+    <button class="btn" onclick="runCompare()">Compare</button>
+    <div id="cmpOut" style="margin-top:14px"></div>
+  </section>
+
+  {% if live %}
+  <section id="regen">
+    <div class="note"><b>Live mode.</b> This is the only action that calls the Claude API and spends budget.
+      It is password-gated. Upload the mentor sheet and the student sheet to regenerate.</div>
+    <input type="password" id="pw" placeholder="Admin password">
+    <label style="font-size:12px;color:var(--ink-2)">Mentors (.xlsx/.csv)</label>
+    <input type="file" id="mFile" accept=".xlsx,.xls,.csv">
+    <label style="font-size:12px;color:var(--ink-2)">Students (.csv/.xlsx)</label>
+    <input type="file" id="sFile" accept=".csv,.xlsx,.xls">
+    <button class="btn" onclick="runRegen()">Run matching</button>
+    <div id="regenOut" style="margin-top:14px"></div>
+  </section>
+  {% endif %}
+</div>
+
+<footer><div class="wrap" id="foot"></div></footer>
+
+<script>
+const $=s=>document.querySelector(s), el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+let DATA=null;
+
+document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#nav button').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('section').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on'); $('#'+b.dataset.t).classList.add('on');
+});
+
+function stat(v,l){const d=el('div','stat');d.append(el('b',null,v),el('span',null,l));return d}
+function critBar(k,v){const d=el('div',null,`${k.replace(/_/g,' ')} ${v}/10`);
+  const bar=el('div','bar');bar.append(el('i',null,''));bar.firstChild.style.width=(v*10)+'%';d.append(bar);return d}
+function esc(s){return String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
+
+function render(){
+  const s=DATA.stats||{};
+  $('#stats').innerHTML='';
+  [['matched','Matched'],['unmatched','Unmatched'],['mentors_pool','1:1 mentors'],
+   ['total_slots','Slots'],['avg_confidence','Avg conf'],['solver_agreement','Solver ✓']]
+   .forEach(([k,l])=>$('#stats').append(stat(String(s[k]),l)));
+
+  const mx=$('#matches'); mx.innerHTML='';
+  (DATA.matches||[]).forEach(m=>{
+    const c=el('div','card');
+    const top=el('div','pair');
+    top.append(el('div','m',`${esc(m.mentee_name)} <span class="arrow">paired with</span> ${esc(m.mentor_name)}`),
+               el('div','conf',`confidence ${m.confidence_score}/10`));
+    c.append(top, el('p','rat',esc(m.rationale)));
+    const cr=el('div','crit'); Object.entries(m.criteria_scores||{}).forEach(([k,v])=>cr.append(critBar(k,v)));
+    c.append(cr); mx.append(c);
+  });
+
+  const um=$('#unmatched');
+  um.innerHTML=`<div class="note">${(DATA.unmatched||[]).length} students exceed available mentor capacity
+    (${s.total_slots} 1:1 slots for ${s.students} students). They are surfaced, never silently dropped.</div>`;
+  const ul=el('div','ul'); (DATA.unmatched||[]).forEach(n=>ul.append(el('div',null,esc(n)))); um.append(ul);
+
+  $('#foot').innerHTML=`Generated ${ esc((DATA.generated_at||'').slice(0,19).replace('T',' ')) } UTC ·
+    mode <b>${esc(DATA.generation_mode)}</b> · ${esc(DATA.privacy||'')}`;
+}
+
+async function loadAnalysis(){
+  const a=await (await fetch('/api/analysis')).json();
+  const sec=$('#analysis'); sec.innerHTML='';
+  const c1=el('div','card'); c1.append(el('h3',null,'Average score by criterion'));
+  const g=el('div','gridbars');
+  Object.entries(a.criteria_avg).forEach(([k,v])=>{
+    const row=el('div','gb'); const tr=el('div','track'); tr.append(el('i'));tr.firstChild.style.width=(v*10)+'%';
+    row.append(el('div',null,k.replace(/_/g,' ')),tr,el('div',null,v)); g.append(row);
+  });
+  c1.append(g); sec.append(c1);
+
+  const c2=el('div','card'); c2.append(el('h3',null,'Confidence distribution'));
+  const g2=el('div','gridbars'); const mx=Math.max(1,...Object.values(a.confidence_histogram));
+  Object.entries(a.confidence_histogram).filter(([k,v])=>v>0).forEach(([k,v])=>{
+    const row=el('div','gb'); const tr=el('div','track'); tr.append(el('i'));tr.firstChild.style.width=(100*v/mx)+'%';
+    row.append(el('div',null,'conf '+k),tr,el('div',null,v)); g2.append(row);
+  });
+  c2.append(g2,el('p','rat',`Slot utilization ${a.slot_utilization_pct}% · match rate ${a.match_rate_pct}%`));
+  sec.append(c2);
+
+  const r=a.reconciliation||{}; const c3=el('div','card'); c3.append(el('h3',null,'Reconciliation'));
+  const t=el('table'); t.innerHTML='<tr><th>Metric</th><th>Value</th></tr>'+
+    [['Mentors total',r.mentors_total],['In 1:1 pool',r.mentors_in_1to1_pool],
+     ['Excluded (panel-only / no consent)',r.mentors_excluded],['Total slots',r.total_mentor_slots],
+     ['Students',r.students_total],['Expected unmatched',r.expected_unmatched],
+     ['Unknown capacity (defaulted)',r.unknown_capacity_count],
+     ['Solver agreement (OR-Tools vs scipy)',r.solver_agreement]]
+    .map(([k,v])=>`<tr><td>${esc(k)}</td><td>${esc(v)}</td></tr>`).join('');
+  c3.append(t); sec.append(c3);
+}
+
+async function runCompare(){
+  const f=$('#cmpFile').files[0]; if(!f){$('#cmpOut').textContent='Choose a CSV first.';return}
+  const fd=new FormData(); fd.append('file',f);
+  const r=await (await fetch('/api/comparison',{method:'POST',body:fd})).json();
+  $('#cmpOut').innerHTML = r.error ? `<div class="note">${esc(r.error)}</div>` :
+    `<div class="card"><b>Cohen's κ: ${r.cohens_kappa}</b><p class="rat">${r.shared_pairs} shared pairs ·
+     this tool ${r.this_tool_pairs} · uploaded ${r.uploaded_pairs}</p><p class="rat" style="font-size:13px">${esc(r.note)}</p></div>`;
+}
+
+async function runRegen(){
+  const out=$('#regenOut'); out.textContent='Running…';
+  const fd=new FormData(); fd.append('password',$('#pw').value);
+  if($('#mFile').files[0])fd.append('mentors',$('#mFile').files[0]);
+  if($('#sFile').files[0])fd.append('students',$('#sFile').files[0]);
+  const r=await (await fetch('/api/match',{method:'POST',body:fd})).json();
+  if(r.error){out.innerHTML=`<div class="note">${esc(r.error)}</div>`;return}
+  out.innerHTML=`<div class="note">Done (mode ${esc(r.mode)}). Reloading…</div>`;
+  DATA=await (await fetch('/api/results')).json(); render(); await loadAnalysis();
+}
+
+(async()=>{ DATA=await (await fetch('/api/results')).json(); render(); await loadAnalysis(); })();
+</script>
+</body>
+</html>

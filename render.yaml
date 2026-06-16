@@ -1,0 +1,21 @@
+# Render blueprint for the Ghost Social mentor-matching app (LLM arm / Condition B).
+# Boots in DISPLAY mode with NO secrets set: serves the committed, anonymized
+# results in mentor-match/display_data/results.json with zero Claude API calls.
+services:
+  - type: web
+    name: ghost-social-matcher
+    runtime: python
+    plan: free
+    rootDir: mentor-match
+    buildCommand: pip install -r requirements.txt
+    # Single worker on purpose: the live-regenerate override is held in memory and
+    # would not be shared across workers.
+    startCommand: gunicorn app:app --workers 1 --timeout 180 --bind 0.0.0.0:$PORT
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.13"
+      - key: APP_MODE
+        value: display          # set to "live" only to enable password-gated regen
+      # ADMIN_PASSWORD: set in the Render dashboard ONLY if APP_MODE=live
+      # ANTHROPIC_API_KEY: set in the Render dashboard ONLY for live LLM regen
