@@ -69,11 +69,16 @@ from solver import (COST_RESOLUTION, TIE_EPS_MOD, hungarian_cross_check,
                     solve_min_cost_flow, tie_eps)
 
 BASE = Path(__file__).parent
-NPZ = BASE / "output" / "score_matrix.npz"
-INTERNAL = BASE / "output" / "results.json"          # June run: 85 matches + criteria_scores
+# HISTORICAL TOOL: operates on the ARCHIVED June-run artifacts. The live
+# output/ and display_data/ now hold the v2 full-precision re-score, which is
+# the canonical Condition B result; re-running this script writes its outputs
+# under the archive directory only.
+ARCHIVE = BASE / "output" / "archive" / "june-run"
+NPZ = ARCHIVE / "score_matrix.npz"
+INTERNAL = ARCHIVE / "results.json"                  # June run: 85 matches (+ criteria file)
 ROSTER = BASE / "private" / "roster.json"            # Student NNN -> name/email
-DISPLAY = BASE / "display_data" / "results.json"     # mentor emails
-METADATA = BASE / "output" / "metadata.json"
+DISPLAY = ARCHIVE / "rederived_display.json"         # rederive output (archived)
+METADATA = ARCHIVE / "metadata.json"
 
 SEED = 20260315
 RATIONALE_MODEL = "claude-sonnet-4-5-20250929"       # same model as the June run
@@ -156,13 +161,13 @@ def main():
 
     internal = json.loads(INTERNAL.read_text())
     roster = json.loads(ROSTER.read_text())
-    display_old = json.loads(DISPLAY.read_text())
+    display_old = json.loads(INTERNAL.read_text())   # archived results carry mentor emails
     meta_old = json.loads(METADATA.read_text())
 
     # This script OVERWRITES output/results.json — its own input. Preserve the
     # June per-pair criteria to a separate file BEFORE writing anything, and
     # prefer that file on re-runs.
-    crit_file = BASE / "output" / "june_criteria_scores.json"
+    crit_file = ARCHIVE / "june_criteria_scores.json"
     have_criteria = internal.get("matches") and "criteria_scores" in internal["matches"][0]
     if have_criteria:
         crit_file.write_text(json.dumps(
@@ -342,7 +347,7 @@ def main():
         unmatched_rows.append(row)
 
     # ── write artifacts ──────────────────────────────────────────────────────
-    out = BASE / "output"
+    out = ARCHIVE
     import csv as _csv
     with open(out / "matches.csv", "w", newline="") as f:
         w = _csv.DictWriter(f, fieldnames=["student_id", "mentee_name", "mentor_id",

@@ -5,19 +5,25 @@ Mentor–Mentee Matching Tool — LLM matching arm (Condition B)
 Pipeline:
   1. Load + map the real TEL spreadsheets (data_mapping.py). Every row gets an
      immutable student_id / mentor_id at load time; ALL joins are by id, names
-     are display-only (this cohort has 4 same-name student pairs).
-  2. Pool filter (1:1 mentors only; consent respected)        [HARD constraint]
-  3. Hard location constraint: an in-person-only mentor outside the Madison/WI
+     are display-only (this cohort has 5 duplicate-submission student pairs).
+  2. Dedupe duplicate student submissions BEFORE scoring (by email; the last
+     submission is canonical) so no API calls are spent on duplicates.
+  3. Pool filter (1:1 mentors only; consent respected)        [HARD constraint]
+  4. Hard location constraint: an in-person-only mentor outside the Madison/WI
      area has NO arcs to these (UW–Madison) students          [HARD constraint]
-  4. Score compatibility on 4 criteria
+  5. Score compatibility on the 3 MEASURED criteria only (skill_alignment,
+     domain_fit, goal_compatibility)
         mode="llm"     -> Claude tool-use, parallel, seeded mentor shuffle
         mode="offline" -> deterministic overlap scoring (zero API, reproducible)
-     style_fit is stored for reference but EXCLUDED from the utility: the forms
-     never asked about communication/mentoring style, so it is inferred, not
-     measured. Utility = full-precision mean of the 3 measured criteria.
-  5. Assign with OR-Tools min-cost max-flow on composite integer costs
-     (-round(1000*utility), then a documented seeded tie-break — see solver.py)
-     and cross-check the objective with scipy Hungarian.
+     style_fit is no longer scored at all: the forms never asked about
+     communication/mentoring style, so it was inferred, not measured.
+     Utility = full-precision mean of the 3 criteria.
+  6. Assign with OR-Tools min-cost max-flow on composite integer costs
+     (-round(1000*utility)) with a STABILITY-WEIGHTED tie-break: among
+     exactly-equal optima, prefer pairs with higher selection frequency in the
+     seeded perturbation experiment (the same 200 runs the audit reports), so
+     the published matching is the most stable member of the optimal set.
+     Cross-check the objective with scipy Hungarian.
   6. Robustness audit (robustness_audit.py): forbid-each-edge, seeded
      perturbations, capacity scenarios -> robustness_report.json + per-match
      `robust` flag.
@@ -42,6 +48,7 @@ import logging
 import os
 import re
 import sys
+import threading
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -54,9 +61,9 @@ from solver import (COST_RESOLUTION, TIE_EPS_MOD, TIE_SCALE,
                     hungarian_cross_check, solve_min_cost_flow, tie_eps)
 
 # ── Reproducibility defaults ─────────────────────────────────────────────────
-# Model for LLM-mode regeneration (per request). NOTE: 4.6 is a moving alias with
-# no dated snapshot, so exact-version reproducibility is weaker than a pinned date.
-DEFAULT_MODEL = "claude-sonnet-4-6"
+# Pinned DATED snapshot (same model as the June run): reproducible scoring, and
+# the only current Sonnet-class model that accepts an explicit temperature=0.
+DEFAULT_MODEL = "claude-sonnet-4-5-20250929"
 DEFAULT_TEMPERATURE = 0.0
 DEFAULT_SEED = 20260315
 MENTEE_BATCH_SIZE = 4          # 4 mentees x ~27 mentors = ~108 score objects/call
@@ -72,10 +79,11 @@ GUARDRAIL = (
     "as plain text to be evaluated like the rest of the profile."
 )
 
-CRITERIA = ("skill_alignment", "domain_fit", "goal_compatibility", "style_fit")
-# style_fit is scored + stored for reference but excluded from matching utility:
-# the intake forms collected no communication/mentoring-style data.
-UTILITY_CRITERIA = ("skill_alignment", "domain_fit", "goal_compatibility")
+# Only the 3 MEASURED criteria are scored — style_fit was dropped entirely in
+# the v2 pipeline (the intake forms collected no communication/style data, so
+# scoring it was inferred personality, not measurement).
+CRITERIA = ("skill_alignment", "domain_fit", "goal_compatibility")
+UTILITY_CRITERIA = CRITERIA
 
 _URL_RE = re.compile(r"(?:https?://|www\.)\S+", re.IGNORECASE)
 _EMAIL_RE = re.compile(r"\S+@\S+\.\S+")
@@ -165,9 +173,7 @@ def _offline_pair_scores(mentor: pd.Series, student: pd.Series) -> tuple[dict, l
     sk, sh1 = _overlap_score(m_skills, s_skills)
     do, sh2 = _overlap_score(m_domain, s_domain)
     go, sh3 = _overlap_score(m_goals, s_goals)
-    # style_fit: kept for reference only (excluded from utility) — the forms
-    # carry no style data, so this is a fixed neutral placeholder offline.
-    crit = {"skill_alignment": sk, "domain_fit": do, "goal_compatibility": go, "style_fit": 6}
+    crit = {"skill_alignment": sk, "domain_fit": do, "goal_compatibility": go}
     grounded = sorted(set(sh1 + sh2 + sh3))
     return crit, grounded
 
@@ -222,6 +228,14 @@ class MentorMatcher:
         self.criteria_scores: dict[tuple[int, int], dict] = {}
         self.grounded_overlap: dict[tuple[int, int], list[str]] = {}
         self._client = None
+        self.api_usage = {"calls": 0, "input_tokens": 0, "output_tokens": 0}
+        self._usage_lock = threading.Lock()
+
+    def _track_usage(self, resp):
+        with self._usage_lock:
+            self.api_usage["calls"] += 1
+            self.api_usage["input_tokens"] += resp.usage.input_tokens
+            self.api_usage["output_tokens"] += resp.usage.output_tokens
 
     # — scoring —
 
@@ -255,7 +269,6 @@ class MentorMatcher:
                             "skill_alignment": {"type": "integer"},
                             "domain_fit": {"type": "integer"},
                             "goal_compatibility": {"type": "integer"},
-                            "style_fit": {"type": "integer"},
                         },
                         "required": ["mentee_id", "mentor_id", *CRITERIA],
                     },
@@ -285,7 +298,7 @@ class MentorMatcher:
         prompt = (f"{GUARDRAIL}\n\nMENTORS:\n" + "\n".join(mlines) +
                   "\n\nMENTEES:\n" + "\n".join(slines) +
                   "\n\nFor every mentee, score EACH mentor 1-10 on skill_alignment, domain_fit, "
-                  "goal_compatibility, style_fit. Call submit_scores with all evaluations, "
+                  "and goal_compatibility. Call submit_scores with all evaluations, "
                   "identifying each pair by the exact mentee_id and mentor_id shown "
                   "(e.g. S014, M03) — never by name.")
         client = self._client_lazy()
@@ -294,6 +307,7 @@ class MentorMatcher:
             tools=[self._SCORE_TOOL], tool_choice={"type": "tool", "name": "submit_scores"},
             messages=[{"role": "user", "content": prompt}],
         )
+        self._track_usage(resp)
         if resp.stop_reason == "max_tokens":
             self.log.warning(f"Scoring call hit max_tokens — {len(batch_students)} mentees "
                              "scored partially; consider a smaller batch.")
@@ -393,6 +407,7 @@ class MentorMatcher:
             model=self.model, max_tokens=4096, temperature=self.temperature,
             tools=[tool], tool_choice={"type": "tool", "name": "submit_rationales"},
             messages=[{"role": "user", "content": prompt}])
+        self._track_usage(resp)
         for blk in resp.content:
             if blk.type == "tool_use":
                 return {(str(r["mentee_id"]).strip(), str(r["mentor_id"]).strip()): r["rationale"]
@@ -446,10 +461,17 @@ class MentorMatcher:
         self.log.info("=" * 60)
 
         mentors_all = dm.load_mentors(mentor_file)
-        students = dm.load_students(student_file).reset_index(drop=True)
+        students_all = dm.load_students(student_file).reset_index(drop=True)
+        # Dedupe BEFORE scoring: one row per person (by email, last submission
+        # wins) so no API calls are spent on duplicates.
+        students, duplicate_rows = dm.dedupe_students(students_all)
+        for d in duplicate_rows:
+            self.log.info(f"  duplicate submission {d['student_id']} -> canonical {d['duplicate_of']}")
         pool, excluded = dm.pool_filter_mentors(mentors_all)
         pool = pool.reset_index(drop=True)
         rec = dm.reconcile(mentors_all, pool, excluded, students)
+        rec["student_rows_total"] = int(len(students_all))
+        rec["duplicate_submissions"] = duplicate_rows
 
         self.log.info(
             f"RECONCILIATION  mentors={rec['mentors_total']} pool={rec['mentors_in_1to1_pool']} "
@@ -502,12 +524,21 @@ class MentorMatcher:
         student_ids = [students.iloc[j]["student_id"] for j in range(S)]
         mentor_ids = [pool.iloc[i]["mentor_id"] for i in range(P)]
 
-        # Documented seeded tie-break (see solver.py): applied strictly after the
-        # substantive cost; deterministic under (seed, student_id, mentor_id).
+        # STABILITY-WEIGHTED tie-break (documented in metadata): run the seeded
+        # perturbation experiment first and derive eps from each pair's
+        # selection frequency — among exactly-equal optima the solver then
+        # publishes the most perturbation-stable member of the optimal set. A
+        # seeded hash breaks residual frequency ties. eps stays < TIE_EPS_MOD,
+        # so it can never flip a substantive cost difference (see solver.py).
+        pert = robustness_audit.perturbation_frequencies(score_matrix, slots, self.seed)
+        self.log.info(f"Tie-break: perturbation frequencies from "
+                      f"{pert['n']} seeded runs (sigma={pert['sigma']:.3f})")
         eps = np.zeros((S, P), dtype=int)
         for j in range(S):
             for i in range(P):
-                eps[j, i] = tie_eps(self.seed, student_ids[j], mentor_ids[i])
+                freq = pert["pair_counts"].get((j, i), 0) / pert["n"]
+                eps[j, i] = (int(round((1.0 - freq) * 800)) +
+                             tie_eps(self.seed, student_ids[j], mentor_ids[i]) % 199)
 
         assignments, unmatched, sub_total, comp_total = solve_min_cost_flow(score_matrix, slots, eps)
         scipy_total = hungarian_cross_check(score_matrix, slots, eps)
@@ -522,7 +553,7 @@ class MentorMatcher:
         if self.audit:
             audit_report, robust = robustness_audit.run_audit(
                 score_matrix, slots, assignments, self.seed, student_ids, mentor_ids,
-                log=self.log.info)
+                log=self.log.info, precomputed_perturbation=pert)
 
         matches = self._generate_rationales(assignments, pool, students)
         rec["matched"] = len(matches)
@@ -534,11 +565,11 @@ class MentorMatcher:
         rec["location_hard_constraint_removed"] = removed_edges
 
         self._export(matches, students, unmatched, pool, score_matrix, slots, rec,
-                     audit_report, robust)
+                     audit_report, robust, duplicate_rows)
         return matches, unmatched, rec
 
     def _export(self, matches, students, unmatched, pool, score_matrix, slots, rec,
-                audit_report, robust):
+                audit_report, robust, duplicate_rows=()):
         rows = [{
             "student_id": m["student_id"],
             "mentee_name": m["mentee_name"],
@@ -557,6 +588,9 @@ class MentorMatcher:
                     "reason": ("no scored mentor pairs" if np.all(np.isnan(score_matrix[j]))
                                else "mentor capacity exhausted")}
                    for j in unmatched]
+        un_rows += [{"student_id": d["student_id"], "mentee_name": d["name"],
+                     "reason": f"duplicate submission — see {d['duplicate_of']}"}
+                    for d in duplicate_rows]
         pd.DataFrame(un_rows, columns=["student_id", "mentee_name", "reason"]).to_csv(
             self.output_dir / "unmatched.csv", index=False)
 
@@ -592,11 +626,20 @@ class MentorMatcher:
             "criteria": list(CRITERIA),
             "utility_criteria": list(UTILITY_CRITERIA),
             "utility_basis": "full-precision mean of the 3 measured criteria; style_fit is "
-                             "stored for reference only (the forms collected no style data)",
+                             "no longer scored (the forms collected no style data)",
             "cost_model": f"substantive arc cost = -round({COST_RESOLUTION}*utility); "
-                          f"composite = substantive*{TIE_SCALE} + seeded tie-break eps in "
-                          f"[0,{TIE_EPS_MOD}) keyed on (seed, student_id, mentor_id) — the "
-                          f"tie-break can never flip a substantive difference",
+                          f"composite = substantive*{TIE_SCALE} + tie-break eps in "
+                          f"[0,{TIE_EPS_MOD}) — the tie-break can never flip a substantive "
+                          f"difference",
+            "tie_break": "stability-weighted: eps = round((1 - selection_frequency)*800) + "
+                         "seeded_hash%199, where selection_frequency is each pair's frequency "
+                         "across the 200-run seeded perturbation experiment (the SAME runs "
+                         "reported in robustness_report.json). Among exactly-equal optima the "
+                         "solver therefore publishes the most perturbation-stable member of "
+                         "the optimal set; a seeded hash breaks residual frequency ties.",
+            "deduplication": "duplicate student submissions collapsed before scoring by "
+                             "normalized email; the LAST submission is canonical",
+            "api_usage": dict(self.api_usage),
             "location_hard_constraint": "in-person-only mentors outside Madison/WI have no "
                                         "arcs (edge removal, logged); location is otherwise "
                                         "not scored",
@@ -642,7 +685,11 @@ class MentorMatcher:
                            "student_name": students.iloc[j]["name"],
                            "student_email": students.iloc[j].get("email", ""),
                            "reason": ("no scored mentor pairs" if np.all(np.isnan(score_matrix[j]))
-                                      else "mentor capacity exhausted")} for j in unmatched],
+                                      else "mentor capacity exhausted")} for j in unmatched] +
+                         [{"student_id": d["student_id"], "student_name": d["name"],
+                           "student_email": d["email"],
+                           "reason": "duplicate submission — excluded from scoring",
+                           "duplicate_submission_of": d["duplicate_of"]} for d in duplicate_rows],
         }
         (self.output_dir / "results.json").write_text(json.dumps(payload, indent=2, default=str))
         self.log.info(f"Output -> {self.output_dir.resolve()}")

@@ -35,9 +35,32 @@ def _solve_sub(scores, slots):
     return assignments, unmatched, sub_total
 
 
+def perturbation_frequencies(scores: np.ndarray, slots, seed: int,
+                             n_perturbations: int = N_PERTURBATIONS) -> dict:
+    """The seeded perturbation experiment, separable so the matcher can use the
+    SAME frequencies for its stability-weighted tie-break that the audit later
+    reports — one experiment, two consumers."""
+    S, P = scores.shape
+    observed = scores[~np.isnan(scores)]
+    sigma = float(NOISE_SIGMA_FACTOR * observed.std())
+    rng = np.random.default_rng(seed)
+    pair_counts: dict[tuple[int, int], int] = {}
+    unmatched_counts = np.zeros(S, dtype=int)
+    for _ in range(n_perturbations):
+        noisy = scores + rng.normal(0.0, sigma, scores.shape)   # NaN + noise stays NaN
+        assignments, unmatched, _ = _solve_sub(noisy, slots)
+        for pair in assignments:
+            pair_counts[pair] = pair_counts.get(pair, 0) + 1
+        for j in unmatched:
+            unmatched_counts[j] += 1
+    return {"pair_counts": pair_counts, "unmatched_counts": unmatched_counts,
+            "sigma": sigma, "n": n_perturbations}
+
+
 def run_audit(scores: np.ndarray, slots, selected: list[tuple[int, int]],
               seed: int, student_ids: list[str], mentor_ids: list[str],
-              n_perturbations: int = N_PERTURBATIONS, log=None) -> dict:
+              n_perturbations: int = N_PERTURBATIONS, log=None,
+              precomputed_perturbation: dict | None = None) -> dict:
     """scores: (S, P) float utility matrix, NaN = no arc. selected: solved pairs."""
     S, P = scores.shape
     say = log or (lambda m: None)
@@ -58,19 +81,11 @@ def run_audit(scores: np.ndarray, slots, selected: list[tuple[int, int]],
     say(f"Audit a) forbid-each-edge: {n_arbitrary}/{len(selected)} pairs are "
         f"arbitrary among equal optima")
 
-    # ── b) seeded perturbation ───────────────────────────────────────────
-    observed = scores[~np.isnan(scores)]
-    sigma = float(NOISE_SIGMA_FACTOR * observed.std())
-    rng = np.random.default_rng(seed)
-    pair_counts: dict[tuple[int, int], int] = {}
-    unmatched_counts = np.zeros(S, dtype=int)
-    for _ in range(n_perturbations):
-        noisy = scores + rng.normal(0.0, sigma, scores.shape)   # NaN + noise stays NaN
-        assignments, unmatched, _ = _solve_sub(noisy, slots)
-        for pair in assignments:
-            pair_counts[pair] = pair_counts.get(pair, 0) + 1
-        for j in unmatched:
-            unmatched_counts[j] += 1
+    # ── b) seeded perturbation (reused from the tie-break pass if provided) ──
+    pert = precomputed_perturbation or perturbation_frequencies(
+        scores, slots, seed, n_perturbations)
+    pair_counts, unmatched_counts = pert["pair_counts"], pert["unmatched_counts"]
+    sigma, n_perturbations = pert["sigma"], pert["n"]
     sel_freq = {pair: pair_counts.get(pair, 0) / n_perturbations for pair in selected}
     say(f"Audit b) perturbation x{n_perturbations} (sigma={sigma:.3f}): "
         f"{sum(1 for f in sel_freq.values() if f >= ROBUST_FREQ)}/{len(selected)} "
@@ -127,7 +142,7 @@ def run_audit(scores: np.ndarray, slots, selected: list[tuple[int, int]],
         "n_perturbations": n_perturbations,
         "noise_sigma": sigma,
         "noise_basis": f"{NOISE_SIGMA_FACTOR} * std of observed scores "
-                       f"(std={float(observed.std()):.3f})",
+                       f"(std={sigma / NOISE_SIGMA_FACTOR:.3f})",
         "robust_rule": f"selected in >= {ROBUST_FREQ:.0%} of perturbation runs "
                        "AND not arbitrary under forbid-each-edge",
         "base_substantive_total": base_total / COST_RESOLUTION,

@@ -7,11 +7,13 @@ confidence score, then serves them in a small Flask app.
 
 ## What it does
 
-1. **Column mapping + stable ids** (`data_mapping.py`) — maps the raw Google-Form
-   headers (smart quotes, embedded newlines) to clean internal fields via an
-   editable dict, and assigns an immutable `student_id` / `mentor_id` from row
-   order at load time. **All joins are by id** (scoring, rationales, exports,
-   display) — names are display-only; this cohort has 4 same-name student pairs.
+1. **Column mapping + stable ids + dedupe** (`data_mapping.py`) — maps the raw
+   Google-Form headers (smart quotes, embedded newlines) to clean internal
+   fields via an editable dict, and assigns an immutable `student_id` /
+   `mentor_id` from row order at load time. **All joins are by id** (scoring,
+   rationales, exports, display) — names are display-only. Duplicate student
+   submissions are collapsed **before scoring** (by email; the last submission
+   is canonical) — this cohort has 5 duplicate-submission pairs.
 2. **Capacity from free text** — an editable rules dict turns "Ongoing engagement
    throughout the year" → 4 slots, "A few hours per semester" → 2, etc.; blank or
    unrecognized → `unknown` (defaults to 1, flagged and logged).
@@ -19,19 +21,24 @@ confidence score, then serves them in a small Flask app.
    include "1:1 mentoring conversations" and `consent_to_share` ≠ No. Also **hard**:
    an in-person-only mentor located outside the Madison/WI area gets no arcs at
    all (edge removal, logged). Excluded mentors are reported with reasons.
-4. **Scoring** — four criteria (skill, domain, goals, style) 1–10; the matching
-   **utility is the full-precision mean of the 3 measured criteria** — `style_fit`
-   is stored for reference but excluded (the forms collected no style data).
+4. **Scoring** — the 3 **measured** criteria only (skill_alignment, domain_fit,
+   goal_compatibility) 1–10; `style_fit` is no longer scored (the forms
+   collected no style data). Matching **utility is the full-precision mean of
+   the 3**. Pinned dated model (`claude-sonnet-4-5-20250929`), temperature 0.
    - `offline` (default): deterministic keyword-overlap on the real profile fields.
      **Zero API calls, fully reproducible.**
    - `llm`: Claude tool-use scoring + rationales (Condition B). Needs a key.
      Prompts declare profile text data-not-instructions and are stripped of
      URLs/emails before the LLM sees them.
 5. **Assignment** — OR-Tools **min-cost max-flow** on integer costs
-   `-round(1000·utility)` plus a documented **seeded tie-break** that can never
-   flip a substantive difference (`solver.py`), cross-checked against scipy's
-   Hungarian algorithm. Capacity shortfall is normal (85 slots, 116 students) →
-   excess students are left **unmatched and surfaced explicitly with reasons**.
+   `-round(1000·utility)` plus a **stability-weighted tie-break**: among
+   exactly-equal optima, the solver prefers pairs with higher selection
+   frequency in the seeded perturbation experiment (the same 200 runs the
+   audit reports), so the published matching is the most stable member of the
+   optimal set. The tie-break can never flip a substantive difference
+   (`solver.py`); cross-checked against scipy's Hungarian algorithm. Capacity
+   shortfall is normal → excess students are left **unmatched and surfaced
+   explicitly with reasons**.
 6. **Robustness audit** (`robustness_audit.py`) — forbid-each-edge re-solves,
    200 seeded perturbation re-solves, and low/base/high capacity scenarios →
    `robustness_report.json` plus a per-match `robust` flag (selected in ≥80% of
@@ -74,9 +81,11 @@ APP_MODE=display ./venv312/bin/gunicorn app:app --bind 0.0.0.0:3000
 ```
 
 For the real LLM (Condition B) run: `export ANTHROPIC_API_KEY=...` and add
-`--mode llm` (default model `claude-sonnet-4-6`, `temperature=0`, seeded —
-logged in `metadata.json`). To re-derive the committed display from the
-persisted 2026-06-15 artifacts without re-scoring: `python rederive_run.py`.
+`--mode llm` (default model `claude-sonnet-4-5-20250929` — pinned dated
+snapshot, `temperature=0`, seeded — logged in `metadata.json`). The June 2026
+run's artifacts are archived under `output/archive/june-run/`. To re-derive
+that archived run without re-scoring: `python rederive_run.py` (historical
+tool; operates on the archived artifacts).
 
 ## Deploy to Render
 

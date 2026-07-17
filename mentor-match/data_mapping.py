@@ -214,6 +214,30 @@ def load_students(path: str) -> pd.DataFrame:
     return df
 
 
+def dedupe_students(students: pd.DataFrame) -> tuple[pd.DataFrame, list[dict]]:
+    """Collapse duplicate submissions BEFORE scoring: one row per person, keyed
+    by normalized email. The LAST submission wins (most recent answers). Rows
+    without an email cannot be deduped and are kept. Returns (canonical_df,
+    duplicates) where each duplicate records its canonical twin's student_id —
+    duplicates are excluded from scoring/matching and surfaced in outputs."""
+    keep_idx, duplicates = [], []
+    last_for_email: dict[str, int] = {}
+    for j, r in students.iterrows():
+        email = str(r.get("email", "")).strip().lower()
+        if email:
+            last_for_email[email] = j
+    for j, r in students.iterrows():
+        email = str(r.get("email", "")).strip().lower()
+        if email and last_for_email[email] != j:
+            duplicates.append({
+                "student_id": r["student_id"], "name": r["name"], "email": r.get("email", ""),
+                "duplicate_of": students.iloc[last_for_email[email]]["student_id"],
+            })
+        else:
+            keep_idx.append(j)
+    return students.loc[keep_idx].reset_index(drop=True), duplicates
+
+
 def pool_filter_mentors(mentors: pd.DataFrame) -> tuple[pd.DataFrame, list[dict]]:
     """Split mentors into the 1:1-eligible pool and an excluded list with reasons.
     Excluded if: formats lack the 1:1 signal, OR consent == 'no'."""
