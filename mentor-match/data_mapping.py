@@ -185,6 +185,10 @@ def load_mentors(path: str) -> pd.DataFrame:
     # Drop junk rows: no name AND no email.
     df["_junk"] = (df.get("name", "") == "") & (df.get("email", "") == "")
     df = df[~df["_junk"]].drop(columns=["_junk"]).reset_index(drop=True)
+    # Immutable per-run id, deterministic from row order after junk-drop.
+    # ALL joins downstream (scoring, rationales, exports, display) go through
+    # this id — names are display fields only (same-name people are distinct rows).
+    df["mentor_id"] = [f"M{i + 1:02d}" for i in range(len(df))]
     return df
 
 
@@ -203,6 +207,10 @@ def load_students(path: str) -> pd.DataFrame:
     df = pd.DataFrame(rows)
     df["_junk"] = (df.get("name", "") == "") & (df.get("email", "") == "")
     df = df[~df["_junk"]].drop(columns=["_junk"]).reset_index(drop=True)
+    # Immutable per-run id, deterministic from row order after junk-drop (see
+    # load_mentors). This cohort has 4 same-name student pairs, so name joins
+    # are a real corruption risk — never join by name.
+    df["student_id"] = [f"S{j + 1:03d}" for j in range(len(df))]
     return df
 
 
@@ -218,7 +226,8 @@ def pool_filter_mentors(mentors: pd.DataFrame) -> tuple[pd.DataFrame, list[dict]
         if r["consent"] == "no":
             reasons.append("consent_to_share = No")
         if reasons:
-            excluded.append({"name": r["name"] or "(unnamed)", "reasons": reasons})
+            excluded.append({"mentor_id": r.get("mentor_id", ""),
+                             "name": r["name"] or "(unnamed)", "reasons": reasons})
         else:
             keep_idx.append(i)
     pool = mentors.loc[keep_idx].reset_index(drop=True)
@@ -229,7 +238,7 @@ def reconcile(mentors_all: pd.DataFrame, pool: pd.DataFrame,
               excluded: list[dict], students: pd.DataFrame) -> dict:
     total_slots = int(pool["capacity_slots"].sum()) if len(pool) else 0
     unknown_caps = [
-        {"name": r["name"], "reason": r["capacity_reason"]}
+        {"mentor_id": r.get("mentor_id", ""), "name": r["name"], "reason": r["capacity_reason"]}
         for _, r in pool.iterrows() if r["capacity_unknown"]
     ]
     return {

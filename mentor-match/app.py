@@ -87,12 +87,17 @@ def api_csv():
     d = load_results()
     buf = io.StringIO()
     w = csv.writer(buf)
-    w.writerow(["status", "mentor_name", "mentor_email", "student_name", "student_email", "confidence"])
+    w.writerow(["status", "student_id", "mentor_id", "mentor_name", "mentor_email",
+                "student_name", "student_email", "fit", "robust", "reason"])
     for m in d.get("matches", []):
-        w.writerow(["matched", m.get("mentor_name", ""), m.get("mentor_email", ""),
-                    m.get("student_name", ""), m.get("student_email", ""), m.get("confidence", "")])
+        w.writerow(["matched", m.get("student_id", ""), m.get("mentor_id", ""),
+                    m.get("mentor_name", ""), m.get("mentor_email", ""),
+                    m.get("student_name", ""), m.get("student_email", ""),
+                    m.get("fit", ""), m.get("robust", ""), ""])
     for u in d.get("unmatched", []):
-        w.writerow(["unmatched", "", "", u.get("student_name", ""), u.get("student_email", ""), ""])
+        w.writerow(["unmatched", u.get("student_id", ""), "", "", "",
+                    u.get("student_name", ""), u.get("student_email", ""), "", "",
+                    u.get("reason", "")])
     return Response(buf.getvalue(), mimetype="text/csv",
                     headers={"Content-Disposition": "attachment; filename=ghost_social_roster.csv"})
 
@@ -104,6 +109,7 @@ def api_report():
 
 
 def _build_pdf(d: dict) -> bytes:
+    from xml.sax.saxutils import escape as x
     from reportlab.lib import colors
     from reportlab.lib.pagesizes import letter
     from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
@@ -117,13 +123,17 @@ def _build_pdf(d: dict) -> bytes:
     story = [Paragraph("Ghost Social — Mentor / Mentee Matches", st["Title"]),
              Paragraph(f"Matched: {len(matches)} &nbsp; Unmatched: {len(unmatched)} &nbsp; "
                        f"Mode: {d.get('generation_mode','?')}", st["Normal"]), Spacer(1, 12)]
-    data = [["Mentor", "Student", "Conf", "Rationale"]]
+    data = [["Mentor", "Student", "Fit", "Rationale"]]
     for m in matches:
+        fit = str(m.get("fit", ""))
+        if m.get("robust") is False:
+            fit += " *"          # * = fragile match (see footnote)
+        # Field values are data, not Paragraph mini-XML — always escape.
         data.append([
-            Paragraph(f"{m.get('mentor_name','')}<br/><font size=7 color='#666666'>{m.get('mentor_email','')}</font>", small),
-            Paragraph(f"{m.get('student_name','')}<br/><font size=7 color='#666666'>{m.get('student_email','')}</font>", small),
-            str(m.get("confidence", "")), Paragraph(str(m.get("rationale", "")), small)])
-    t = Table(data, colWidths=[110, 110, 26, 250], repeatRows=1)
+            Paragraph(f"{x(str(m.get('mentor_name','')))}<br/><font size=7 color='#666666'>{x(str(m.get('mentor_email','')))}</font>", small),
+            Paragraph(f"{x(str(m.get('student_name','')))}<br/><font size=7 color='#666666'>{x(str(m.get('student_email','')))}</font>", small),
+            fit, Paragraph(x(str(m.get("rationale", ""))), small)])
+    t = Table(data, colWidths=[100, 100, 24, 244], repeatRows=1)
     t.setStyle(TableStyle([
         ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#C5050C")),
         ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
@@ -132,11 +142,17 @@ def _build_pdf(d: dict) -> bytes:
         ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#f7f3f3")]),
     ]))
     story.append(t)
+    if any(m.get("robust") is False for m in matches):
+        story.append(Spacer(1, 6))
+        story.append(Paragraph("* fragile match — sensitive to small scoring changes "
+                               "(see robustness audit)", small))
     if unmatched:
         story.append(Spacer(1, 16))
         story.append(Paragraph("Unmatched students", st["Heading2"]))
-        ud = [["Student", "Email"]] + [[u.get("student_name", ""), u.get("student_email", "")] for u in unmatched]
-        ut = Table(ud, colWidths=[160, 240], repeatRows=1)
+        ud = [["Student", "Email", "Reason"]] + \
+             [[u.get("student_name", ""), u.get("student_email", ""),
+               Paragraph(x(str(u.get("reason", ""))), small)] for u in unmatched]
+        ut = Table(ud, colWidths=[120, 150, 198], repeatRows=1)
         ut.setStyle(TableStyle([
             ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#C5050C")),
             ("TEXTCOLOR", (0, 0), (-1, 0), colors.white), ("FONTSIZE", (0, 0), (-1, -1), 8),

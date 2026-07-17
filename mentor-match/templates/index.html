@@ -48,12 +48,16 @@
   .conn{align-self:center;color:var(--red);font-size:18px;line-height:1}
   .conf{flex:none;font-size:12px;font-weight:600;color:var(--red);background:var(--chip);
         border:1px solid #f2d6d4;padding:4px 10px;border-radius:999px;white-space:nowrap}
+  .conf.fragile{border-style:dashed}
+  .conf .frg{font-weight:400;opacity:.75;margin-left:3px;cursor:help}
   .rat{margin:10px 0 0;color:#33353a;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .card.open .rat{white-space:normal}
   .acts{margin-top:11px;display:none;gap:8px}.card.open .acts{display:flex}
-  .um{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);
-      border-radius:10px;padding:11px 16px;margin:8px 0;background:#fff;flex-wrap:wrap;gap:6px}
+  .um{border:1px solid var(--line);
+      border-radius:10px;padding:11px 16px;margin:8px 0;background:#fff}
+  .um .row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
   .um .nm{font-weight:600;font-size:14.5px}.um .em{font-size:12.5px;color:var(--muted)}
+  .um .note{font-size:12px;color:var(--muted);margin-top:4px}
   .pager{display:flex;justify-content:center;align-items:center;gap:16px;margin:22px 0 56px;color:var(--muted);font-size:13px}
   .pager button{font:inherit;font-size:13px;border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 13px;cursor:pointer}
   .pager button:hover:not(:disabled){background:var(--soft)}
@@ -114,8 +118,8 @@ function curList(){return tab==='matched'?(DATA.matches||[]):(DATA.unmatched||[]
 function matchQ(it){
   if(!q) return true;
   const hay=tab==='matched'
-    ? [it.mentor_name,it.mentor_email,it.student_name,it.student_email]
-    : [it.student_name,it.student_email];
+    ? [it.mentor_name,it.mentor_email,it.student_name,it.student_email,it.student_id,it.mentor_id]
+    : [it.student_name,it.student_email,it.student_id];
   return hay.filter(Boolean).join(' ').toLowerCase().includes(q);
 }
 
@@ -142,10 +146,12 @@ function person(lbl,name,email){
 }
 function card(m){
   const c=el('div','card');
+  const fragile=m.robust===false;
+  const badge=`<span class="conf${fragile?' fragile':''}"${fragile?' title="Fragile match: sensitive to small scoring changes (robustness audit)"':''}>fit ${esc(m.fit)}/10${fragile?'<span class="frg">◦</span>':''}</span>`;
   c.innerHTML=`<div class="chead">
       <div class="people">${person('Mentor',m.mentor_name,m.mentor_email)}
         <span class="conn">→</span>${person('Student',m.student_name,m.student_email)}</div>
-      <span class="conf">confidence ${esc(m.confidence)}/10</span>
+      ${badge}
     </div>
     <div class="rat">${esc(m.rationale)}</div>
     <div class="acts"></div>`;
@@ -159,7 +165,11 @@ function card(m){
 }
 function umRow(u){
   const r=el('div','um');
-  r.innerHTML=`<span class="nm">${esc(u.student_name)}</span><span class="em"><a href="mailto:${esc(u.student_email)}">${esc(u.student_email)}</a></span>`;
+  const note=u.duplicate_submission_of
+    ? `duplicate submission — this person is matched under ${esc(u.duplicate_submission_of)}`
+    : (u.reason||'');
+  r.innerHTML=`<div class="row"><span class="nm">${esc(u.student_name)}</span><span class="em"><a href="mailto:${esc(u.student_email)}">${esc(u.student_email)}</a></span></div>`+
+    (note?`<div class="note">${esc(note)}</div>`:'');
   return r;
 }
 boot();

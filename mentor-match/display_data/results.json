@@ -1,813 +1,1136 @@
 {
-  "generated_at": "2026-06-16T04:48:28.203310+00:00",
-  "generation_mode": "llm",
+  "generated_at": "2026-07-17T22:14:29.390211+00:00",
+  "generation_mode": "llm (re-derived 2026-07; scores from the 2026-06-15 run)",
   "scope": "Internal coordinator view: real mentor + student identities with contact info.",
+  "fit_basis": "fit = 0.6*mean + 0.4*min of the 3 measured criteria (1-10); style_fit excluded (no style data was collected)",
   "matches": [
     {
-      "mentor_name": "Christopher Harrison",
-      "mentor_email": "chris@prismscope.ai",
-      "student_name": "Viacheslav Iudenko",
-      "student_email": "slavaiud2003@gmail.com",
-      "confidence": 9,
-      "rationale": "Christopher Harrison's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, and Innovation Processes aligns with Viacheslav Iudenko's interests across Business/Strategy, Product/UX, Engineering/Development, and Data/AI/Analytics. Christopher's Career Advice & Professional Growth background can support Viacheslav's diverse skill set spanning research, customer discovery, and operations/project management. This pairing provides comprehensive mentorship across the multiple domains Viacheslav is exploring."
-    },
-    {
-      "mentor_name": "Catherine Killam",
-      "mentor_email": "catherineskillam@gmail.com",
-      "student_name": "Evan He",
-      "student_email": "ehe6@wisc.edu",
-      "confidence": 9,
-      "rationale": "Catherine's expertise in Product Development/Design, Industry Applications / Use Cases, go-to-market execution, sales enablement, and storytelling aligns perfectly with Evan's top choice of Campus and Industry Innovation Project Leader. Evan wants to work on real-world problems with real constraints and real people, taking responsibility for decisions and tradeoffs, which connects to Catherine's industry applications and product development knowledge. Catherine's go-to-market and storytelling expertise can support Evan's leadership development as he moves beyond just helping on projects to owning them."
-    },
-    {
-      "mentor_name": "Max Landau",
-      "mentor_email": "maxjsl@gmail.com",
-      "student_name": "Adit Singh",
-      "student_email": "singh377@wisc.edu",
-      "confidence": 9,
-      "rationale": "Max's expertise in AI & Emerging Tech, Virtual Environments/XR, and Career Advice & Professional Growth is an excellent match for Adit's Self-Directed Exploration concept using augmented reality to guide people through hands-on trade tasks. Adit's idea specifically involves AR glasses or headsets for real-time visual overlays, making Max's Virtual Environments/XR expertise directly relevant. Max can provide guidance on the visual technology Adit needs and support his interest in the Venture Pathway for developing business-building skills."
-    },
-    {
-      "mentor_name": "Christian Kaczmarczyk",
-      "mentor_email": "ck@thirdprime.vc",
-      "student_name": "Nathanael Kim",
-      "student_email": "ntkim@wisc.edu",
-      "confidence": 9,
-      "rationale": "Christian's expertise in AI & Emerging Tech, Entrepreneurship / Venture Creation, Industry Applications / Use Cases, and Innovation Processes aligns with Nathanael's interest in the intersection of technology and business as a computer science and finance major. Nathanael wants to use technology to solve real business problems and create and build products, which directly connects to Christian's entrepreneurship and industry applications knowledge. Christian can help Nathanael leverage lab resources to further build upon his startup ideas."
-    },
-    {
-      "mentor_name": "Nicki Doggart",
-      "mentor_email": "ndoggart@41northconsulting.com",
-      "student_name": "Isha Hebbar",
-      "student_email": "ihebbar@wisc.edu",
-      "confidence": 9,
-      "rationale": "Isha's top choice is the Venture Pathway with a strong interest in building a startup from the ground up, identifying real problems, and developing solutions people will pay for. Nicki's expertise spans Entrepreneurship/Venture Creation, Product Development/Design, and Go-to-market strategy including ICP and story, which directly aligns with Isha's goals of creating impactful, real-world products and understanding how to bring them to market."
-    },
-    {
-      "mentor_name": "Christopher Harrison",
-      "mentor_email": "chris@prismscope.ai",
-      "student_name": "Aarav Dayal",
-      "student_email": "adayal6@wisc.edu",
-      "confidence": 9,
-      "rationale": "Aarav is interested in the Venture Pathway and Events, which align with his current ventures. Christopher's expertise includes Entrepreneurship/Venture Creation, Innovation Processes, and AI & Emerging Tech, providing relevant guidance for Aarav's ongoing venture work and event participation."
-    },
-    {
-      "mentor_name": "Tim Nott",
-      "mentor_email": "timothynott@gmail.com",
-      "student_name": "Bala Shukla",
-      "student_email": "shukla35@wisc.edu",
-      "confidence": 9,
-      "rationale": "Bala is mainly interested in the Venture Pathway and Events to validate, learn, and team up for their prototype. Tim's expertise in Entrepreneurship/Venture Creation, Product Development/Design, AI & Emerging Tech, and Innovation Processes directly supports Bala's goals of prototype validation and venture development."
-    },
-    {
-      "mentor_name": "Tim Nott",
-      "mentor_email": "timothynott@gmail.com",
-      "student_name": "Abdul Ghani Quraishi",
-      "student_email": "aquraishi2@wisc.edu",
-      "confidence": 9,
-      "rationale": "Abdul's top choice is the Venture Pathway, as he already has an idea with friends for a degree planning tool for UW Madison students and wants to turn it into a working product. Tim's expertise in Entrepreneurship/Venture Creation, Product Development/Design, and Innovation Processes aligns perfectly with Abdul's goal of implementing his idea and benefiting from resources to help with product development."
-    },
-    {
-      "mentor_name": "Tim Nott",
-      "mentor_email": "timothynott@gmail.com",
-      "student_name": "Sami Beg",
-      "student_email": "sbeg@wisc.edu",
-      "confidence": 9,
-      "rationale": "Tim Nott's expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship/Venture Creation, and Innovation Processes aligns directly with Sami Beg's venture idea for a UW-specific academic planning tool with a conversational interface. Sami wants to validate the problem, build an MVP, and iterate fast through the Venture Pathway, which matches Tim's product development and entrepreneurship focus. Tim's background can support Sami's goal of building production-oriented software and ML systems for real campus challenges."
-    },
-    {
-      "mentor_name": "Christopher Harrison",
-      "mentor_email": "chris@prismscope.ai",
-      "student_name": "Humza Pasha",
-      "student_email": "hpasha2@wisc.edu",
-      "confidence": 9,
-      "rationale": "Christopher Harrison's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns well with Humza Pasha's interest in applying artificial intelligence to chaotic systems. Humza wants to explore cutting-edge AI tools and techniques through Self-Directed Exploration and engage in research through the Campus and Industry Innovation Project Leader program. Christopher's AI and innovation background can guide Humza's research goals in mathematics and computer science applications."
-    },
-    {
-      "mentor_name": "Ananth Subramanya",
-      "mentor_email": "ananth@mangodesk.com",
-      "student_name": "Golsa Moinshaghaghi",
-      "student_email": "moinshaghagh@wisc.edu",
-      "confidence": 9,
-      "rationale": "Ananth Subramanya's expertise in AI & Emerging Tech and Entrepreneurship/Venture Creation directly matches Golsa Moinshaghaghi's top choice of the Venture Pathway, where she wants to build and validate an AI-driven project from idea to prototype. Golsa's interest in using data science and AI for real-world technical challenges aligns with Ananth's entrepreneurship and AI focus. His mentorship can support her goal of contributing meaningfully to venture-building despite a busy course load."
-    },
-    {
+      "student_id": "S074",
+      "mentor_id": "M01",
       "mentor_name": "Ananth Subramanya",
       "mentor_email": "ananth@mangodesk.com",
       "student_name": "Samuel Avramov",
       "student_email": "savramov@wisc.edu",
-      "confidence": 9,
+      "fit": 10,
+      "robust": false,
       "rationale": "Ananth Subramanya's expertise in AI & Emerging Tech and Entrepreneurship/Venture Creation aligns with Samuel Avramov's top choice of the Venture Pathway, where he wants a guided approach to confirming whether his technical concepts are valid ventures. Samuel has experience with AI, knowledge graphs, and developer infrastructure projects and needs help developing passion projects to the next stage. Ananth's entrepreneurship background can provide the guidance Samuel seeks for moving from exploratory phases to MVPs."
     },
     {
+      "student_id": "S053",
+      "mentor_id": "M27",
+      "mentor_name": "Nicki Doggart",
+      "mentor_email": "ndoggart@41northconsulting.com",
+      "student_name": "Isha Hebbar",
+      "student_email": "ihebbar@wisc.edu",
+      "fit": 9,
+      "robust": false,
+      "rationale": "Isha's top choice is the Venture Pathway with a strong interest in building a startup from the ground up, identifying real problems, and developing solutions people will pay for. Nicki's expertise spans Entrepreneurship/Venture Creation, Product Development/Design, and Go-to-market strategy including ICP and story, which directly aligns with Isha's goals of creating impactful, real-world products and understanding how to bring them to market."
+    },
+    {
+      "student_id": "S054",
+      "mentor_id": "M12",
+      "mentor_name": "Christopher Harrison",
+      "mentor_email": "chris@prismscope.ai",
+      "student_name": "Aarav Dayal",
+      "student_email": "adayal6@wisc.edu",
+      "fit": 9,
+      "robust": false,
+      "rationale": "Aarav is interested in the Venture Pathway and Events, which align with his current ventures. Christopher's expertise includes Entrepreneurship/Venture Creation, Innovation Processes, and AI & Emerging Tech, providing relevant guidance for Aarav's ongoing venture work and event participation."
+    },
+    {
+      "student_id": "S022",
+      "mentor_id": "M12",
+      "mentor_name": "Christopher Harrison",
+      "mentor_email": "chris@prismscope.ai",
+      "student_name": "Viacheslav Iudenko",
+      "student_email": "slavaiud2003@gmail.com",
+      "fit": 9,
+      "robust": true,
+      "rationale": "Christopher Harrison's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, and Innovation Processes aligns with Viacheslav Iudenko's interests across Business/Strategy, Product/UX, Engineering/Development, and Data/AI/Analytics. Christopher's Career Advice & Professional Growth background can support Viacheslav's diverse skill set spanning research, customer discovery, and operations/project management. This pairing provides comprehensive mentorship across the multiple domains Viacheslav is exploring."
+    },
+    {
+      "student_id": "S063",
+      "mentor_id": "M03",
+      "mentor_name": "Tim Nott",
+      "mentor_email": "timothynott@gmail.com",
+      "student_name": "Abdul Ghani Quraishi",
+      "student_email": "aquraishi2@wisc.edu",
+      "fit": 9,
+      "robust": false,
+      "rationale": "Abdul's top choice is the Venture Pathway, as he already has an idea with friends for a degree planning tool for UW Madison students and wants to turn it into a working product. Tim's expertise in Entrepreneurship/Venture Creation, Product Development/Design, and Innovation Processes aligns perfectly with Abdul's goal of implementing his idea and benefiting from resources to help with product development."
+    },
+    {
+      "student_id": "S034",
+      "mentor_id": "M06",
+      "mentor_name": "Max Landau",
+      "mentor_email": "maxjsl@gmail.com",
+      "student_name": "Adit Singh",
+      "student_email": "singh377@wisc.edu",
+      "fit": 9,
+      "robust": true,
+      "rationale": "Max's expertise in AI & Emerging Tech, Virtual Environments/XR, and Career Advice & Professional Growth is an excellent match for Adit's Self-Directed Exploration concept using augmented reality to guide people through hands-on trade tasks. Adit's idea specifically involves AR glasses or headsets for real-time visual overlays, making Max's Virtual Environments/XR expertise directly relevant. Max can provide guidance on the visual technology Adit needs and support his interest in the Venture Pathway for developing business-building skills."
+    },
+    {
+      "student_id": "S035",
+      "mentor_id": "M21",
+      "mentor_name": "Christian Kaczmarczyk",
+      "mentor_email": "ck@thirdprime.vc",
+      "student_name": "Nathanael Kim",
+      "student_email": "ntkim@wisc.edu",
+      "fit": 9,
+      "robust": true,
+      "rationale": "Christian's expertise in AI & Emerging Tech, Entrepreneurship / Venture Creation, Industry Applications / Use Cases, and Innovation Processes aligns with Nathanael's interest in the intersection of technology and business as a computer science and finance major. Nathanael wants to use technology to solve real business problems and create and build products, which directly connects to Christian's entrepreneurship and industry applications knowledge. Christian can help Nathanael leverage lab resources to further build upon his startup ideas."
+    },
+    {
+      "student_id": "S068",
+      "mentor_id": "M01",
+      "mentor_name": "Ananth Subramanya",
+      "mentor_email": "ananth@mangodesk.com",
+      "student_name": "Golsa Moinshaghaghi",
+      "student_email": "moinshaghagh@wisc.edu",
+      "fit": 9,
+      "robust": false,
+      "rationale": "Ananth Subramanya's expertise in AI & Emerging Tech and Entrepreneurship/Venture Creation directly matches Golsa Moinshaghaghi's top choice of the Venture Pathway, where she wants to build and validate an AI-driven project from idea to prototype. Golsa's interest in using data science and AI for real-world technical challenges aligns with Ananth's entrepreneurship and AI focus. His mentorship can support her goal of contributing meaningfully to venture-building despite a busy course load."
+    },
+    {
+      "student_id": "S062",
+      "mentor_id": "M03",
+      "mentor_name": "Tim Nott",
+      "mentor_email": "timothynott@gmail.com",
+      "student_name": "Bala Shukla",
+      "student_email": "shukla35@wisc.edu",
+      "fit": 9,
+      "robust": false,
+      "rationale": "Bala is mainly interested in the Venture Pathway and Events to validate, learn, and team up for their prototype. Tim's expertise in Entrepreneurship/Venture Creation, Product Development/Design, AI & Emerging Tech, and Innovation Processes directly supports Bala's goals of prototype validation and venture development."
+    },
+    {
+      "student_id": "S066",
+      "mentor_id": "M12",
+      "mentor_name": "Christopher Harrison",
+      "mentor_email": "chris@prismscope.ai",
+      "student_name": "Humza Pasha",
+      "student_email": "hpasha2@wisc.edu",
+      "fit": 9,
+      "robust": true,
+      "rationale": "Christopher Harrison's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns well with Humza Pasha's interest in applying artificial intelligence to chaotic systems. Humza wants to explore cutting-edge AI tools and techniques through Self-Directed Exploration and engage in research through the Campus and Industry Innovation Project Leader program. Christopher's AI and innovation background can guide Humza's research goals in mathematics and computer science applications."
+    },
+    {
+      "student_id": "S033",
+      "mentor_id": "M09",
       "mentor_name": "Catherine Killam",
       "mentor_email": "catherineskillam@gmail.com",
-      "student_name": "Jane Park",
-      "student_email": "syjanepark1@gmail.com",
-      "confidence": 8,
-      "rationale": "Catherine's expertise in Product Development/Design, Industry Applications/Use Cases, go-to-market execution, sales enablement, and storytelling aligns well with Jane's interest in the Venture Pathway. Jane wants to strengthen her product thinking, learn to validate ideas with real users, and gain exposure to moving from concept to execution, which directly matches Catherine's skill set in product development and go-to-market strategies."
+      "student_name": "Evan He",
+      "student_email": "ehe6@wisc.edu",
+      "fit": 9,
+      "robust": true,
+      "rationale": "Catherine's expertise in Product Development/Design, Industry Applications / Use Cases, go-to-market execution, sales enablement, and storytelling aligns perfectly with Evan's top choice of Campus and Industry Innovation Project Leader. Evan wants to work on real-world problems with real constraints and real people, taking responsibility for decisions and tradeoffs, which connects to Catherine's industry applications and product development knowledge. Catherine's go-to-market and storytelling expertise can support Evan's leadership development as he moves beyond just helping on projects to owning them."
     },
     {
-      "mentor_name": "Saurabh K Gupta",
-      "mentor_email": "sgupta278@wisc.edu",
-      "student_name": "Devansh Mittal",
-      "student_email": "dmittal9@wisc.edu",
-      "confidence": 8,
-      "rationale": "Saurabh's expertise in AI & Emerging Tech, Product Development/Design, Industry Applications/Use Cases, and Innovation Processes aligns with Devansh's interest in the campus and industry innovation project. Devansh wants to implement his skills in real-world settings and challenge himself to improve, which matches Saurabh's focus on industry applications and product development."
+      "student_id": "S064",
+      "mentor_id": "M03",
+      "mentor_name": "Tim Nott",
+      "mentor_email": "timothynott@gmail.com",
+      "student_name": "Sami Beg",
+      "student_email": "sbeg@wisc.edu",
+      "fit": 9,
+      "robust": false,
+      "rationale": "Tim Nott's expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship/Venture Creation, and Innovation Processes aligns directly with Sami Beg's venture idea for a UW-specific academic planning tool with a conversational interface. Sami wants to validate the problem, build an MVP, and iterate fast through the Venture Pathway, which matches Tim's product development and entrepreneurship focus. Tim's background can support Sami's goal of building production-oriented software and ML systems for real campus challenges."
     },
     {
+      "student_id": "S010",
+      "mentor_id": "M09",
       "mentor_name": "Catherine Killam",
       "mentor_email": "catherineskillam@gmail.com",
       "student_name": "Siddharth Singh",
       "student_email": "ssingh329@wisc.edu",
-      "confidence": 8,
+      "fit": 8,
+      "robust": true,
       "rationale": "Catherine's expertise in Product Development/Design, Industry Applications/Use Cases, go-to-market execution, sales enablement, and storytelling aligns with Siddharth's diverse interests spanning Business/Strategy, Product/UX, Engineering/Development, Data/AI/Analytics, Design/Branding, Research/Customer Discovery, and Operations/Project Management. Her comprehensive skill set in product development and go-to-market strategies can support Siddharth's multifaceted professional interests."
     },
     {
-      "mentor_name": "Luke Anderson",
-      "mentor_email": "lucas.anderson@gmail.com",
-      "student_name": "Shivanth Peddada",
-      "student_email": "peddada2@wisc.edu",
-      "confidence": 8,
-      "rationale": "Luke's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns with Shivanth's top choice as a Campus and Industry Innovation Project Leader. Shivanth wants to build rigorous engineering and problem-solving skills in areas like AI and enterprise tech within a structured team environment, and seeks professional mentorship for future internships and jobs, which matches Luke's focus areas."
-    },
-    {
-      "mentor_name": "Thomas Yen",
-      "mentor_email": "yenthomas@outlook.com",
-      "student_name": "Soham Kolhe",
-      "student_email": "skolhe2@wisc.edu",
-      "confidence": 8,
-      "rationale": "Thomas Yen's expertise in AI & Emerging Tech, Product Development/Design, and Industry Applications aligns well with Soham Kolhe's goal to build a real solution for the Digital Health Challenge. Soham wants to develop technology that supports communication for people with different abilities, which connects to Thomas's strengths in turning ideas into practical products and exploring use cases. Thomas's background in Innovation Processes and Entrepreneurship can help Soham transform his existing ideas into a viable solution."
-    },
-    {
-      "mentor_name": "Thomas Yen",
-      "mentor_email": "yenthomas@outlook.com",
-      "student_name": "Stavan Sagala",
-      "student_email": "ssagala@wisc.edu",
-      "confidence": 8,
-      "rationale": "Thomas Yen's expertise in Product Development/Design and Entrepreneurship/Venture Creation directly supports Stavan Sagala's dual interests in the Digital Health Challenge and Venture Pathway. Stavan has already worked on health-related projects like Medica and Vitals and needs help with validation and the business side, which aligns with Thomas's strengths in Innovation Processes and turning technical projects into viable ventures. Thomas's experience in Industry Applications can guide Stavan in taking his health projects further in a structured setting."
-    },
-    {
-      "mentor_name": "Christopher Harrison",
-      "mentor_email": "chris@prismscope.ai",
-      "student_name": "Anurag Chinnaboina",
-      "student_email": "chinnaboina@wisc.edu",
-      "confidence": 8,
-      "rationale": "Christopher Harrison's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, and Innovation Processes directly supports Anurag Chinnaboina's top choices of Venture Pathway and Campus & Industry Innovation Project Leader. Anurag wants a structured way to take an idea from zero to one with real user validation and MVP building, which aligns with Christopher's strengths in entrepreneurship and innovation. Christopher's Career Advice & Professional Growth expertise can also help Anurag prepare for the kind of work he wants to do after graduation in computer science and data science."
-    },
-    {
-      "mentor_name": "Mike Trigg",
-      "mentor_email": "mike@miketrigg.com",
-      "student_name": "Sanyam Garg",
-      "student_email": "sanyam@sanyamgarg.com",
-      "confidence": 8,
-      "rationale": "Mike's expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship / Venture Creation, and Career Advice & Professional Growth directly matches Sanyam's goal of turning side projects into something bigger through the Venture Pathway. Sanyam has been building developer tools and wants to learn how to take them further, making Mike's entrepreneurship and product development knowledge essential. Mike's comprehensive skill set can guide Sanyam through the entire process of transforming projects into viable ventures."
-    },
-    {
+      "student_id": "S036",
+      "mentor_id": "M09",
       "mentor_name": "Catherine Killam",
       "mentor_email": "catherineskillam@gmail.com",
       "student_name": "Amitej Babra",
       "student_email": "ababra@wisc.edu",
-      "confidence": 8,
+      "fit": 8,
+      "robust": false,
       "rationale": "Catherine's expertise in Product Development/Design, Industry Applications / Use Cases, go-to-market execution, sales enablement, and storytelling supports Amitej's top choice of Campus and Industry Innovation Project Leader. As a junior wanting to gain leadership experience and create a collaborative environment, Amitej can benefit from Catherine's product development and industry applications knowledge. Catherine's go-to-market expertise also aligns with Amitej's interest in the Venture Pathway and desire to innovate something new from start to finish, making a simple idea become reality."
     },
     {
-      "mentor_name": "Roy Vreeland",
-      "mentor_email": "royvreeland@gmail.com",
-      "student_name": "Bryson Turner",
-      "student_email": "bryseTurner0130@gmail.com",
-      "confidence": 8,
-      "rationale": "Bryson explicitly requests to continue working with his mentor Roy from the Tech Lab last semester, stating it was \"super helpful\" and wanting to stay connected through self-directed exploration. Roy's expertise in AI & Emerging Tech, Career Advice & Professional Growth, and Innovation Processes directly supports Bryson's work on refining the EverOS MVP for edge devices (Nvidia Jetsons) and applying to government opportunities (SBIR and SOCOM). The established mentor relationship and Roy's relevant technical expertise make this an ideal continuation pairing."
+      "student_id": "S002",
+      "mentor_id": "M09",
+      "mentor_name": "Catherine Killam",
+      "mentor_email": "catherineskillam@gmail.com",
+      "student_name": "Jane Park",
+      "student_email": "syjanepark1@gmail.com",
+      "fit": 8,
+      "robust": false,
+      "rationale": "Catherine's expertise in Product Development/Design, Industry Applications/Use Cases, go-to-market execution, sales enablement, and storytelling aligns well with Jane's interest in the Venture Pathway. Jane wants to strengthen her product thinking, learn to validate ideas with real users, and gain exposure to moving from concept to execution, which directly matches Catherine's skill set in product development and go-to-market strategies."
     },
     {
-      "mentor_name": "Mike Trigg",
-      "mentor_email": "mike@miketrigg.com",
-      "student_name": "Matt Bai",
-      "student_email": "mbai22@wisc.edu",
-      "confidence": 8,
-      "rationale": "Mike's comprehensive expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship/Venture Creation, and Career Advice & Professional Growth aligns perfectly with Matt's profile. Matt brings business experience from running a storage business for two years and near-completion of CS and DS degrees, seeking to assist others and work on serious projects. Mike's entrepreneurship background can guide Matt's leadership aspirations in Campus and Industry Innovation Projects, while his broad expertise supports Matt's goal of building experiences and relationships across technical and business domains."
-    },
-    {
-      "mentor_name": "Mike Trigg",
-      "mentor_email": "mike@miketrigg.com",
-      "student_name": "Ruitao WU",
-      "student_email": "rwu245@wisc.edu",
-      "confidence": 8,
-      "rationale": "Mike's expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship/Venture Creation, and Career Advice & Professional Growth directly supports Ruitao's Venture Pathway interests. As a computer science senior interested in AI and backend systems, Ruitao wants to move beyond prototypes to focus on problem discovery, MVP development, and market validation. Mike's entrepreneurship and product development expertise can guide Ruitao through the structured process of turning technical ideas into validated, real-world solutions with solid engineering foundations."
-    },
-    {
-      "mentor_name": "Zainab Hameed",
-      "mentor_email": "zainab.hameed@wedc.org",
-      "student_name": "Alka Lakadia",
-      "student_email": "lakadia@wisc.edu",
-      "confidence": 8,
-      "rationale": "Zainab's expertise in Product Development/Design, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns perfectly with Alka's interests in Digital Health and Self-Directed Exploration. Alka is exploring ideas at the intersection of technology, health, and wellness, seeking space to understand user problems, experiment, research, and prototype thoughtfully. Zainab's product development and entrepreneurship expertise can provide the structured guidance Alka seeks while supporting her participation in hackathons and workshops to build technical and interdisciplinary skills."
-    },
-    {
-      "mentor_name": "Max Landau",
-      "mentor_email": "maxjsl@gmail.com",
-      "student_name": "Xiaozhe Ning",
-      "student_email": "xning22@wisc.edu",
-      "confidence": 8,
-      "rationale": "Xiaozhe's top choice is Self-Directed Exploration to build immersive experiences connecting technology with storytelling, culture, and perception. Max's expertise in Virtual Environments/XR and AI & Emerging Tech directly aligns with Xiaozhe's interest in immersive experiences, while his Career Advice & Professional Growth experience can support Xiaozhe's development goals."
-    },
-    {
-      "mentor_name": "Mike Trigg",
-      "mentor_email": "mike@miketrigg.com",
-      "student_name": "Franco Pastor",
-      "student_email": "pastorcueto@wisc.edu",
-      "confidence": 8,
-      "rationale": "Mike Trigg's expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship/Venture Creation, and Career Advice & Professional Growth aligns perfectly with Franco Pastor's top choice of the Venture Pathway. Franco wants structure, feedback, and accountability for customer discovery, validation, and shipping iterations to scale his venture, which matches Mike's product development and entrepreneurship focus. Mike can also support Franco's second choice of Campus and Industry Innovation Project Leader with his product direction expertise."
-    },
-    {
-      "mentor_name": "Saurabh K Gupta",
-      "mentor_email": "sgupta278@wisc.edu",
-      "student_name": "Ethan Feiges",
-      "student_email": "ejfeiges@hotmail.com",
-      "confidence": 8,
-      "rationale": "Saurabh K Gupta's expertise in AI & Emerging Tech, Product Development/Design, Industry Applications/Use Cases, and Innovation Processes aligns with Ethan Feiges's interest in the Campus and Industry Innovation Project Leader program. Ethan is passionate about using technology to solve problems affecting everyday people, such as climate change and global hunger, which matches Saurabh's industry applications focus. Saurabh can help Ethan navigate the startup ecosystem and pursue solutions beyond profit-focused ventures as he hopes to do post-grad."
-    },
-    {
-      "mentor_name": "Tim Nott",
-      "mentor_email": "timothynott@gmail.com",
-      "student_name": "Varun Parekh",
-      "student_email": "vparekh4@wisc.edu",
-      "confidence": 8,
-      "rationale": "Tim Nott's expertise in Product Development/Design, Entrepreneurship/Venture Creation, and Innovation Processes aligns well with Varun's interest in Self-Directed Exploration, where Varun wants guidance from experts on research ideas he has started exploring. Tim's background in AI & Emerging Tech and Innovation Processes can support Varun's goal of learning how classroom knowledge applies in industry through the Campus and Industry Innovation Project Leader experience."
-    },
-    {
-      "mentor_name": "Thomas Yen",
-      "mentor_email": "yenthomas@outlook.com",
-      "student_name": "Chloe Brooks",
-      "student_email": "cgbrooks2@wisc.edu",
-      "confidence": 8,
-      "rationale": "Thomas Yen's comprehensive expertise spanning Product Development/Design, Entrepreneurship/Venture Creation, Innovation Processes, and Career Advice & Professional Growth aligns perfectly with Chloe's interest in the Digital Health Challenge. His background can support Chloe's goals of building solutions at the intersection of health and technology, emphasizing real user problems, rapid experimentation, and validation through the guided accelerator format."
-    },
-    {
-      "mentor_name": "Zainab Hameed",
-      "mentor_email": "zainab.hameed@wedc.org",
-      "student_name": "Neha Srinivasula",
-      "student_email": "nsrinivasula@wisc.edu",
-      "confidence": 8,
-      "rationale": "Zainab Hameed's expertise in Product Development/Design, Entrepreneurship/Venture Creation, and Innovation Processes aligns perfectly with Neha's interest in the Digital Health Challenge and Campus and Industry Innovation Project Leader experiences. Zainab's background in Career Advice & Professional Growth can provide mentorship on the human-facing side of tech that Neha seeks, supporting her goal of building tech products while meeting with stakeholders to identify meaningful areas of impact."
-    },
-    {
-      "mentor_name": "Thomas Yen",
-      "mentor_email": "yenthomas@outlook.com",
-      "student_name": "Luray He",
-      "student_email": "mrbluerayhe@gmail.com",
-      "confidence": 8,
-      "rationale": "Thomas Yen's expertise in AI & Emerging Tech directly supports Luray's goal of building skills to understand the AI industry and developing a toolkit for personal projects. His focus on Product Development/Design and Innovation Processes aligns with Luray's interest in creating health and wellness solutions, as demonstrated by Luray's previous electroencephalogram project for sleep disorder detection. Thomas's comprehensive mentorship areas, including both technical and innovation processes, will support Luray's learning stage goals across self-directed exploration and the digital health challenge."
-    },
-    {
+      "student_id": "S111",
+      "mentor_id": "M25",
       "mentor_name": "Brett Hawkins",
       "mentor_email": "brett.hawkinsjr@gmail.com",
       "student_name": "Malcolm Mahaney",
       "student_email": "mahaney2@wisc.edu",
-      "confidence": 8,
+      "fit": 8,
+      "robust": false,
       "rationale": "Brett's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, and Innovation Processes aligns well with Malcolm's interest in applying technical and business skills to frontier technologies. Malcolm's desire to understand how different project components work together and his interest in leadership and communication match Brett's focus areas in Career Advice & Professional Growth and Innovation Processes. Malcolm's experience with tech and CPG startups and his preference for both Project Leader and Venture Pathway roles directly connect to Brett's entrepreneurship and venture creation expertise."
     },
     {
+      "student_id": "S007",
+      "mentor_id": "M07",
+      "mentor_name": "Saurabh K Gupta",
+      "mentor_email": "sgupta278@wisc.edu",
+      "student_name": "Devansh Mittal",
+      "student_email": "dmittal9@wisc.edu",
+      "fit": 8,
+      "robust": true,
+      "rationale": "Saurabh's expertise in AI & Emerging Tech, Product Development/Design, Industry Applications/Use Cases, and Innovation Processes aligns with Devansh's interest in the campus and industry innovation project. Devansh wants to implement his skills in real-world settings and challenge himself to improve, which matches Saurabh's focus on industry applications and product development."
+    },
+    {
+      "student_id": "S114",
+      "mentor_id": "M15",
       "mentor_name": "Andy Siedschlag",
       "mentor_email": "asiedschlag@comcast.net",
       "student_name": "Casey Nguyen",
       "student_email": "kvnguyen4@wisc.edu",
-      "confidence": 8,
+      "fit": 8,
+      "robust": false,
       "rationale": "Andy's expertise in Product Development/Design and Innovation Processes directly supports Casey's top choice of the Campus and Industry Innovation Project Leader track and approach to breaking down ambiguous problems and iterating toward solutions. His focus on Career Advice & Professional Growth aligns with Casey's desire to take ownership and work across disciplines on goal-oriented teams. Andy's background matches Casey's interest in execution-focused projects that move ideas forward without needing fully defined instructions."
     },
     {
-      "mentor_name": "Christian Kaczmarczyk",
-      "mentor_email": "ck@thirdprime.vc",
-      "student_name": "Dheer Sheth",
-      "student_email": "dnsheth@wisc.edu",
-      "confidence": 8,
-      "rationale": "Christian's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, and Innovation Processes aligns with Dheer's top choice of the Campus and Industry Innovation Project Leader role and interest in managing projects end-to-end. His knowledge in Industry Applications/Use Cases supports Dheer's experience with technical deliverables, data analysis, and product features from past internships. Christian's entrepreneurship background also matches Dheer's second choice of the Venture Pathway and interest in building and validating new ideas through customer discovery and rapid prototyping."
+      "student_id": "S046",
+      "mentor_id": "M08",
+      "mentor_name": "Mike Trigg",
+      "mentor_email": "mike@miketrigg.com",
+      "student_name": "Ruitao WU",
+      "student_email": "rwu245@wisc.edu",
+      "fit": 8,
+      "robust": false,
+      "rationale": "Mike's expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship/Venture Creation, and Career Advice & Professional Growth directly supports Ruitao's Venture Pathway interests. As a computer science senior interested in AI and backend systems, Ruitao wants to move beyond prototypes to focus on problem discovery, MVP development, and market validation. Mike's entrepreneurship and product development expertise can guide Ruitao through the structured process of turning technical ideas into validated, real-world solutions with solid engineering foundations."
     },
     {
-      "mentor_name": "Brett Hawkins",
-      "mentor_email": "brett.hawkinsjr@gmail.com",
-      "student_name": "Navya Sharma",
-      "student_email": "nsharma56@wisc.edu",
-      "confidence": 7,
-      "rationale": "Brett's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns with Navya's interest in both the Venture Pathway and Campus and Industry Innovation Project Leader roles. Navya wants to apply analytical skills to customer discovery and venture development while working on real campus and industry challenges in fields like AI, which matches Brett's areas of expertise."
+      "student_id": "S089",
+      "mentor_id": "M18",
+      "mentor_name": "Zainab Hameed",
+      "mentor_email": "zainab.hameed@wedc.org",
+      "student_name": "Neha Srinivasula",
+      "student_email": "nsrinivasula@wisc.edu",
+      "fit": 8,
+      "robust": false,
+      "rationale": "Zainab Hameed's expertise in Product Development/Design, Entrepreneurship/Venture Creation, and Innovation Processes aligns perfectly with Neha's interest in the Digital Health Challenge and Campus and Industry Innovation Project Leader experiences. Zainab's background in Career Advice & Professional Growth can provide mentorship on the human-facing side of tech that Neha seeks, supporting her goal of building tech products while meeting with stakeholders to identify meaningful areas of impact."
     },
     {
-      "mentor_name": "Cathy Carlson-Barchus",
-      "mentor_email": "cathy.bluedevil@gmail.com",
-      "student_name": "Prisha Agarwalla",
-      "student_email": "Pagarwalla@wisc.edu",
-      "confidence": 7,
-      "rationale": "Cathy's expertise in Product Development/Design, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns with Prisha's interest in both the Venture Pathway and Campus and Industry Innovation Project Leader role. Prisha is motivated by turning ideas into reality through iteration and feedback, and has leadership experience from Women in ACM, which matches Cathy's focus on entrepreneurship, product development, and innovation processes."
-    },
-    {
-      "mentor_name": "Cathy Carlson-Barchus",
-      "mentor_email": "cathy.bluedevil@gmail.com",
-      "student_name": "Adaobi Ibe",
-      "student_email": "aibe@wisc.edu",
-      "confidence": 7,
-      "rationale": "Cathy's expertise in Product Development/Design, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns with Adaobi's top choices of Campus and Industry Innovation Project Leader and Venture Pathway. Adaobi is interested in structuring ambiguous challenges, leading research and analysis, and early-stage venture development with emphasis on user research and experimentation, which matches Cathy's comprehensive skill set in entrepreneurship and innovation."
-    },
-    {
-      "mentor_name": "Grant Watkins",
-      "mentor_email": "grant.watkins@gener8tor.com",
-      "student_name": "Ranveer Mishra",
-      "student_email": "ranveer.mishra@gmail.com",
-      "confidence": 7,
-      "rationale": "Grant Watkins's expertise in AI & Emerging Tech, Product Development/Design, and Innovation Processes aligns with Ranveer Mishra's interest in the Campus and Industry Project Leader and Venture Pathways roles. Ranveer wants to lead a team in discovering and creating ideas for real-world challenges, which connects to Grant's strengths in innovation and entrepreneurship. Grant's background in Entrepreneurship/Venture Creation can support Ranveer's excitement about working in teams and fostering growth in teammates and the community."
-    },
-    {
-      "mentor_name": "Cathy Carlson-Barchus",
-      "mentor_email": "cathy.bluedevil@gmail.com",
-      "student_name": "Apurva Rajput",
-      "student_email": "ayrajput@wisc.edu",
-      "confidence": 7,
-      "rationale": "Cathy Carlson-Barchus's expertise in Product Development/Design, Entrepreneurship/Venture Creation, and Innovation Processes aligns with Apurva Rajput's top choices of Campus and Industry Innovation Project Leader and Self-Directed Exploration. Apurva wants to build leadership skills while working on real campus and industry problems, and also values the flexibility to explore emerging technologies independently, which connects to Cathy's strengths in turning ideas into practical solutions. Cathy's Career Advice & Professional Growth expertise can help Apurva balance structured leadership experience with independent exploration as a sophomore."
-    },
-    {
-      "mentor_name": "Roy Vreeland",
-      "mentor_email": "royvreeland@gmail.com",
-      "student_name": "Adhviklal Thoppe",
-      "student_email": "thoppe@wisc.edu",
-      "confidence": 7,
-      "rationale": "Roy Vreeland's expertise in AI & Emerging Tech, Career Advice & Professional Growth, and Innovation Processes aligns with Adhviklal Thoppe's dual interests in creating tech talks/meetups and pursuing research rooted in computer science. Adhviklal wants to bridge the tech and business industries by discussing applications of cutting-edge technology, and is also interested in AI/ML, HCI, and CS Theory research with meaningful societal impact, which connects to Roy's strengths in AI and innovation. Roy's background can support Adhviklal's goal of developing innovative solutions to real-world problems."
-    },
-    {
-      "mentor_name": "Tejvir Mann",
-      "mentor_email": "tejvirmann11@gmail.com",
-      "student_name": "Shikha Ashara",
-      "student_email": "sashara@wisc.edu",
-      "confidence": 7,
-      "rationale": "Tejvir Mann's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns with Shikha Ashara's top choices of Campus and Industry Innovation Project Leader and Venture Pathway. Shikha wants to apply her statistics and data science background to real challenges in AI and enterprise tech while growing as a leader, which connects to Tejvir's strengths in AI applications and career development. Tejvir's background can support Shikha's goals in analytics and AI-focused roles while helping her think more entrepreneurially."
-    },
-    {
-      "mentor_name": "Christian Kaczmarczyk",
-      "mentor_email": "ck@thirdprime.vc",
-      "student_name": "Damien Kim",
-      "student_email": "dkim756@wisc.edu",
-      "confidence": 7,
-      "rationale": "Christian's expertise in AI & Emerging Tech, Entrepreneurship / Venture Creation, Industry Applications / Use Cases, and Innovation Processes directly aligns with Damien's interest in learning about venture and deployment processes. Damien has experience with AI projects (Unload AI voice journal and Trusted to Lead AI career advising) but notes that neither led to venture or deployment, making Christian's entrepreneurship and innovation process knowledge particularly valuable. Christian can guide Damien through the processes of moving from prototype to venture, which is exactly what Damien wants to learn."
-    },
-    {
-      "mentor_name": "Roy Vreeland",
-      "mentor_email": "royvreeland@gmail.com",
-      "student_name": "Jia Kesaria",
-      "student_email": "kesaria@wisc.edu",
-      "confidence": 7,
-      "rationale": "Roy's expertise in AI & Emerging Tech, Career Advice & Professional Growth, and Innovation Processes matches well with Jia's background in computer science, data science, and applied AI. Jia wants to work on real-world, technically challenging problems with emerging technologies while developing leadership skills, and Roy's innovation processes expertise can support this growth. Roy's career advice focus also aligns with Jia's desire to challenge herself and learn through hands-on leadership in the Campus and Industry Innovation Project Leader role."
-    },
-    {
-      "mentor_name": "Roy Vreeland",
-      "mentor_email": "royvreeland@gmail.com",
-      "student_name": "Sathvik Reddy",
-      "student_email": "smreddy2@wisc.edu",
-      "confidence": 7,
-      "rationale": "Roy's expertise in AI & Emerging Tech, Career Advice & Professional Growth, and Innovation Processes fits well with Sathvik's desire for real-world experience and willingness to learn required skills. Sathvik is looking to work as part of a team to engineer solutions to real problems, and Roy's innovation processes knowledge can guide him through structured problem-solving approaches. Roy's career advice focus also supports Sathvik's goal of gaining practical experience in a collaborative environment."
-    },
-    {
-      "mentor_name": "Tejvir Mann",
-      "mentor_email": "tejvirmann11@gmail.com",
-      "student_name": "Daniah Almalaki",
-      "student_email": "almalaki@wisc.edu",
-      "confidence": 7,
-      "rationale": "Tejvir's expertise in AI & Emerging Tech, Industry Applications / Use Cases, and Career Advice & Professional Growth aligns with Daniah's interest in Self-Directed Exploration and experimenting with emerging technology. Daniah wants to learn by building and eventually understand how to validate ideas with real users, which connects to Tejvir's industry applications knowledge. With Daniah's upcoming AWS Software Engineering internship at Amazon, Tejvir's career advice expertise can help her integrate industry-scale systems experience with hands-on exploration of emerging tech."
-    },
-    {
-      "mentor_name": "Brett Hawkins",
-      "mentor_email": "brett.hawkinsjr@gmail.com",
-      "student_name": "Parth Aditya",
-      "student_email": "paditya2@wisc.edu",
-      "confidence": 7,
-      "rationale": "Brett's expertise in AI & Emerging Tech, Virtual Environments/XR, Entrepreneurship/Venture Creation, and Innovation Processes aligns well with Parth's self-directed exploration of DuoSport. Parth is developing a complex backend stack with Java/Spring Boot, Go microservices, and Kafka, and seeks to experiment with emerging distributed systems patterns\u2014areas where Brett's emerging tech and innovation process knowledge can provide valuable guidance. Additionally, Brett's entrepreneurship experience can support Parth's venture development goals while balancing academic demands in advanced mathematics and computer science."
-    },
-    {
-      "mentor_name": "David Pulvermacher",
-      "mentor_email": "davidj@matrixpd.com",
-      "student_name": "Jason Ge",
-      "student_email": "jge37@wisc.edu",
-      "confidence": 7,
-      "rationale": "David's expertise in AI & Emerging Tech and Product Development/Design aligns with Jason's interest in Campus and Industry Innovation to gain practical Computer Science experience beyond theoretical coursework. Jason specifically wants to work on real campus and company challenges in enterprise tech, which matches David's product development and AI expertise. This pairing provides the practical, real-world application exposure Jason is seeking."
-    },
-    {
-      "mentor_name": "Luke Anderson",
-      "mentor_email": "lucas.anderson@gmail.com",
-      "student_name": "Yiyuan Guo",
-      "student_email": "yguo388@wisc.edu",
-      "confidence": 7,
-      "rationale": "Luke's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns with Yiyuan's top choice of Campus and Industry Innovation Project Leader. Yiyuan is interested in working on practical tasks, collaborating with others, and achieving outcomes using development and programming skills. Luke's industry applications expertise can guide Yiyuan in contributing technical skills to specific projects while supporting collaborative work in real-world contexts."
-    },
-    {
-      "mentor_name": "Luke Anderson",
-      "mentor_email": "lucas.anderson@gmail.com",
-      "student_name": "Daria Feng",
-      "student_email": "yfeng266@wisc.edu",
-      "confidence": 7,
-      "rationale": "Luke's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth directly supports Daria's top choice of Campus and Industry Innovation Project Leader. Daria wants to apply her computer science and AI background to build practical solutions for real campus or industry problems while taking meaningful responsibility. Luke's industry applications and AI expertise can guide Daria in contributing to project progress and exploring emerging technologies through Lab events like hackathons and workshops."
-    },
-    {
-      "mentor_name": "Luke Anderson",
-      "mentor_email": "lucas.anderson@gmail.com",
-      "student_name": "Jessica Adjiwibawa",
-      "student_email": "jadjiwibawa@wisc.edu",
-      "confidence": 7,
-      "rationale": "Jessica's interests are in Engineering/Development and Data/AI/Analytics. Luke's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns well with Jessica's technical focus areas and can support her development in these domains."
-    },
-    {
+      "student_id": "S057",
+      "mentor_id": "M10",
       "mentor_name": "Tejvir Mann",
       "mentor_email": "tejvirmann11@gmail.com",
       "student_name": "FNU Pallavi Sharma",
       "student_email": "pallavisharm@wisc.edu",
-      "confidence": 7,
+      "fit": 8,
+      "robust": false,
       "rationale": "Pallavi wants to focus on high-impact projects applying grad school learning to real-world problems, with interest in the Project Leader role working on complex challenges like AI or enterprise tech. Tejvir's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns well with Pallavi's goals for her final semester leadership experience."
     },
     {
-      "mentor_name": "Ali Abtahi",
-      "mentor_email": "ali@gvg.vc",
-      "student_name": "Alexander Kubiak",
-      "student_email": "akubiak2@wisc.edu",
-      "confidence": 7,
-      "rationale": "Alexander's top choice is the Digital Health Challenge, motivated by personal experiences with people struggling with brain health and neurological issues, wanting to create real-world health impact. Ali is co-founder of a venture capital firm focused on human health challenges, has an MS in epidemiology, and is keenly interested in assisting startups in the health and medical sectors, making this an excellent match for Alexander's health-focused goals."
+      "student_id": "S015",
+      "mentor_id": "M13",
+      "mentor_name": "Thomas Yen",
+      "mentor_email": "yenthomas@outlook.com",
+      "student_name": "Soham Kolhe",
+      "student_email": "skolhe2@wisc.edu",
+      "fit": 8,
+      "robust": true,
+      "rationale": "Thomas Yen's expertise in AI & Emerging Tech, Product Development/Design, and Industry Applications aligns well with Soham Kolhe's goal to build a real solution for the Digital Health Challenge. Soham wants to develop technology that supports communication for people with different abilities, which connects to Thomas's strengths in turning ideas into practical products and exploring use cases. Thomas's background in Innovation Processes and Entrepreneurship can help Soham transform his existing ideas into a viable solution."
     },
     {
-      "mentor_name": "Nicki Doggart",
-      "mentor_email": "ndoggart@41northconsulting.com",
-      "student_name": "Shilin Chhabra",
-      "student_email": "chhabra7@wisc.edu",
-      "confidence": 7,
-      "rationale": "Shilin's top choice is the Campus and Industry Innovation Project Leader pathway, wanting to take ownership of work with real stakeholders and impact while applying strengths in AI, systems, and product execution. Nicki's expertise in Product Development/Design, Industry Applications/Use Cases, AI & Emerging Tech, and Go-to-market strategy aligns well with Shilin's goals of translating ambiguous problems into clear execution plans and shipping measurable outcomes."
+      "student_id": "S018",
+      "mentor_id": "M12",
+      "mentor_name": "Christopher Harrison",
+      "mentor_email": "chris@prismscope.ai",
+      "student_name": "Anurag Chinnaboina",
+      "student_email": "chinnaboina@wisc.edu",
+      "fit": 8,
+      "robust": false,
+      "rationale": "Christopher Harrison's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, and Innovation Processes directly supports Anurag Chinnaboina's top choices of Venture Pathway and Campus & Industry Innovation Project Leader. Anurag wants a structured way to take an idea from zero to one with real user validation and MVP building, which aligns with Christopher's strengths in entrepreneurship and innovation. Christopher's Career Advice & Professional Growth expertise can also help Anurag prepare for the kind of work he wants to do after graduation in computer science and data science."
     },
     {
-      "mentor_name": "Brooks Boyd",
-      "mentor_email": "bro@oks.me",
-      "student_name": "Everett Villiger",
-      "student_email": "evilliger@wisc.edu",
-      "confidence": 7,
-      "rationale": "Brooks Boyd's expertise in Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns well with Everett Villiger's top choice of Campus and Industry Innovation Project Leader experience. Everett wants to use his skills to solve real-world problems for companies or people on campus, which matches Brooks's industry applications focus. Brooks can also support Everett's second choice of Self-Directed Exploration with focused technical exploration that complements his coursework."
+      "student_id": "S072",
+      "mentor_id": "M08",
+      "mentor_name": "Mike Trigg",
+      "mentor_email": "mike@miketrigg.com",
+      "student_name": "Franco Pastor",
+      "student_email": "pastorcueto@wisc.edu",
+      "fit": 8,
+      "robust": true,
+      "rationale": "Mike Trigg's expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship/Venture Creation, and Career Advice & Professional Growth aligns perfectly with Franco Pastor's top choice of the Venture Pathway. Franco wants structure, feedback, and accountability for customer discovery, validation, and shipping iterations to scale his venture, which matches Mike's product development and entrepreneurship focus. Mike can also support Franco's second choice of Campus and Industry Innovation Project Leader with his product direction expertise."
     },
     {
+      "student_id": "S047",
+      "mentor_id": "M18",
+      "mentor_name": "Zainab Hameed",
+      "mentor_email": "zainab.hameed@wedc.org",
+      "student_name": "Alka Lakadia",
+      "student_email": "lakadia@wisc.edu",
+      "fit": 8,
+      "robust": true,
+      "rationale": "Zainab's expertise in Product Development/Design, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns perfectly with Alka's interests in Digital Health and Self-Directed Exploration. Alka is exploring ideas at the intersection of technology, health, and wellness, seeking space to understand user problems, experiment, research, and prototype thoughtfully. Zainab's product development and entrepreneurship expertise can provide the structured guidance Alka seeks while supporting her participation in hackathons and workshops to build technical and interdisciplinary skills."
+    },
+    {
+      "student_id": "S085",
+      "mentor_id": "M13",
+      "mentor_name": "Thomas Yen",
+      "mentor_email": "yenthomas@outlook.com",
+      "student_name": "Chloe Brooks",
+      "student_email": "cgbrooks2@wisc.edu",
+      "fit": 8,
+      "robust": true,
+      "rationale": "Thomas Yen's comprehensive expertise spanning Product Development/Design, Entrepreneurship/Venture Creation, Innovation Processes, and Career Advice & Professional Growth aligns perfectly with Chloe's interest in the Digital Health Challenge. His background can support Chloe's goals of building solutions at the intersection of health and technology, emphasizing real user problems, rapid experimentation, and validation through the guided accelerator format."
+    },
+    {
+      "student_id": "S078",
+      "mentor_id": "M07",
+      "mentor_name": "Saurabh K Gupta",
+      "mentor_email": "sgupta278@wisc.edu",
+      "student_name": "Ethan Feiges",
+      "student_email": "ejfeiges@hotmail.com",
+      "fit": 8,
+      "robust": true,
+      "rationale": "Saurabh K Gupta's expertise in AI & Emerging Tech, Product Development/Design, Industry Applications/Use Cases, and Innovation Processes aligns with Ethan Feiges's interest in the Campus and Industry Innovation Project Leader program. Ethan is passionate about using technology to solve problems affecting everyday people, such as climate change and global hunger, which matches Saurabh's industry applications focus. Saurabh can help Ethan navigate the startup ecosystem and pursue solutions beyond profit-focused ventures as he hopes to do post-grad."
+    },
+    {
+      "student_id": "S081",
+      "mentor_id": "M03",
+      "mentor_name": "Tim Nott",
+      "mentor_email": "timothynott@gmail.com",
+      "student_name": "Varun Parekh",
+      "student_email": "vparekh4@wisc.edu",
+      "fit": 8,
+      "robust": false,
+      "rationale": "Tim Nott's expertise in Product Development/Design, Entrepreneurship/Venture Creation, and Innovation Processes aligns well with Varun's interest in Self-Directed Exploration, where Varun wants guidance from experts on research ideas he has started exploring. Tim's background in AI & Emerging Tech and Innovation Processes can support Varun's goal of learning how classroom knowledge applies in industry through the Campus and Industry Innovation Project Leader experience."
+    },
+    {
+      "student_id": "S109",
+      "mentor_id": "M13",
+      "mentor_name": "Thomas Yen",
+      "mentor_email": "yenthomas@outlook.com",
+      "student_name": "Luray He",
+      "student_email": "mrbluerayhe@gmail.com",
+      "fit": 8,
+      "robust": false,
+      "rationale": "Thomas Yen's expertise in AI & Emerging Tech directly supports Luray's goal of building skills to understand the AI industry and developing a toolkit for personal projects. His focus on Product Development/Design and Innovation Processes aligns with Luray's interest in creating health and wellness solutions, as demonstrated by Luray's previous electroencephalogram project for sleep disorder detection. Thomas's comprehensive mentorship areas, including both technical and innovation processes, will support Luray's learning stage goals across self-directed exploration and the digital health challenge."
+    },
+    {
+      "student_id": "S030",
+      "mentor_id": "M08",
+      "mentor_name": "Mike Trigg",
+      "mentor_email": "mike@miketrigg.com",
+      "student_name": "Sanyam Garg",
+      "student_email": "sanyam@sanyamgarg.com",
+      "fit": 8,
+      "robust": false,
+      "rationale": "Mike's expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship / Venture Creation, and Career Advice & Professional Growth directly matches Sanyam's goal of turning side projects into something bigger through the Venture Pathway. Sanyam has been building developer tools and wants to learn how to take them further, making Mike's entrepreneurship and product development knowledge essential. Mike's comprehensive skill set can guide Sanyam through the entire process of transforming projects into viable ventures."
+    },
+    {
+      "student_id": "S115",
+      "mentor_id": "M21",
+      "mentor_name": "Christian Kaczmarczyk",
+      "mentor_email": "ck@thirdprime.vc",
+      "student_name": "Dheer Sheth",
+      "student_email": "dnsheth@wisc.edu",
+      "fit": 8,
+      "robust": true,
+      "rationale": "Christian's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, and Innovation Processes aligns with Dheer's top choice of the Campus and Industry Innovation Project Leader role and interest in managing projects end-to-end. His knowledge in Industry Applications/Use Cases supports Dheer's experience with technical deliverables, data analysis, and product features from past internships. Christian's entrepreneurship background also matches Dheer's second choice of the Venture Pathway and interest in building and validating new ideas through customer discovery and rapid prototyping."
+    },
+    {
+      "student_id": "S060",
+      "mentor_id": "M06",
+      "mentor_name": "Max Landau",
+      "mentor_email": "maxjsl@gmail.com",
+      "student_name": "Xiaozhe Ning",
+      "student_email": "xning22@wisc.edu",
+      "fit": 8,
+      "robust": false,
+      "rationale": "Xiaozhe's top choice is Self-Directed Exploration to build immersive experiences connecting technology with storytelling, culture, and perception. Max's expertise in Virtual Environments/XR and AI & Emerging Tech directly aligns with Xiaozhe's interest in immersive experiences, while his Career Advice & Professional Growth experience can support Xiaozhe's development goals."
+    },
+    {
+      "student_id": "S043",
+      "mentor_id": "M08",
+      "mentor_name": "Mike Trigg",
+      "mentor_email": "mike@miketrigg.com",
+      "student_name": "Matt Bai",
+      "student_email": "mbai22@wisc.edu",
+      "fit": 8,
+      "robust": true,
+      "rationale": "Mike's comprehensive expertise in AI & Emerging Tech, Product Development/Design, Entrepreneurship/Venture Creation, and Career Advice & Professional Growth aligns perfectly with Matt's profile. Matt brings business experience from running a storage business for two years and near-completion of CS and DS degrees, seeking to assist others and work on serious projects. Mike's entrepreneurship background can guide Matt's leadership aspirations in Campus and Industry Innovation Projects, while his broad expertise supports Matt's goal of building experiences and relationships across technical and business domains."
+    },
+    {
+      "student_id": "S012",
+      "mentor_id": "M20",
+      "mentor_name": "Luke Anderson",
+      "mentor_email": "lucas.anderson@gmail.com",
+      "student_name": "Shivanth Peddada",
+      "student_email": "peddada2@wisc.edu",
+      "fit": 8,
+      "robust": false,
+      "rationale": "Luke's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns with Shivanth's top choice as a Campus and Industry Innovation Project Leader. Shivanth wants to build rigorous engineering and problem-solving skills in areas like AI and enterprise tech within a structured team environment, and seeks professional mentorship for future internships and jobs, which matches Luke's focus areas."
+    },
+    {
+      "student_id": "S039",
+      "mentor_id": "M04",
+      "mentor_name": "Roy Vreeland",
+      "mentor_email": "royvreeland@gmail.com",
+      "student_name": "Bryson Turner",
+      "student_email": "bryseTurner0130@gmail.com",
+      "fit": 8,
+      "robust": true,
+      "rationale": "Bryson explicitly requests to continue working with his mentor Roy from the Tech Lab last semester, stating it was \"super helpful\" and wanting to stay connected through self-directed exploration. Roy's expertise in AI & Emerging Tech, Career Advice & Professional Growth, and Innovation Processes directly supports Bryson's work on refining the EverOS MVP for edge devices (Nvidia Jetsons) and applying to government opportunities (SBIR and SOCOM). The established mentor relationship and Roy's relevant technical expertise make this an ideal continuation pairing."
+    },
+    {
+      "student_id": "S016",
+      "mentor_id": "M13",
+      "mentor_name": "Thomas Yen",
+      "mentor_email": "yenthomas@outlook.com",
+      "student_name": "Stavan Sagala",
+      "student_email": "ssagala@wisc.edu",
+      "fit": 8,
+      "robust": true,
+      "rationale": "Thomas Yen's expertise in Product Development/Design and Entrepreneurship/Venture Creation directly supports Stavan Sagala's dual interests in the Digital Health Challenge and Venture Pathway. Stavan has already worked on health-related projects like Medica and Vitals and needs help with validation and the business side, which aligns with Thomas's strengths in Innovation Processes and turning technical projects into viable ventures. Thomas's experience in Industry Applications can guide Stavan in taking his health projects further in a structured setting."
+    },
+    {
+      "student_id": "S038",
+      "mentor_id": "M25",
+      "mentor_name": "Brett Hawkins",
+      "mentor_email": "brett.hawkinsjr@gmail.com",
+      "student_name": "Parth Aditya",
+      "student_email": "paditya2@wisc.edu",
+      "fit": 7,
+      "robust": true,
+      "rationale": "Brett's expertise in AI & Emerging Tech, Virtual Environments/XR, Entrepreneurship/Venture Creation, and Innovation Processes aligns well with Parth's self-directed exploration of DuoSport. Parth is developing a complex backend stack with Java/Spring Boot, Go microservices, and Kafka, and seeks to experiment with emerging distributed systems patterns\u2014areas where Brett's emerging tech and innovation process knowledge can provide valuable guidance. Additionally, Brett's entrepreneurship experience can support Parth's venture development goals while balancing academic demands in advanced mathematics and computer science."
+    },
+    {
+      "student_id": "S077",
+      "mentor_id": "M16",
       "mentor_name": "Shayna Hetzel",
       "mentor_email": "shayna.hetzel@wedc.org",
       "student_name": "Ana Toscano",
       "student_email": "atoscano2@wisc.edu",
-      "confidence": 7,
+      "fit": 7,
+      "robust": false,
       "rationale": "Shayna Hetzel's expertise in Entrepreneurship/Venture Creation, Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns with Ana Toscano's top interest in the Venture Pathway. Ana wants to continue working in venture capital after her summer experience evaluating how ML could improve internal processes in venture capital firms. Shayna's entrepreneurship and industry applications background can support Ana's venture capital interests while accommodating her busy senior double major schedule."
     },
     {
-      "mentor_name": "Saurabh K Gupta",
-      "mentor_email": "sgupta278@wisc.edu",
-      "student_name": "Paawan Kathuria",
-      "student_email": "pkathuria@wisc.edu",
-      "confidence": 7,
-      "rationale": "Saurabh K Gupta's expertise in AI & Emerging Tech, Product Development/Design, Industry Applications/Use Cases, and Innovation Processes aligns with Paawan Kathuria's top choice of Campus and Industry Innovation Project Leader. Paawan wants to work on real, well-defined problems while taking on leadership roles with meaningful responsibility and applying his technical background to projects with tangible impact. Saurabh's industry applications and product development expertise can support Paawan's goals of improving campus systems or addressing industry partner challenges."
-    },
-    {
+      "student_id": "S082",
+      "mentor_id": "M06",
       "mentor_name": "Max Landau",
       "mentor_email": "maxjsl@gmail.com",
       "student_name": "Eric Cao",
       "student_email": "ecao7@wisc.edu",
-      "confidence": 7,
+      "fit": 7,
+      "robust": true,
       "rationale": "Max Landau's expertise in AI & Emerging Tech and Career Advice & Professional Growth matches Eric's interests in both the Venture Pathway, where Eric's team is developing a degree planning tool, and the Campus and Industry Innovation Project Leader track, where Eric wants to work on projects with real-world practical business uses. Max's industry experience can provide valuable guidance for Eric's product development goals."
     },
     {
-      "mentor_name": "Brooks Boyd",
-      "mentor_email": "bro@oks.me",
-      "student_name": "kishan rishik kota",
-      "student_email": "kkota@wisc.edu",
-      "confidence": 7,
-      "rationale": "Brooks Boyd's expertise in Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns with Kishan's interest in the Venture Pathway, where Kishan wants structured process and feedback to turn ideas into something real and usable. Brooks can provide guidance on the hands-on, collaborative learning approach that Kishan values in events like hackathons and build nights."
-    },
-    {
-      "mentor_name": "Christian Kaczmarczyk",
-      "mentor_email": "ck@thirdprime.vc",
-      "student_name": "Devanshi Jain",
-      "student_email": "dsjain3@wisc.edu",
-      "confidence": 7,
-      "rationale": "Christian Kaczmarczyk's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Innovation Processes aligns well with Devanshi's experience working on an industry-facing project with SBDC and her interest in translating client needs into technical solutions. His background in Entrepreneurship/Venture Creation can support Devanshi's goal of taking on leadership responsibility while working on real-world applications and continuing to build practical skills."
-    },
-    {
-      "mentor_name": "Andy Siedschlag",
-      "mentor_email": "asiedschlag@comcast.net",
-      "student_name": "Duy Tran",
-      "student_email": "dmtran@wisc.edu",
-      "confidence": 7,
-      "rationale": "Andy Siedschlag's expertise in Product Development/Design, Innovation Processes, and Career Advice & Professional Growth directly aligns with Duy's top choice of the Campus and Industry Innovation Project Leader track. Andy can support Duy's goal of working with technologies actively used in industry while solving real problems with real constraints, and help Duy apply technical skills to make meaningful impact."
-    },
-    {
-      "mentor_name": "Ali Abtahi",
-      "mentor_email": "ali@gvg.vc",
-      "student_name": "Sanjit Saji",
-      "student_email": "ssaji2@wisc.edu",
-      "confidence": 7,
-      "rationale": "Ali Abtahi's background as co-founder of Global Venture Group focused on seed and early-stage investments in health sectors, combined with his educational background in molecular biology and epidemiology, aligns exceptionally well with Sanjit's top choices. Ali's keen interest in assisting startups in health and medical sectors directly supports Sanjit's Venture Pathway goals at the early validation stage and the Digital Health Challenge focus on health, wellness, and AI."
-    },
-    {
-      "mentor_name": "Saurabh K Gupta",
-      "mentor_email": "sgupta278@wisc.edu",
-      "student_name": "Omkar Khade",
-      "student_email": "okhade@wisc.edu",
-      "confidence": 7,
-      "rationale": "Saurabh K Gupta's expertise in AI & Emerging Tech, Product Development/Design, Industry Applications/Use Cases, and Innovation Processes aligns perfectly with Omkar's top choice of Campus and Industry Innovation Project Leader. Saurabh can support Omkar's goal of applying his background in data science, machine learning, and AI to enterprise or research-driven challenges, and also guide Omkar's Self-Directed Exploration interest in prototyping ideas in applied AI, automation, and intelligent systems."
-    },
-    {
-      "mentor_name": "Ali Abtahi",
-      "mentor_email": "ali@gvg.vc",
-      "student_name": "Adnan Fazulbhoy",
-      "student_email": "fazulbhoy@wisc.edu",
-      "confidence": 7,
-      "rationale": "Ali Abtahi's background as co-founder of Global Venture Group, a venture capital firm focused on seed and early-stage investments with emphasis on health sectors, directly aligns with Adnan's top choice of Venture Pathway for early validation stage work. Additionally, Ali's keen interest in assisting startups in health and medical sectors matches Adnan's Digital Health Challenge interest, as Adnan's idea focuses on health, wellness, and AI. Ali's combined expertise in strategic advisory services and health-focused venture investments makes him well-suited to guide Adnan through both validation and impact-driven refinement."
-    },
-    {
-      "mentor_name": "Shayna Hetzel",
-      "mentor_email": "shayna.hetzel@wedc.org",
-      "student_name": "Sumedh Sabherwal",
-      "student_email": "sabherwal2@wisc.edu",
-      "confidence": 7,
-      "rationale": "Shayna Hetzel's expertise in Entrepreneurship/Venture Creation aligns with Sumedh's top choice of Venture Discovery, where he wants to return to the cycle of testing assumptions, getting feedback, and improving ideas. Her additional focus on Industry Applications/Use Cases directly matches Sumedh's second choice of Industry Innovation/Co-Labs, where he's interested in working on real problems with clear constraints and stakeholders. Shayna's combined mentorship areas cover both the foundational validation work and practical application settings that Sumedh seeks."
-    },
-    {
-      "mentor_name": "Brooks Boyd",
-      "mentor_email": "bro@oks.me",
-      "student_name": "Elijah Orille",
-      "student_email": "orille@wisc.edu",
-      "confidence": 7,
-      "rationale": "Brooks Boyd's expertise in Industry Applications/Use Cases can help Elijah identify interesting projects across different domains that align with his passions. Additionally, Brooks's focus on Career Advice & Professional Growth will support Elijah's goal of gaining meaningful experience. Brooks's knowledge of Innovation Processes can guide Elijah in contributing effectively to projects he's passionate about building."
-    },
-    {
+      "student_id": "S020",
+      "mentor_id": "M05",
       "mentor_name": "Cathy Carlson-Barchus",
       "mentor_email": "cathy.bluedevil@gmail.com",
-      "student_name": "Thea Fonstad",
-      "student_email": "tfonstad@wisc.edu",
-      "confidence": 7,
-      "rationale": "Cathy Carlson-Barchus's expertise in Product Development/Design and Innovation Processes directly aligns with Thea's interest in translating complex systems into usable, human-centered products as she works on her autonomous trucking thesis. Cathy's focus on Entrepreneurship/Venture Creation supports Thea's Co-Labs interest in working on real campus or company problem statements with leadership roles. Her combined expertise in product design and innovation processes will help Thea bridge her technical research experience with building impactful, real-world solutions."
+      "student_name": "Apurva Rajput",
+      "student_email": "ayrajput@wisc.edu",
+      "fit": 7,
+      "robust": true,
+      "rationale": "Cathy Carlson-Barchus's expertise in Product Development/Design, Entrepreneurship/Venture Creation, and Innovation Processes aligns with Apurva Rajput's top choices of Campus and Industry Innovation Project Leader and Self-Directed Exploration. Apurva wants to build leadership skills while working on real campus and industry problems, and also values the flexibility to explore emerging technologies independently, which connects to Cathy's strengths in turning ideas into practical solutions. Cathy's Career Advice & Professional Growth expertise can help Apurva balance structured leadership experience with independent exploration as a sophomore."
     },
     {
-      "mentor_name": "David Pulvermacher",
-      "mentor_email": "davidj@matrixpd.com",
-      "student_name": "Zach Lichtman",
-      "student_email": "zalichtman@wisc.edu",
-      "confidence": 7,
-      "rationale": "David Pulvermacher's expertise in AI & Emerging Tech and Product Development/Design aligns with Zach's goal of contributing to meaningful UW Tech Projects that provide impact. David's product development focus will help Zach build tangible contributions to discuss in full-time role interviews. This pairing supports Zach's dual objectives of creating meaningful impact and advancing his professional prospects."
-    },
-    {
-      "mentor_name": "Zainab Hameed",
-      "mentor_email": "zainab.hameed@wedc.org",
-      "student_name": "Shivani Potnuru",
-      "student_email": "spotnuru@wisc.edu",
-      "confidence": 7,
-      "rationale": "Zainab Hameed's expertise in Product Development/Design and Entrepreneurship/Venture Creation directly aligns with Shivani's top choice of Venture Pathway, where she wants end-to-end project experience with applied learning and exploration. Zainab's focus on Innovation Processes supports Shivani's interest in taking steps to find solutions, validate, research, and test. Her combined mentorship areas match Shivani's desire to work on meaningful projects while applying her HCI, computer science, and statistics knowledge to build solutions that help people."
-    },
-    {
-      "mentor_name": "Max Landau",
-      "mentor_email": "maxjsl@gmail.com",
-      "student_name": "Krithika Guduru",
-      "student_email": "krguduru@wisc.edu",
-      "confidence": 7,
-      "rationale": "Max Landau's expertise in AI & Emerging Tech aligns with Krithika's Self-Directed Exploration interest in experimenting with emerging tech and continuing her C++/Arduino hardware integration projects. His focus on Career Advice & Professional Growth supports Krithika's desire for community involvement with academic flexibility. Max's technical expertise will provide valuable mentorship for Krithika's current projects while respecting her need for creative experimentation without rigid venture-track pressure."
-    },
-    {
+      "student_id": "S110",
+      "mentor_id": "M11",
       "mentor_name": "Grant Watkins",
       "mentor_email": "grant.watkins@gener8tor.com",
       "student_name": "Arwa Mohamud",
       "student_email": "mohamud4@wisc.edu",
-      "confidence": 7,
+      "fit": 7,
+      "robust": false,
       "rationale": "Grant Watkins's expertise in AI & Emerging Tech, Product Development/Design, and Entrepreneurship/Venture Creation aligns with Arwa's dual interests in Campus and Industry Innovation Project Leader and Venture Pathway. His focus on Innovation Processes supports Arwa's goal of developing and growing through campus/company challenges in biotech and enterprise tech areas. Grant's combined technical and entrepreneurial expertise will help Arwa work on projects in her areas of interest while developing her innovation capabilities."
     },
     {
-      "mentor_name": "Brett Hawkins",
-      "mentor_email": "brett.hawkinsjr@gmail.com",
-      "student_name": "Lingfang Yuan",
-      "student_email": "lyuan57@wisc.edu",
-      "confidence": 7,
-      "rationale": "Brett's expertise in Entrepreneurship/Venture Creation directly supports Lingfang's primary interest in the Venture Pathway and desire to test technical projects for real-world potential. His knowledge in AI & Emerging Tech and Innovation Processes can help Lingfang learn how to bridge the gap between prototype and real product, specifically addressing her interest in the validation aspect. Brett's background aligns with Lingfang's goal of graduating with a validated project under her belt."
+      "student_id": "S103",
+      "mentor_id": "M05",
+      "mentor_name": "Cathy Carlson-Barchus",
+      "mentor_email": "cathy.bluedevil@gmail.com",
+      "student_name": "Thea Fonstad",
+      "student_email": "tfonstad@wisc.edu",
+      "fit": 7,
+      "robust": true,
+      "rationale": "Cathy Carlson-Barchus's expertise in Product Development/Design and Innovation Processes directly aligns with Thea's interest in translating complex systems into usable, human-centered products as she works on her autonomous trucking thesis. Cathy's focus on Entrepreneurship/Venture Creation supports Thea's Co-Labs interest in working on real campus or company problem statements with leadership roles. Her combined expertise in product design and innovation processes will help Thea bridge her technical research experience with building impactful, real-world solutions."
     },
     {
+      "student_id": "S055",
+      "mentor_id": "M20",
+      "mentor_name": "Luke Anderson",
+      "mentor_email": "lucas.anderson@gmail.com",
+      "student_name": "Jessica Adjiwibawa",
+      "student_email": "jadjiwibawa@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Jessica's interests are in Engineering/Development and Data/AI/Analytics. Luke's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns well with Jessica's technical focus areas and can support her development in these domains."
+    },
+    {
+      "student_id": "S094",
+      "mentor_id": "M02",
+      "mentor_name": "Ali Abtahi",
+      "mentor_email": "ali@gvg.vc",
+      "student_name": "Sanjit Saji",
+      "student_email": "ssaji2@wisc.edu",
+      "fit": 7,
+      "robust": true,
+      "rationale": "Ali Abtahi's background as co-founder of Global Venture Group focused on seed and early-stage investments in health sectors, combined with his educational background in molecular biology and epidemiology, aligns exceptionally well with Sanjit's top choices. Ali's keen interest in assisting startups in health and medical sectors directly supports Sanjit's Venture Pathway goals at the early validation stage and the Digital Health Challenge focus on health, wellness, and AI."
+    },
+    {
+      "student_id": "S029",
+      "mentor_id": "M10",
+      "mentor_name": "Tejvir Mann",
+      "mentor_email": "tejvirmann11@gmail.com",
+      "student_name": "Daniah Almalaki",
+      "student_email": "almalaki@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Tejvir's expertise in AI & Emerging Tech, Industry Applications / Use Cases, and Career Advice & Professional Growth aligns with Daniah's interest in Self-Directed Exploration and experimenting with emerging technology. Daniah wants to learn by building and eventually understand how to validate ideas with real users, which connects to Tejvir's industry applications knowledge. With Daniah's upcoming AWS Software Engineering internship at Amazon, Tejvir's career advice expertise can help her integrate industry-scale systems experience with hands-on exploration of emerging tech."
+    },
+    {
+      "student_id": "S101",
+      "mentor_id": "M26",
+      "mentor_name": "Brooks Boyd",
+      "mentor_email": "bro@oks.me",
+      "student_name": "Elijah Orille",
+      "student_email": "orille@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Brooks Boyd's expertise in Industry Applications/Use Cases can help Elijah identify interesting projects across different domains that align with his passions. Additionally, Brooks's focus on Career Advice & Professional Growth will support Elijah's goal of gaining meaningful experience. Brooks's knowledge of Innovation Processes can guide Elijah in contributing effectively to projects he's passionate about building."
+    },
+    {
+      "student_id": "S042",
+      "mentor_id": "M22",
+      "mentor_name": "David Pulvermacher",
+      "mentor_email": "davidj@matrixpd.com",
+      "student_name": "Jason Ge",
+      "student_email": "jge37@wisc.edu",
+      "fit": 7,
+      "robust": true,
+      "rationale": "David's expertise in AI & Emerging Tech and Product Development/Design aligns with Jason's interest in Campus and Industry Innovation to gain practical Computer Science experience beyond theoretical coursework. Jason specifically wants to work on real campus and company challenges in enterprise tech, which matches David's product development and AI expertise. This pairing provides the practical, real-world application exposure Jason is seeking."
+    },
+    {
+      "student_id": "S096",
+      "mentor_id": "M02",
+      "mentor_name": "Ali Abtahi",
+      "mentor_email": "ali@gvg.vc",
+      "student_name": "Adnan Fazulbhoy",
+      "student_email": "fazulbhoy@wisc.edu",
+      "fit": 7,
+      "robust": true,
+      "rationale": "Ali Abtahi's background as co-founder of Global Venture Group, a venture capital firm focused on seed and early-stage investments with emphasis on health sectors, directly aligns with Adnan's top choice of Venture Pathway for early validation stage work. Additionally, Ali's keen interest in assisting startups in health and medical sectors matches Adnan's Digital Health Challenge interest, as Adnan's idea focuses on health, wellness, and AI. Ali's combined expertise in strategic advisory services and health-focused venture investments makes him well-suited to guide Adnan through both validation and impact-driven refinement."
+    },
+    {
+      "student_id": "S017",
+      "mentor_id": "M11",
+      "mentor_name": "Grant Watkins",
+      "mentor_email": "grant.watkins@gener8tor.com",
+      "student_name": "Ranveer Mishra",
+      "student_email": "ranveer.mishra@gmail.com",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Grant Watkins's expertise in AI & Emerging Tech, Product Development/Design, and Innovation Processes aligns with Ranveer Mishra's interest in the Campus and Industry Project Leader and Venture Pathways roles. Ranveer wants to lead a team in discovering and creating ideas for real-world challenges, which connects to Grant's strengths in innovation and entrepreneurship. Grant's background in Entrepreneurship/Venture Creation can support Ranveer's excitement about working in teams and fostering growth in teammates and the community."
+    },
+    {
+      "student_id": "S058",
+      "mentor_id": "M02",
+      "mentor_name": "Ali Abtahi",
+      "mentor_email": "ali@gvg.vc",
+      "student_name": "Alexander Kubiak",
+      "student_email": "akubiak2@wisc.edu",
+      "fit": 7,
+      "robust": true,
+      "rationale": "Alexander's top choice is the Digital Health Challenge, motivated by personal experiences with people struggling with brain health and neurological issues, wanting to create real-world health impact. Ali is co-founder of a venture capital firm focused on human health challenges, has an MS in epidemiology, and is keenly interested in assisting startups in the health and medical sectors, making this an excellent match for Alexander's health-focused goals."
+    },
+    {
+      "student_id": "S108",
+      "mentor_id": "M06",
+      "mentor_name": "Max Landau",
+      "mentor_email": "maxjsl@gmail.com",
+      "student_name": "Krithika Guduru",
+      "student_email": "krguduru@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Max Landau's expertise in AI & Emerging Tech aligns with Krithika's Self-Directed Exploration interest in experimenting with emerging tech and continuing her C++/Arduino hardware integration projects. His focus on Career Advice & Professional Growth supports Krithika's desire for community involvement with academic flexibility. Max's technical expertise will provide valuable mentorship for Krithika's current projects while respecting her need for creative experimentation without rigid venture-track pressure."
+    },
+    {
+      "student_id": "S021",
+      "mentor_id": "M04",
+      "mentor_name": "Roy Vreeland",
+      "mentor_email": "royvreeland@gmail.com",
+      "student_name": "Adhviklal Thoppe",
+      "student_email": "thoppe@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Roy Vreeland's expertise in AI & Emerging Tech, Career Advice & Professional Growth, and Innovation Processes aligns with Adhviklal Thoppe's dual interests in creating tech talks/meetups and pursuing research rooted in computer science. Adhviklal wants to bridge the tech and business industries by discussing applications of cutting-edge technology, and is also interested in AI/ML, HCI, and CS Theory research with meaningful societal impact, which connects to Roy's strengths in AI and innovation. Roy's background can support Adhviklal's goal of developing innovative solutions to real-world problems."
+    },
+    {
+      "student_id": "S049",
+      "mentor_id": "M20",
+      "mentor_name": "Luke Anderson",
+      "mentor_email": "lucas.anderson@gmail.com",
+      "student_name": "Yiyuan Guo",
+      "student_email": "yguo388@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Luke's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns with Yiyuan's top choice of Campus and Industry Innovation Project Leader. Yiyuan is interested in working on practical tasks, collaborating with others, and achieving outcomes using development and programming skills. Luke's industry applications expertise can guide Yiyuan in contributing technical skills to specific projects while supporting collaborative work in real-world contexts."
+    },
+    {
+      "student_id": "S104",
+      "mentor_id": "M22",
+      "mentor_name": "David Pulvermacher",
+      "mentor_email": "davidj@matrixpd.com",
+      "student_name": "Zach Lichtman",
+      "student_email": "zalichtman@wisc.edu",
+      "fit": 7,
+      "robust": true,
+      "rationale": "David Pulvermacher's expertise in AI & Emerging Tech and Product Development/Design aligns with Zach's goal of contributing to meaningful UW Tech Projects that provide impact. David's product development focus will help Zach build tangible contributions to discuss in full-time role interviews. This pairing supports Zach's dual objectives of creating meaningful impact and advancing his professional prospects."
+    },
+    {
+      "student_id": "S107",
+      "mentor_id": "M18",
+      "mentor_name": "Zainab Hameed",
+      "mentor_email": "zainab.hameed@wedc.org",
+      "student_name": "Shivani Potnuru",
+      "student_email": "spotnuru@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Zainab Hameed's expertise in Product Development/Design and Entrepreneurship/Venture Creation directly aligns with Shivani's top choice of Venture Pathway, where she wants end-to-end project experience with applied learning and exploration. Zainab's focus on Innovation Processes supports Shivani's interest in taking steps to find solutions, validate, research, and test. Her combined mentorship areas match Shivani's desire to work on meaningful projects while applying her HCI, computer science, and statistics knowledge to build solutions that help people."
+    },
+    {
+      "student_id": "S095",
+      "mentor_id": "M07",
+      "mentor_name": "Saurabh K Gupta",
+      "mentor_email": "sgupta278@wisc.edu",
+      "student_name": "Omkar Khade",
+      "student_email": "okhade@wisc.edu",
+      "fit": 7,
+      "robust": true,
+      "rationale": "Saurabh K Gupta's expertise in AI & Emerging Tech, Product Development/Design, Industry Applications/Use Cases, and Innovation Processes aligns perfectly with Omkar's top choice of Campus and Industry Innovation Project Leader. Saurabh can support Omkar's goal of applying his background in data science, machine learning, and AI to enterprise or research-driven challenges, and also guide Omkar's Self-Directed Exploration interest in prototyping ideas in applied AI, automation, and intelligent systems."
+    },
+    {
+      "student_id": "S070",
+      "mentor_id": "M26",
+      "mentor_name": "Brooks Boyd",
+      "mentor_email": "bro@oks.me",
+      "student_name": "Everett Villiger",
+      "student_email": "evilliger@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Brooks Boyd's expertise in Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns well with Everett Villiger's top choice of Campus and Industry Innovation Project Leader experience. Everett wants to use his skills to solve real-world problems for companies or people on campus, which matches Brooks's industry applications focus. Brooks can also support Everett's second choice of Self-Directed Exploration with focused technical exploration that complements his coursework."
+    },
+    {
+      "student_id": "S099",
+      "mentor_id": "M16",
+      "mentor_name": "Shayna Hetzel",
+      "mentor_email": "shayna.hetzel@wedc.org",
+      "student_name": "Sumedh Sabherwal",
+      "student_email": "sabherwal2@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Shayna Hetzel's expertise in Entrepreneurship/Venture Creation aligns with Sumedh's top choice of Venture Discovery, where he wants to return to the cycle of testing assumptions, getting feedback, and improving ideas. Her additional focus on Industry Applications/Use Cases directly matches Sumedh's second choice of Industry Innovation/Co-Labs, where he's interested in working on real problems with clear constraints and stakeholders. Shayna's combined mentorship areas cover both the foundational validation work and practical application settings that Sumedh seeks."
+    },
+    {
+      "student_id": "S008",
+      "mentor_id": "M05",
+      "mentor_name": "Cathy Carlson-Barchus",
+      "mentor_email": "cathy.bluedevil@gmail.com",
+      "student_name": "Prisha Agarwalla",
+      "student_email": "Pagarwalla@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Cathy's expertise in Product Development/Design, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns with Prisha's interest in both the Venture Pathway and Campus and Industry Innovation Project Leader role. Prisha is motivated by turning ideas into reality through iteration and feedback, and has leadership experience from Women in ACM, which matches Cathy's focus on entrepreneurship, product development, and innovation processes."
+    },
+    {
+      "student_id": "S113",
+      "mentor_id": "M27",
       "mentor_name": "Nicki Doggart",
       "mentor_email": "ndoggart@41northconsulting.com",
       "student_name": "Ami Buch",
       "student_email": "abuch2@wisc.edu",
-      "confidence": 7,
+      "fit": 7,
+      "robust": false,
       "rationale": "Nicki's expertise in AI & Emerging Tech, Product Development/Design, and Entrepreneurship/Venture Creation aligns with Ami's passion for developing healthcare solutions and building something revolutionary. Her knowledge in Industry Applications/Use Cases and Go-to-market strategy can support Ami's experience with NLP solutions and tracking apps in the healthcare space. Nicki's background can help Ami with rapid ideation and building, which connects to Ami's interest in hackathons and rapid development."
     },
     {
-      "mentor_name": "Joey Frayne",
-      "mentor_email": "joey.frayne@wedc.org",
-      "student_name": "Aayush Agrawal",
-      "student_email": "agrawal32@wisc.edu",
-      "confidence": 6,
-      "rationale": "Joey's expertise in Entrepreneurship/Venture Creation and Career Advice & Professional Growth aligns with Aayush's interest in the Venture Pathway for their PersonaXR project. Aayush enjoyed previous mentorship and is interested in continuing venture-focused guidance, which matches Joey's entrepreneurship and career mentorship focus."
+      "student_id": "S028",
+      "mentor_id": "M04",
+      "mentor_name": "Roy Vreeland",
+      "mentor_email": "royvreeland@gmail.com",
+      "student_name": "Sathvik Reddy",
+      "student_email": "smreddy2@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Roy's expertise in AI & Emerging Tech, Career Advice & Professional Growth, and Innovation Processes fits well with Sathvik's desire for real-world experience and willingness to learn required skills. Sathvik is looking to work as part of a team to engineer solutions to real problems, and Roy's innovation processes knowledge can guide him through structured problem-solving approaches. Roy's career advice focus also supports Sathvik's goal of gaining practical experience in a collaborative environment."
     },
     {
-      "mentor_name": "Andrea Stein",
-      "mentor_email": "Andreastein79@gmail.com",
-      "student_name": "Zach Huang",
-      "student_email": "lhuang349@wisc.edu",
-      "confidence": 6,
-      "rationale": "Andrea's expertise in Career Advice & Professional Growth and Marketing can support Zach's interest in the Venture pathway as he works with the AI sports team next semester. Her career guidance and marketing expertise can provide valuable mentorship for venture development."
+      "student_id": "S014",
+      "mentor_id": "M05",
+      "mentor_name": "Cathy Carlson-Barchus",
+      "mentor_email": "cathy.bluedevil@gmail.com",
+      "student_name": "Adaobi Ibe",
+      "student_email": "aibe@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Cathy's expertise in Product Development/Design, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns with Adaobi's top choices of Campus and Industry Innovation Project Leader and Venture Pathway. Adaobi is interested in structuring ambiguous challenges, leading research and analysis, and early-stage venture development with emphasis on user research and experimentation, which matches Cathy's comprehensive skill set in entrepreneurship and innovation."
     },
     {
+      "student_id": "S026",
+      "mentor_id": "M04",
+      "mentor_name": "Roy Vreeland",
+      "mentor_email": "royvreeland@gmail.com",
+      "student_name": "Jia Kesaria",
+      "student_email": "kesaria@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Roy's expertise in AI & Emerging Tech, Career Advice & Professional Growth, and Innovation Processes matches well with Jia's background in computer science, data science, and applied AI. Jia wants to work on real-world, technically challenging problems with emerging technologies while developing leadership skills, and Roy's innovation processes expertise can support this growth. Roy's career advice focus also aligns with Jia's desire to challenge herself and learn through hands-on leadership in the Campus and Industry Innovation Project Leader role."
+    },
+    {
+      "student_id": "S080",
+      "mentor_id": "M07",
+      "mentor_name": "Saurabh K Gupta",
+      "mentor_email": "sgupta278@wisc.edu",
+      "student_name": "Paawan Kathuria",
+      "student_email": "pkathuria@wisc.edu",
+      "fit": 7,
+      "robust": true,
+      "rationale": "Saurabh K Gupta's expertise in AI & Emerging Tech, Product Development/Design, Industry Applications/Use Cases, and Innovation Processes aligns with Paawan Kathuria's top choice of Campus and Industry Innovation Project Leader. Paawan wants to work on real, well-defined problems while taking on leadership roles with meaningful responsibility and applying his technical background to projects with tangible impact. Saurabh's industry applications and product development expertise can support Paawan's goals of improving campus systems or addressing industry partner challenges."
+    },
+    {
+      "student_id": "S087",
+      "mentor_id": "M21",
+      "mentor_name": "Christian Kaczmarczyk",
+      "mentor_email": "ck@thirdprime.vc",
+      "student_name": "Devanshi Jain",
+      "student_email": "dsjain3@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Christian Kaczmarczyk's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Innovation Processes aligns well with Devanshi's experience working on an industry-facing project with SBDC and her interest in translating client needs into technical solutions. His background in Entrepreneurship/Venture Creation can support Devanshi's goal of taking on leadership responsibility while working on real-world applications and continuing to build practical skills."
+    },
+    {
+      "student_id": "S025",
+      "mentor_id": "M21",
+      "mentor_name": "Christian Kaczmarczyk",
+      "mentor_email": "ck@thirdprime.vc",
+      "student_name": "Damien Kim",
+      "student_email": "dkim756@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Christian's expertise in AI & Emerging Tech, Entrepreneurship / Venture Creation, Industry Applications / Use Cases, and Innovation Processes directly aligns with Damien's interest in learning about venture and deployment processes. Damien has experience with AI projects (Unload AI voice journal and Trusted to Lead AI career advising) but notes that neither led to venture or deployment, making Christian's entrepreneurship and innovation process knowledge particularly valuable. Christian can guide Damien through the processes of moving from prototype to venture, which is exactly what Damien wants to learn."
+    },
+    {
+      "student_id": "S050",
+      "mentor_id": "M20",
+      "mentor_name": "Luke Anderson",
+      "mentor_email": "lucas.anderson@gmail.com",
+      "student_name": "Daria Feng",
+      "student_email": "yfeng266@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Luke's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth directly supports Daria's top choice of Campus and Industry Innovation Project Leader. Daria wants to apply her computer science and AI background to build practical solutions for real campus or industry problems while taking meaningful responsibility. Luke's industry applications and AI expertise can guide Daria in contributing to project progress and exploring emerging technologies through Lab events like hackathons and workshops."
+    },
+    {
+      "student_id": "S024",
+      "mentor_id": "M10",
+      "mentor_name": "Tejvir Mann",
+      "mentor_email": "tejvirmann11@gmail.com",
+      "student_name": "Shikha Ashara",
+      "student_email": "sashara@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Tejvir Mann's expertise in AI & Emerging Tech, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns with Shikha Ashara's top choices of Campus and Industry Innovation Project Leader and Venture Pathway. Shikha wants to apply her statistics and data science background to real challenges in AI and enterprise tech while growing as a leader, which connects to Tejvir's strengths in AI applications and career development. Tejvir's background can support Shikha's goals in analytics and AI-focused roles while helping her think more entrepreneurially."
+    },
+    {
+      "student_id": "S112",
+      "mentor_id": "M25",
+      "mentor_name": "Brett Hawkins",
+      "mentor_email": "brett.hawkinsjr@gmail.com",
+      "student_name": "Lingfang Yuan",
+      "student_email": "lyuan57@wisc.edu",
+      "fit": 7,
+      "robust": true,
+      "rationale": "Brett's expertise in Entrepreneurship/Venture Creation directly supports Lingfang's primary interest in the Venture Pathway and desire to test technical projects for real-world potential. His knowledge in AI & Emerging Tech and Innovation Processes can help Lingfang learn how to bridge the gap between prototype and real product, specifically addressing her interest in the validation aspect. Brett's background aligns with Lingfang's goal of graduating with a validated project under her belt."
+    },
+    {
+      "student_id": "S006",
+      "mentor_id": "M25",
+      "mentor_name": "Brett Hawkins",
+      "mentor_email": "brett.hawkinsjr@gmail.com",
+      "student_name": "Navya Sharma",
+      "student_email": "nsharma56@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Brett's expertise in AI & Emerging Tech, Entrepreneurship/Venture Creation, Career Advice & Professional Growth, and Innovation Processes aligns with Navya's interest in both the Venture Pathway and Campus and Industry Innovation Project Leader roles. Navya wants to apply analytical skills to customer discovery and venture development while working on real campus and industry challenges in fields like AI, which matches Brett's areas of expertise."
+    },
+    {
+      "student_id": "S088",
+      "mentor_id": "M15",
+      "mentor_name": "Andy Siedschlag",
+      "mentor_email": "asiedschlag@comcast.net",
+      "student_name": "Duy Tran",
+      "student_email": "dmtran@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Andy Siedschlag's expertise in Product Development/Design, Innovation Processes, and Career Advice & Professional Growth directly aligns with Duy's top choice of the Campus and Industry Innovation Project Leader track. Andy can support Duy's goal of working with technologies actively used in industry while solving real problems with real constraints, and help Duy apply technical skills to make meaningful impact."
+    },
+    {
+      "student_id": "S061",
+      "mentor_id": "M27",
+      "mentor_name": "Nicki Doggart",
+      "mentor_email": "ndoggart@41northconsulting.com",
+      "student_name": "Shilin Chhabra",
+      "student_email": "chhabra7@wisc.edu",
+      "fit": 7,
+      "robust": false,
+      "rationale": "Shilin's top choice is the Campus and Industry Innovation Project Leader pathway, wanting to take ownership of work with real stakeholders and impact while applying strengths in AI, systems, and product execution. Nicki's expertise in Product Development/Design, Industry Applications/Use Cases, AI & Emerging Tech, and Go-to-market strategy aligns well with Shilin's goals of translating ambiguous problems into clear execution plans and shipping measurable outcomes."
+    },
+    {
+      "student_id": "S086",
+      "mentor_id": "M26",
       "mentor_name": "Brooks Boyd",
       "mentor_email": "bro@oks.me",
-      "student_name": "Jamie Loh",
-      "student_email": "ziruiloh0110@gmail.com",
-      "confidence": 6,
-      "rationale": "Brooks Boyd's expertise in Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns with Jamie Loh's priority for the Campus and Industry Innovation Project Leader role. Jamie wants to lead projects that bridge academic learning with practical industry impact in areas like enterprise technology and AI, which connects to Brooks's strengths in translating innovation into real-world applications. Brooks's background can support Jamie's goal of becoming a technology leader who translates innovative ideas into tangible outcomes."
+      "student_name": "kishan rishik kota",
+      "student_email": "kkota@wisc.edu",
+      "fit": 7,
+      "robust": true,
+      "rationale": "Brooks Boyd's expertise in Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns with Kishan's interest in the Venture Pathway, where Kishan wants structured process and feedback to turn ideas into something real and usable. Brooks can provide guidance on the hands-on, collaborative learning approach that Kishan values in events like hackathons and build nights."
     },
     {
-      "mentor_name": "Ali Abtahi",
-      "mentor_email": "ali@gvg.vc",
-      "student_name": "Sabrina Ortiz",
-      "student_email": "ssortiz@wisc.edu",
-      "confidence": 6,
-      "rationale": "Ali Abtahi's background as co-founder of Global Venture Group focused on health and medical sectors, combined with his educational background in molecular biology, epidemiology, and public health, directly aligns with Sabrina Ortiz's interest in the Digital Health Challenge. Sabrina wants to bridge her majors in Rehabilitation Psychology and Information Science to explore health informatics, which connects to Ali's keen interest in assisting startups in health and medical sectors. Ali's experience with university-affiliated ventures can help Sabrina gain hands-on experience in understanding the foundations of digital health and information."
-    },
-    {
+      "student_id": "S052",
+      "mentor_id": "M17",
       "mentor_name": "Kurt Malueg",
       "mentor_email": "kfmalueg@gmail.com",
       "student_name": "Jingwen Qian",
       "student_email": "jqian67@wisc.edu",
-      "confidence": 6,
+      "fit": 6,
+      "robust": false,
       "rationale": "Kurt's expertise in AI & Emerging Tech and Product Development/Design aligns well with Jingwen's top choice of the Venture Pathway. Jingwen has many different ideas but lacks motivation and channels to turn them into something concrete, which is exactly what she wants to do. Kurt's product development expertise can provide the practical guidance and structure Jingwen needs to transform her various ideas into reality through concrete development processes."
     },
     {
-      "mentor_name": "Ben Dreher",
-      "mentor_email": "ben-dreher@outlook.com",
-      "student_name": "Ojaswanie Sharma",
-      "student_email": "osharma7@wisc.edu",
-      "confidence": 6,
-      "rationale": "Ojaswanie is extremely interested in Campus and Industry Innovation to work on real campus/company challenges and apply tech knowledge in the real world. Ben's expertise in Product Development/Design and Industry Applications/Use Cases directly supports Ojaswanie's goal of applying skills to real-world challenges, while his Career Advice & Professional Growth experience can guide her development."
+      "student_id": "S013",
+      "mentor_id": "M23",
+      "mentor_name": "Andrea Stein",
+      "mentor_email": "Andreastein79@gmail.com",
+      "student_name": "Zach Huang",
+      "student_email": "lhuang349@wisc.edu",
+      "fit": 6,
+      "robust": false,
+      "rationale": "Andrea's expertise in Career Advice & Professional Growth and Marketing can support Zach's interest in the Venture pathway as he works with the AI sports team next semester. Her career guidance and marketing expertise can provide valuable mentorship for venture development."
     },
     {
-      "mentor_name": "Ben Dreher",
-      "mentor_email": "ben-dreher@outlook.com",
-      "student_name": "Yana Gupta",
-      "student_email": "ygupta6@wisc.edu",
-      "confidence": 6,
-      "rationale": "Ben Dreher's expertise in Product Development/Design, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns with Yana Gupta's interest in Campus and Industry Innovation Project Leader - Co-Labs and Problem Statements. Yana wants to gain experience applying her skills to solve real-world problems while connecting with industry to learn about practical applications. Ben's industry applications and career advice background can support Yana's goals of bridging her skills with real-world problem-solving."
-    },
-    {
+      "student_id": "S084",
+      "mentor_id": "M19",
       "mentor_name": "Joey Frayne",
       "mentor_email": "joey.frayne@wedc.org",
       "student_name": "Nirvana Krocak",
       "student_email": "nkrocak@wisc.edu",
-      "confidence": 6,
+      "fit": 6,
+      "robust": false,
       "rationale": "Joey Frayne's expertise in Entrepreneurship/Venture Creation and Career Advice & Professional Growth directly aligns with Nirvana's interest in the Venture Pathway, where Nirvana wants to build something concrete from classroom skills. Joey can provide guidance on translating classroom knowledge into real-world team-based projects and events that Nirvana is interested in pursuing."
     },
     {
+      "student_id": "S019",
+      "mentor_id": "M26",
+      "mentor_name": "Brooks Boyd",
+      "mentor_email": "bro@oks.me",
+      "student_name": "Jamie Loh",
+      "student_email": "ziruiloh0110@gmail.com",
+      "fit": 6,
+      "robust": false,
+      "rationale": "Brooks Boyd's expertise in Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns with Jamie Loh's priority for the Campus and Industry Innovation Project Leader role. Jamie wants to lead projects that bridge academic learning with practical industry impact in areas like enterprise technology and AI, which connects to Brooks's strengths in translating innovation into real-world applications. Brooks's background can support Jamie's goal of becoming a technology leader who translates innovative ideas into tangible outcomes."
+    },
+    {
+      "student_id": "S079",
+      "mentor_id": "M24",
+      "mentor_name": "Ben Dreher",
+      "mentor_email": "ben-dreher@outlook.com",
+      "student_name": "Yana Gupta",
+      "student_email": "ygupta6@wisc.edu",
+      "fit": 6,
+      "robust": false,
+      "rationale": "Ben Dreher's expertise in Product Development/Design, Industry Applications/Use Cases, and Career Advice & Professional Growth aligns with Yana Gupta's interest in Campus and Industry Innovation Project Leader - Co-Labs and Problem Statements. Yana wants to gain experience applying her skills to solve real-world problems while connecting with industry to learn about practical applications. Ben's industry applications and career advice background can support Yana's goals of bridging her skills with real-world problem-solving."
+    },
+    {
+      "student_id": "S100",
+      "mentor_id": "M19",
       "mentor_name": "Joey Frayne",
       "mentor_email": "joey.frayne@wedc.org",
       "student_name": "Aditya Punjani",
       "student_email": "apunjani2@wisc.edu",
-      "confidence": 6,
+      "fit": 6,
+      "robust": false,
       "rationale": "Joey Frayne's expertise in Entrepreneurship/Venture Creation and Career Advice & Professional Growth aligns well with Aditya Punjani's goals. Aditya's second choice is the Venture Pathway, where he is passionate about startups and seeks structured guidance to validate and refine his ideas into successful ventures. Joey's entrepreneurship focus can provide the mentorship Aditya needs to develop his venture ideas while also supporting his professional growth aspirations."
     },
     {
-      "mentor_name": "Rich Fischer",
-      "mentor_email": "rfischer6430@gmail.com",
-      "student_name": "Arunjay Agrawal",
-      "student_email": "agrawal54@wisc.edu",
-      "confidence": 5,
-      "rationale": "Rich's expertise in Product Development/Design, Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes matches Arunjay's goal as a Campus and Industry Innovation Project Leader. Arunjay wants to apply his technical background to real-world operational challenges and take ownership from problem statement to deployed solution, which aligns with Rich's focus on product development and industry applications."
+      "student_id": "S056",
+      "mentor_id": "M24",
+      "mentor_name": "Ben Dreher",
+      "mentor_email": "ben-dreher@outlook.com",
+      "student_name": "Ojaswanie Sharma",
+      "student_email": "osharma7@wisc.edu",
+      "fit": 6,
+      "robust": false,
+      "rationale": "Ojaswanie is extremely interested in Campus and Industry Innovation to work on real campus/company challenges and apply tech knowledge in the real world. Ben's expertise in Product Development/Design and Industry Applications/Use Cases directly supports Ojaswanie's goal of applying skills to real-world challenges, while his Career Advice & Professional Growth experience can guide her development."
     },
     {
-      "mentor_name": "Rich Fischer",
-      "mentor_email": "rfischer6430@gmail.com",
-      "student_name": "Akshat Vasisht",
-      "student_email": "avasisht2@wisc.edu",
-      "confidence": 5,
-      "rationale": "Rich's expertise in Product Development/Design, Industry Applications / Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns perfectly with Akshat's goal of moving from technical execution to overseeing projects from start to finish. Akshat has experience managing HPC workflows, full stack development, and architecting ML pipelines, and Rich's product development and industry applications knowledge can help him transition to the Campus and Industry Innovation Project Leader role. Rich's career advice expertise also supports Akshat's professional growth trajectory within a team environment."
+      "student_id": "S011",
+      "mentor_id": "M19",
+      "mentor_name": "Joey Frayne",
+      "mentor_email": "joey.frayne@wedc.org",
+      "student_name": "Aayush Agrawal",
+      "student_email": "agrawal32@wisc.edu",
+      "fit": 6,
+      "robust": false,
+      "rationale": "Joey's expertise in Entrepreneurship/Venture Creation and Career Advice & Professional Growth aligns with Aayush's interest in the Venture Pathway for their PersonaXR project. Aayush enjoyed previous mentorship and is interested in continuing venture-focused guidance, which matches Joey's entrepreneurship and career mentorship focus."
     },
     {
+      "student_id": "S023",
+      "mentor_id": "M02",
+      "mentor_name": "Ali Abtahi",
+      "mentor_email": "ali@gvg.vc",
+      "student_name": "Sabrina Ortiz",
+      "student_email": "ssortiz@wisc.edu",
+      "fit": 6,
+      "robust": false,
+      "rationale": "Ali Abtahi's background as co-founder of Global Venture Group focused on health and medical sectors, combined with his educational background in molecular biology, epidemiology, and public health, directly aligns with Sabrina Ortiz's interest in the Digital Health Challenge. Sabrina wants to bridge her majors in Rehabilitation Psychology and Information Science to explore health informatics, which connects to Ali's keen interest in assisting startups in health and medical sectors. Ali's experience with university-affiliated ventures can help Sabrina gain hands-on experience in understanding the foundations of digital health and information."
+    },
+    {
+      "student_id": "S045",
+      "mentor_id": "M14",
       "mentor_name": "Rich Fischer",
       "mentor_email": "rfischer6430@gmail.com",
       "student_name": "Diveesha Vanchireddy",
       "student_email": "vanchireddy@wisc.edu",
-      "confidence": 5,
+      "fit": 5,
+      "robust": false,
       "rationale": "Rich's expertise in Product Development/Design, Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns well with Diveesha's interests as a data science major. Diveesha seeks AI or data-driven enterprise problem statements focused on analytics, decision-making, and user behavior, wanting to translate insights into actionable outcomes. Rich's industry applications and product development expertise can guide Diveesha in applying machine learning and data analysis to real-world challenges while supporting her leadership-focused project goals."
+    },
+    {
+      "student_id": "S027",
+      "mentor_id": "M14",
+      "mentor_name": "Rich Fischer",
+      "mentor_email": "rfischer6430@gmail.com",
+      "student_name": "Akshat Vasisht",
+      "student_email": "avasisht2@wisc.edu",
+      "fit": 5,
+      "robust": false,
+      "rationale": "Rich's expertise in Product Development/Design, Industry Applications / Use Cases, Career Advice & Professional Growth, and Innovation Processes aligns perfectly with Akshat's goal of moving from technical execution to overseeing projects from start to finish. Akshat has experience managing HPC workflows, full stack development, and architecting ML pipelines, and Rich's product development and industry applications knowledge can help him transition to the Campus and Industry Innovation Project Leader role. Rich's career advice expertise also supports Akshat's professional growth trajectory within a team environment."
+    },
+    {
+      "student_id": "S003",
+      "mentor_id": "M14",
+      "mentor_name": "Rich Fischer",
+      "mentor_email": "rfischer6430@gmail.com",
+      "student_name": "Arunjay Agrawal",
+      "student_email": "agrawal54@wisc.edu",
+      "fit": 5,
+      "robust": false,
+      "rationale": "Rich's expertise in Product Development/Design, Industry Applications/Use Cases, Career Advice & Professional Growth, and Innovation Processes matches Arunjay's goal as a Campus and Industry Innovation Project Leader. Arunjay wants to apply his technical background to real-world operational challenges and take ownership from problem statement to deployed solution, which aligns with Rich's focus on product development and industry applications."
     }
   ],
   "unmatched": [
     {
+      "student_id": "S001",
       "student_name": "Nisheeth Charan reddy Koppula yeddula",
-      "student_email": "Koppulayeddu@wisc.edu"
+      "student_email": "Koppulayeddu@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S004",
       "student_name": "Ami Buch",
-      "student_email": "abuch2@wisc.edu"
+      "student_email": "abuch2@wisc.edu",
+      "reason": "no scores recorded in the original LLM run \u2014 duplicate submission; this person IS matched via their other row",
+      "duplicate_submission_of": "S113"
     },
     {
+      "student_id": "S005",
       "student_name": "Akshat Vasisht",
-      "student_email": "avasisht2@wisc.edu"
+      "student_email": "avasisht2@wisc.edu",
+      "reason": "no scores recorded in the original LLM run \u2014 duplicate submission; this person IS matched via their other row",
+      "duplicate_submission_of": "S027"
     },
     {
+      "student_id": "S009",
       "student_name": "Rikhil Rao",
-      "student_email": "rrao27@wisc.edu"
+      "student_email": "rrao27@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S031",
       "student_name": "Alexander Tung",
-      "student_email": "astung@wisc.edu"
+      "student_email": "astung@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S032",
       "student_name": "Tatianna Hines",
-      "student_email": "tchines@wisc.edu"
+      "student_email": "tchines@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S037",
       "student_name": "Shrikrishna Mokhasi",
-      "student_email": "mokhasi@wisc.edu"
+      "student_email": "mokhasi@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S040",
       "student_name": "Bridget Wu",
-      "student_email": "bwu247@wisc.edu"
+      "student_email": "bwu247@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S041",
       "student_name": "Joshua Moon",
-      "student_email": "moon58@wisc.edu"
+      "student_email": "moon58@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S044",
       "student_name": "Ryan Chung",
-      "student_email": "rkchung@wisc.edu"
+      "student_email": "rkchung@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S048",
       "student_name": "Aradhya Verma",
-      "student_email": "verma48@wisc.edu"
+      "student_email": "verma48@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S051",
       "student_name": "Macy Xiang",
-      "student_email": "yxiang37@wisc.edu"
+      "student_email": "yxiang37@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S059",
       "student_name": "Xiaozhe Ning",
-      "student_email": "xning22@wisc.edu"
+      "student_email": "xning22@wisc.edu",
+      "reason": "no scores recorded in the original LLM run \u2014 duplicate submission; this person IS matched via their other row",
+      "duplicate_submission_of": "S060"
     },
     {
+      "student_id": "S065",
       "student_name": "Deepa Venkatachalapathi",
-      "student_email": "chickballapu@wisc.edu"
+      "student_email": "chickballapu@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S067",
       "student_name": "Krishiv Gupta",
-      "student_email": "kgupta223@wisc.edu"
+      "student_email": "kgupta223@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S069",
       "student_name": "Sameer Kulkarni",
-      "student_email": "sskulkarni27@wisc.edu"
+      "student_email": "sskulkarni27@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S071",
       "student_name": "Vikram Varikooty",
-      "student_email": "varikooty@wisc.edu"
+      "student_email": "varikooty@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S073",
       "student_name": "Justin Huang",
-      "student_email": "justinhuang773@gmail.com"
+      "student_email": "justinhuang773@gmail.com",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S075",
       "student_name": "Kishan rishik Kota",
-      "student_email": "kkota@wisc.edu"
+      "student_email": "kkota@wisc.edu",
+      "reason": "no scores recorded in the original LLM run \u2014 duplicate submission; this person IS matched via their other row",
+      "duplicate_submission_of": "S086"
     },
     {
+      "student_id": "S076",
       "student_name": "Roshni Guha",
-      "student_email": "rguha9@wisc.edu"
+      "student_email": "rguha9@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S083",
       "student_name": "Victoria Yang",
-      "student_email": "vxyang@wisc.edu"
+      "student_email": "vxyang@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S090",
       "student_name": "Shivani Potnuru",
-      "student_email": "spotnuru@wisc.edu"
+      "student_email": "spotnuru@wisc.edu",
+      "reason": "no scores recorded in the original LLM run \u2014 duplicate submission; this person IS matched via their other row",
+      "duplicate_submission_of": "S107"
     },
     {
+      "student_id": "S091",
       "student_name": "Mark Kiatchaipipat",
-      "student_email": "nkiatchaipip@wisc.edu"
+      "student_email": "nkiatchaipip@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S092",
       "student_name": "Matthew Riggle",
-      "student_email": "mlriggle@wisc.edu"
+      "student_email": "mlriggle@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S093",
       "student_name": "ruizi wu",
-      "student_email": "rwu223@wisc.edu"
+      "student_email": "rwu223@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S097",
       "student_name": "Anjali Agarwal",
-      "student_email": "aagarwal75@wisc.edu"
+      "student_email": "aagarwal75@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S098",
       "student_name": "Anjali Marella",
-      "student_email": "marella2@wisc.edu"
+      "student_email": "marella2@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S102",
       "student_name": "Shobhin Basu",
-      "student_email": "sbasu25@wisc.edu"
+      "student_email": "sbasu25@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S105",
       "student_name": "Zavier Rahmansyah",
-      "student_email": "rahmansyah@wisc.edu"
+      "student_email": "rahmansyah@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S106",
       "student_name": "Saketh Adusumilli",
-      "student_email": "adusumilli4@wisc.edu"
+      "student_email": "adusumilli4@wisc.edu",
+      "reason": "mentor capacity exhausted"
     },
     {
+      "student_id": "S116",
       "student_name": "Darsh Thakkar",
-      "student_email": "dkthakkar@wisc.edu"
+      "student_email": "dkthakkar@wisc.edu",
+      "reason": "mentor capacity exhausted"
     }
   ]
 }
